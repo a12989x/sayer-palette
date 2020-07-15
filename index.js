@@ -14,7 +14,7 @@ mongoose.connect(
     () => console.log('Connected to MongoDB')
 );
 
-app.use('/', colorsRoute);
+app.use('/api', colorsRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
