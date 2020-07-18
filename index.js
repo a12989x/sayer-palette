@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const { connect } = require('mongoose');
 const dotenv = require('dotenv');
 const { success, error } = require('consola');
 
@@ -10,12 +10,22 @@ const colorsRoute = require('./routes/colors');
 const app = express();
 
 app.use(express.json());
-mongoose.connect(
-    MONGODB_URI,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log('Connected to MongoDB')
-);
 
 app.use('/api', colorsRoute);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const startApp = async () => {
+    try {
+        await connect(MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        success({ message: 'Connected to MongoDB', badge: true });
+        app.listen(PORT, () =>
+            success({ message: `Server running on port ${PORT}`, badge: true })
+        );
+    } catch (err) {
+        error({ message: 'Unable to connect to MongoDB', badges: true });
+    }
+};
+
+startApp();
