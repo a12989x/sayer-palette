@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const ColorSchema = new Schema(
     {
-        codeNumber: { type: String, required: true },
-        colorName: { type: String, required: true },
-        hexCode: { type: String, required: true },
+        codeNumber: { type: String, required: true, min: 12, max: 12 },
+        colorName: { type: String, required: true, min: 1, max: 100 },
+        hexCode: { type: String, required: true, min: 7, max: 7 },
         base: [],
     },
     { validateBeforeSave: true }
