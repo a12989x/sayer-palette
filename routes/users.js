@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const { userRegister } = require('../utils/Auth.js');
-const userValidationMiddleware = require('../middlewares/validateUser');
-const schemas = require('../middlewares/userSchema');
+const {
+    userValidationMiddleware,
+    schemas,
+} = require('../middlewares/validateUser');
 
 router.post(
     '/register-user',
