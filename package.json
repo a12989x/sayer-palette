@@ -11,11 +11,11 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@hapi/joi": "^17.1.1",
         "bcrypt": "^5.0.0",
         "consola": "^2.14.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
+        "joi": "^17.1.1",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.9.24",
         "passport": "^0.4.1",
