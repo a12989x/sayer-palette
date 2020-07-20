@@ -1,6 +1,5 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
@@ -37,7 +36,6 @@ const userRegister = async (userDets, role, res) => {
         return res.status(201).json({
             message: 'User is created!',
             success: true,
-            newUser,
         });
     } catch (error) {
         return res.status(500).json({
@@ -45,6 +43,74 @@ const userRegister = async (userDets, role, res) => {
             success: false,
         });
     }
+};
+
+const userLogin = async (userCreds, role, res) => {
+    const { username, password } = userCreds;
+
+    const user = await User.findOne({ username });
+    if (!user)
+        return res.status(404).json({
+            message: 'Username is not found. Invalid login credentials',
+            success: false,
+        });
+
+    if (user.role !== role && !user)
+        return res.status(404).json({
+            message: 'Please make sure you are logging from the right portal.',
+            success: false,
+        });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (isMatch) {
+        const token = jwt.sign(
+            {
+                user_id: user.id,
+                role: user.role,
+                username: user.username,
+                email: user.email,
+            },
+            SECRET,
+            { expiresIn: '1 day' }
+        );
+
+        const result = {
+            username: user.username,
+            role: user.role,
+            email: user.email,
+            token,
+            expiresIn: 24,
+        };
+
+        return res.status(200).json({
+            ...result,
+            message: 'You are now logged in',
+            succes: true,
+        });
+    } else {
+        return res.status(404).json({
+            message: 'Incorrect Password',
+            success: false,
+        });
+    }
+};
+
+const userAuth = passport.authenticate('jwt', { session: false });
+
+const checkRole = (role) => (req, res, next) =>
+    !removeListener.includes(req.user.role)
+        ? res.status(401).json({ message: 'Unauthorized', success: false })
+        : next();
+
+const serializeUser = (user) => {
+    return {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+        name: user.name,
+        updatedAt: user.updatedAt,
+        CreatedAt: user.CreatedAt,
+    };
 };
 
 const validateUsername = async (username) => {
@@ -57,4 +123,10 @@ const validateEmail = async (email) => {
     return user ? false : true;
 };
 
-module.exports = { userRegister };
+module.exports = {
+    userRegister,
+    userLogin,
+    userAuth,
+    serializeUser,
+    checkRole,
+};
