@@ -9,7 +9,7 @@ const schemas = {
     registerSchema: Joi.object().keys({
         name: Joi.string().min(3).max(80).required(),
         email: Joi.string()
-            .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
+            .email({ minDomainSegments: 2 })
             .min(4)
             .max(100)
             .required(),
