@@ -14,6 +14,7 @@ const {
     schemas,
 } = require('../middlewares/validateUser');
 
+/* ─────────────────── Register Routes ────────────────── */
 router.post(
     '/register-user',
     userValidationMiddleware(schemas.registerSchema),
@@ -22,6 +23,7 @@ router.post(
     }
 );
 
+/* ──────────────────── Login Routes ──────────────────── */
 router.post(
     '/login-user',
     userValidationMiddleware(schemas.loginSchema),
