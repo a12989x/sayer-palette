@@ -29,6 +29,12 @@ router.post(
     async (req, res) => await userRegister(req.body, 'admin', res)
 );
 
+router.post(
+    '/register-super-admin',
+    userValidationMiddleware(schemas.registerSchema),
+    async (req, res) => await userRegister(req.body, 'superadmin', res)
+);
+
 /* ──────────────────── Login Routes ──────────────────── */
 router.post(
     '/login-user',
