@@ -50,4 +50,10 @@ router.post(
     async (req, res) => await userLogin(req.body, 'admin', res)
 );
 
+router.post(
+    '/login-super-admin',
+    userValidationMiddleware(schemas.loginSchema),
+    async (req, res) => await userLogin(req.body, 'superadmin', res)
+);
+
 module.exports = router;
