@@ -62,6 +62,7 @@ const userLogin = async (userCreds, role, res) => {
         });
 
     const isMatch = await bcrypt.compare(password, user.password);
+
     if (isMatch) {
         const token = jwt.sign(
             {
@@ -85,7 +86,7 @@ const userLogin = async (userCreds, role, res) => {
         return res.status(200).json({
             ...result,
             message: 'You are now logged in',
-            succes: true,
+            success: true,
         });
     } else {
         return res.status(404).json({
