@@ -1,7 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { userRegister } = require('../utils/Auth.js');
+const {
+    userRegister,
+    userLogin,
+    userAuth,
+    serializeUser,
+    checkRole,
+} = require('../utils/Auth.js');
+
 const {
     userValidationMiddleware,
     schemas,
@@ -12,6 +19,14 @@ router.post(
     userValidationMiddleware(schemas.registerSchema),
     async (req, res) => {
         await userRegister(req.body, 'user', res);
+    }
+);
+
+router.post(
+    '/login-user',
+    userValidationMiddleware(schemas.loginSchema),
+    async (req, res) => {
+        await userLogin(req.body, 'user', res);
     }
 );
 
