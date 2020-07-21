@@ -23,6 +23,12 @@ router.post(
     }
 );
 
+router.post(
+    '/register-admin',
+    userValidationMiddleware(schemas.registerSchema),
+    async (req, res) => await userRegister(req.body, 'admin', res)
+);
+
 /* ──────────────────── Login Routes ──────────────────── */
 router.post(
     '/login-user',
