@@ -38,4 +38,10 @@ router.post(
     }
 );
 
+router.post(
+    '/login-admin',
+    userValidationMiddleware(schemas.loginSchema),
+    async (req, res) => await userLogin(req.body, 'admin', res)
+);
+
 module.exports = router;
