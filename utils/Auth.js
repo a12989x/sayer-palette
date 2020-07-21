@@ -55,9 +55,9 @@ const userLogin = async (userCreds, role, res) => {
             success: false,
         });
 
-    if (user.role !== role && !user)
+    if (user.role !== role)
         return res.status(404).json({
-            message: 'Please make sure you are logging from the right portal.',
+            message: 'Please make sure you are logging from the right portal',
             success: false,
         });
 
