@@ -2,7 +2,6 @@ const Joi = require('joi');
 
 const schemas = {
     loginSchema: Joi.object().keys({
-        email: Joi.string().email().min(4).max(100).required(),
         username: Joi.string().min(5).max(50),
         password: Joi.string().min(8).max(50),
     }),
