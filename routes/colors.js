@@ -43,9 +43,15 @@ router.patch('/:id', async (req, res) => {
             }
         );
 
-        res.json(colorUpdate);
+        res.status(201).json({
+            message: 'Edited successfully.',
+            success: true,
+        });
     } catch (error) {
-        res.status(500).json({ msg: error });
+        res.status(500).json({
+            message: 'Unable to create your new color.',
+            success: false,
+        });
     }
 });
 
