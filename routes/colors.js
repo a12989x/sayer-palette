@@ -41,7 +41,7 @@ router.post('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const color = await Color.findById(req.params.id);
 
-    res.json({ color });
+    res.send(color);
 });
 
 router.patch('/:id', async (req, res) => {
@@ -73,9 +73,12 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const colorRemove = await Color.remove({ _id: req.params.id });
-        res.json(colorRemove);
+        res.json({ message: 'Color removed successfully.', success: true });
     } catch (error) {
-        res.status(500).json({ msg: error });
+        res.status(500).json({
+            message: 'Unable to delete the color.',
+            success: false,
+        });
     }
 });
 
