@@ -2,8 +2,8 @@ const passport = require('passport');
 
 const userAuth = passport.authenticate('jwt', { session: false });
 
-const checkRole = (role) => (req, res, next) =>
-    !removeListener.includes(req.user.role)
+const checkRole = (roles) => (req, res, next) =>
+    !roles.includes(req.user.role)
         ? res.status(401).json({ message: 'Unauthorized', success: false })
         : next();
 
