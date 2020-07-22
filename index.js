@@ -23,8 +23,9 @@ const startApp = async () => {
     try {
         await connect(MONGODB_URI, {
             useNewUrlParser: true,
-            useFindAndModify: true,
+            useFindAndModify: false,
             useUnifiedTopology: true,
+            useCreateIndex: true,
         });
         success({ message: 'Connected to MongoDB', badge: true });
         app.listen(PORT, () =>
