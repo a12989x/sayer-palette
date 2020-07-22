@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {
-    userRegister,
-    userLogin,
-    userAuth,
-    serializeUser,
-    checkRole,
-} = require('../utils/Auth.js');
+const { userRegister, userLogin } = require('../utils/Auth.js');
 
 const {
     userValidationMiddleware,

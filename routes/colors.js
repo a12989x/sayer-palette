@@ -3,7 +3,7 @@ const Color = require('../models/Color');
 
 const router = express.Router();
 
-router.get('/colors', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const allColors = await Color.find();
         res.json(allColors);
@@ -12,7 +12,7 @@ router.get('/colors', async (req, res) => {
     }
 });
 
-router.post('/colors', (req, res) => {
+router.post('/new', (req, res) => {
     const { codeNumber, colorName, base, hexCode } = req.body;
 
     const newColor = new Color({ codeNumber, colorName, base, hexCode });
@@ -23,13 +23,13 @@ router.post('/colors', (req, res) => {
         .catch((error) => res.status(500).json({ msg: error }));
 });
 
-router.get('/colors/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const color = await Color.findById(req.params.id);
 
     res.send(color);
 });
 
-router.patch('/colors/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
         const colorUpdate = await Color.update(
             { _id: req.params.id },
@@ -49,7 +49,7 @@ router.patch('/colors/:id', async (req, res) => {
     }
 });
 
-router.delete('/colors/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const colorRemove = await Color.remove({ _id: req.params.id });
         res.json(colorRemove);
