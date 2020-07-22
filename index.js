@@ -16,7 +16,7 @@ app.use(passport.initialize());
 
 require('./middlewares/passport')(passport);
 
-app.use('/api', colorsRoute);
+app.use('/api/colors', colorsRoute);
 app.use('/api/users', usersRoute);
 
 const startApp = async () => {

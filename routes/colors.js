@@ -26,7 +26,7 @@ router.post('/new', (req, res) => {
 router.get('/:id', async (req, res) => {
     const color = await Color.findById(req.params.id);
 
-    res.send(color);
+    res.json({ color });
 });
 
 router.patch('/:id', async (req, res) => {
