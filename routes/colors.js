@@ -19,29 +19,34 @@ router.get(
     }
 );
 
-router.post('/new', async (req, res) => {
-    try {
-        const { codeNumber, colorName, base, hexCode } = req.body;
+router.post(
+    '/new',
+    userAuth,
+    checkRole(['admin', 'superadmin']),
+    async (req, res) => {
+        try {
+            const { codeNumber, colorName, base, hexCode } = req.body;
 
-        const newColor = await new Color({
-            codeNumber,
-            colorName,
-            base,
-            hexCode,
-        });
+            const newColor = await new Color({
+                codeNumber,
+                colorName,
+                base,
+                hexCode,
+            });
 
-        await newColor.save();
-        res.status(201).json({
-            message: 'New color created.',
-            success: true,
-        });
-    } catch (error) {
-        res.status(500).json({
-            message: 'Unable to create your color.',
-            success: false,
-        });
+            await newColor.save();
+            res.status(201).json({
+                message: 'New color created.',
+                success: true,
+            });
+        } catch (error) {
+            res.status(500).json({
+                message: 'Unable to create your color.',
+                success: false,
+            });
+        }
     }
-});
+);
 
 router.get('/:id', async (req, res) => {
     const color = await Color.findById(req.params.id);
