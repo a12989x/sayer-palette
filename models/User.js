@@ -2,15 +2,22 @@ const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema(
     {
-        name: { type: String, required: true, min: 3, max: 80 },
+        name: { type: String, required: true, min: 3, max: 80, unique: true },
         email: {
             type: String,
             required: true,
             min: 4,
             max: 100,
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/],
+            unique: true,
         },
-        username: { type: String, required: true, min: 5, max: 50 },
+        username: {
+            type: String,
+            required: true,
+            min: 5,
+            max: 50,
+            unique: true,
+        },
         password: { type: String, required: true, min: 8, max: 250 },
         role: {
             type: String,
