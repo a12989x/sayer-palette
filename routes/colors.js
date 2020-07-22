@@ -14,15 +14,28 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/new', (req, res) => {
-    const { codeNumber, colorName, base, hexCode } = req.body;
+router.post('/new', async (req, res) => {
+    try {
+        const { codeNumber, colorName, base, hexCode } = req.body;
 
-    const newColor = new Color({ codeNumber, colorName, base, hexCode });
+        const newColor = await new Color({
+            codeNumber,
+            colorName,
+            base,
+            hexCode,
+        });
 
-    newColor
-        .save()
-        .then((data) => res.json(data))
-        .catch((error) => res.status(500).json({ msg: error }));
+        await newColor.save();
+        res.status(201).json({
+            message: 'New color created.',
+            success: true,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: 'Unable to create your color.',
+            success: false,
+        });
+    }
 });
 
 router.get('/:id', async (req, res) => {
