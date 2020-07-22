@@ -3,6 +3,8 @@ const Color = require('../models/Color');
 
 const router = express.Router();
 
+const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
+
 router.get('/', async (req, res) => {
     try {
         const allColors = await Color.find();
