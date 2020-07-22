@@ -5,14 +5,19 @@ const router = express.Router();
 
 const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
 
-router.get('/', async (req, res) => {
-    try {
-        const allColors = await Color.find();
-        res.json(allColors);
-    } catch (error) {
-        res.status(500).json({ msg: error });
+router.get(
+    '/',
+    userAuth,
+    checkRole(['user', 'admin', 'superadmin']),
+    async (req, res) => {
+        try {
+            const allColors = await Color.find();
+            res.json(allColors);
+        } catch (error) {
+            res.status(500).json({ msg: error });
+        }
     }
-});
+);
 
 router.post('/new', async (req, res) => {
     try {
