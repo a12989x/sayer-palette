@@ -1,5 +1,4 @@
 const Color = require('../models/Color');
-const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
 
 const getColors = async (req, res) => {
     try {

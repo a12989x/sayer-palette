@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { userRegister, userLogin } = require('../utils/Auth.js');
+const { getUsers, getUser, updateUser } = require('../controllers/user');
 const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
 const {
     userValidationMiddleware,
@@ -54,49 +55,10 @@ router.post(
 
 /* ───────────────────── Edit Routes ──────────────────── */
 
-router.get('/', userAuth, checkRole(['superadmin']), async (req, res) => {
-    try {
-        const users = await User.find();
-        res.send(users);
-    } catch (error) {
-        res.status(500).json({
-            message: 'Unable to get all users.',
-            success: false,
-        });
-    }
-});
+router.get('/', userAuth, checkRole(['superadmin']), getUsers);
 
-router.get('/:id', userAuth, checkRole(['superadmin']), async (req, res) => {
-    try {
-        const users = await User.findById(req.params.id);
-        res.send(users);
-    } catch (error) {
-        res.status(500).json({
-            message: 'Unable to get the user.',
-            success: false,
-        });
-    }
-});
+router.get('/:id', userAuth, checkRole(['superadmin']), getUser);
 
-router.patch('/:id', userAuth, checkRole(['superadmin']), async (req, res) => {
-    try {
-        const { role } = req.body;
-        await User.findOneAndUpdate(
-            { _id: req.params.id },
-            { role },
-            { new: true }
-        );
-
-        res.status(201).json({
-            message: 'User edited successfully.',
-            success: true,
-        });
-    } catch (error) {
-        res.status(500).json({
-            message: 'Unable to edit user.',
-            success: false,
-        });
-    }
-});
+router.patch('/:id', userAuth, checkRole(['superadmin']), updateUser);
 
 module.exports = router;
