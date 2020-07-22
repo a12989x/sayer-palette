@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 
 router.patch('/:id', async (req, res) => {
     try {
-        const colorUpdate = await Color.update(
+        await Color.updateOne(
             { _id: req.params.id },
             {
                 $set: {
