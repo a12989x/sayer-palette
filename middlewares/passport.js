@@ -14,7 +14,7 @@ module.exports = (passport) =>
             async (payload, done) =>
                 await User.findById(payload.user_id)
                     .then((user) =>
-                        user ? done(null, false) : done(null, false)
+                        user ? done(null, user) : done(null, false)
                     )
                     .catch((err) => done(null, false))
         )
