@@ -2,12 +2,14 @@ import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 
 import History from './components/History';
+import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 
 const App = () => {
     return (
         <div className="App">
             <Router history={History}>
+                <Navbar />
                 <Switch>
                     <Route exact path="/" component={Home} />
                 </Switch>
