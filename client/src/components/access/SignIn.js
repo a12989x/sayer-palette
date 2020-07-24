@@ -2,9 +2,15 @@ import React from 'react';
 
 const SignIn = () => {
     return (
-        <div>
-            <p>SignIn Component</p>
-        </div>
+        <form>
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" />
+
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" />
+
+            <button type="submit">Sign In</button>
+        </form>
     );
 };
 
