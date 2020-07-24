@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Register = () => {
+    const [emailValidation, setEmailValidation] = useState(true);
+
+    const validateEmail = (e) => {
+        const email = e.target.value;
+        const validate = () => {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        };
+
+        if (email.length === 0) {
+            setEmailValidation(true);
+            return;
+        }
+        if (validate(email)) console.log('true');
+        else setEmailValidation(false);
+    };
+
     return (
         <div>
             <label htmlFor="firstName">First Name</label>
@@ -10,7 +27,8 @@ const Register = () => {
             <input type="text" id="secondName" />
 
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" />
+            <input type="email" id="email" onChange={(e) => validateEmail(e)} />
+            {!emailValidation && <span>Please enter a valid email</span>}
 
             <label htmlFor="username">Username</label>
             <input type="text" id="username" />
