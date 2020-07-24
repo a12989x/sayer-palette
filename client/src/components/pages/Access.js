@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SignIn from '../access/SignIn';
 import Register from '../access/Register';
 
 const Access = () => {
+    const [isSignIn, setIsSignIn] = useState(true);
+
+    const changeSignIn = (value) => {
+        if (value) setIsSignIn(true);
+        else setIsSignIn(false);
+    };
+
     return (
-        <div>
+        <main>
             <p>Access Component</p>
-            <input type="radio" id="signIn" />
+            <input
+                defaultChecked={true}
+                type="radio"
+                id="signIn"
+                name="sign-in"
+                onClick={() => changeSignIn(true)}
+            />
             <label htmlFor="signIn">Sign In</label>
 
-            <input type="radio" id="register" />
+            <input
+                type="radio"
+                id="register"
+                name="sign-in"
+                onClick={() => changeSignIn(false)}
+            />
             <label htmlFor="register">Register</label>
-            <SignIn />
-            <Register />
-        </div>
+
+            {isSignIn ? <SignIn /> : <Register />}
+        </main>
     );
 };
 
