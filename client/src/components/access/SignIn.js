@@ -2,7 +2,7 @@ import React from 'react';
 
 const SignIn = () => {
     return (
-        <form>
+        <form className="sign-in">
             <label htmlFor="username">Username</label>
             <input type="text" id="username" />
 
