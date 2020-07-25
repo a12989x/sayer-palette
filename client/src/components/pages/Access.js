@@ -12,8 +12,10 @@ const Access = () => {
     };
 
     return (
-        <main>
-            <p>Access Component</p>
+        <main
+            className="access"
+            style={isSignIn ? { maxWidth: '500px' } : { maxWidth: '900px' }}
+        >
             <input
                 defaultChecked={true}
                 type="radio"
@@ -21,7 +23,12 @@ const Access = () => {
                 name="sign-in"
                 onClick={() => changeSignIn(true)}
             />
-            <label htmlFor="signIn">Sign In</label>
+            <label
+                className={`access__sign-in ${isSignIn ? 'active' : ''}`}
+                htmlFor="signIn"
+            >
+                Sign In
+            </label>
 
             <input
                 type="radio"
@@ -29,7 +36,12 @@ const Access = () => {
                 name="sign-in"
                 onClick={() => changeSignIn(false)}
             />
-            <label htmlFor="register">Register</label>
+            <label
+                className={`access__register ${!isSignIn ? 'active' : ''}`}
+                htmlFor="register"
+            >
+                Register
+            </label>
 
             {isSignIn ? <SignIn /> : <Register />}
         </main>
