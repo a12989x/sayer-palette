@@ -1,0 +1,83 @@
+.access {
+    min-height: 92vh;
+    width: 90vw;
+    margin: auto;
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    align-content: baseline;
+
+    input[type='radio'] {
+        display: none;
+    }
+
+    &__sign-in,
+    &__register {
+        padding: 1rem 0;
+        display: inline-block;
+        text-align: center;
+        width: 96%;
+        margin-top: 10vh;
+        color: #000000;
+        background-color: #ffffff;
+        border: 1px solid transparent;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            border-color: $accent-color;
+        }
+    }
+
+    &__sign-in {
+        &.active {
+            color: #f4f4f4;
+            background-color: $accent-color;
+        }
+    }
+
+    &__register {
+        &.active {
+            color: #f4f4f4;
+            background-color: $accent-color;
+        }
+    }
+
+    .sign-in,
+    .register {
+        padding: 3.5rem;
+        background-color: #ffffff;
+        border-radius: 0.4rem;
+        display: grid;
+        grid-column: 1 / -1;
+        margin-top: 1.5rem;
+
+        label {
+            margin: 1.5rem 0 0.8rem 0.5rem;
+
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+
+        button {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .sign-in {
+    }
+
+    .register {
+        grid-template: auto / 1fr 1fr;
+        gap: 0 1.3rem;
+
+        button {
+            grid-column: 1 / -1;
+        }
+    }
+}
