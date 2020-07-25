@@ -30,7 +30,11 @@ const Register = () => {
             <label htmlFor="username">Username</label>
 
             <input type="email" id="email" onChange={(e) => validateEmail(e)} />
-            {!emailValidation && <span>Please enter a valid email</span>}
+            {!emailValidation && (
+                <span className="register__email-validation-text">
+                    Please enter a valid email
+                </span>
+            )}
             <input type="text" id="username" />
 
             <label htmlFor="password">Password</label>

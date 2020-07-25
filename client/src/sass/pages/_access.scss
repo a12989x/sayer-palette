@@ -75,6 +75,13 @@
     .register {
         grid-template: auto / 1fr 1fr;
         gap: 0 1.3rem;
+        position: relative;
+
+        &__email-validation-text {
+            position: absolute;
+            bottom: 26vh;
+            left: 3.5vw;
+        }
 
         button {
             grid-column: 1 / -1;
