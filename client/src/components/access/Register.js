@@ -19,28 +19,28 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <form className="register">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" />
-
             <label htmlFor="secondName">Second Name</label>
+
+            <input type="text" id="firstName" />
             <input type="text" id="secondName" />
 
             <label htmlFor="email">Email</label>
+            <label htmlFor="username">Username</label>
+
             <input type="email" id="email" onChange={(e) => validateEmail(e)} />
             {!emailValidation && <span>Please enter a valid email</span>}
-
-            <label htmlFor="username">Username</label>
             <input type="text" id="username" />
 
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
-
             <label htmlFor="confirmPassword">Confirm Password</label>
+
+            <input type="password" id="password" />
             <input type="password" id="confirmPassword" />
 
             <button type="submit">Register</button>
-        </div>
+        </form>
     );
 };
 
