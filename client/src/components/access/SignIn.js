@@ -1,13 +1,31 @@
 import React from 'react';
 
+import { useForm } from '../useForm';
+
 const SignIn = () => {
+    const [values, handleChange] = useForm({ username: '', password: '' });
+
     return (
         <form className="sign-in">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input
+                required={true}
+                type="text"
+                id="username"
+                name="username"
+                value={values.username}
+                onChange={handleChange}
+            />
 
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input
+                required={true}
+                type="password"
+                id="password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+            />
 
             <button type="submit">Sign In</button>
         </form>
