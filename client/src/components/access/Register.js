@@ -40,7 +40,7 @@ const Register = () => {
         const password = e.target.value;
 
         if (password.length === 0) setIsPasswordValidate(true);
-        else if (password.length < 3 || password.length > 50)
+        else if (password.length < 8 || password.length > 50)
             setIsPasswordValidate(false);
         else setIsPasswordValidate(true);
     };
