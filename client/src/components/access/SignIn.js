@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { TiKeyOutline } from 'react-icons/ti';
 
 import { useForm } from '../useForm';
 
@@ -21,7 +23,9 @@ const SignIn = () => {
 
     return (
         <form className="sign-in" onSubmit={(e) => signIn(e)}>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">
+                <FaRegUserCircle /> Username
+            </label>
             <input
                 required={true}
                 type="text"
@@ -31,7 +35,9 @@ const SignIn = () => {
                 onChange={handleChange}
             />
 
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">
+                <TiKeyOutline /> Password
+            </label>
             <input
                 required={true}
                 type="password"
