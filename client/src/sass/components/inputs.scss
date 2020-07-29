@@ -11,4 +11,9 @@ input {
     &:hover {
         border-color: $accent-color;
     }
+
+    &:focus {
+        border-color: $accent-color;
+        outline-color: $accent-color;
+    }
 }
