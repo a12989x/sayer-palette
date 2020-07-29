@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Tippy from '@tippyjs/react';
+import { FaRegUserCircle, FaInfoCircle } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
+import { TiKeyOutline } from 'react-icons/ti';
 
 import 'tippy.js/dist/tippy.css';
 
@@ -57,8 +60,12 @@ const Register = () => {
 
     return (
         <form className="register">
-            <label htmlFor="firstName">First Name</label>
-            <label htmlFor="secondName">Second Name</label>
+            <label htmlFor="firstName">
+                <FaRegUserCircle size="1.2rem" /> First Name
+            </label>
+            <label htmlFor="secondName">
+                <FaRegUserCircle size="1.2rem" /> Last Name
+            </label>
 
             <input
                 required={true}
@@ -78,6 +85,7 @@ const Register = () => {
             />
 
             <label htmlFor="email">
+                <FiMail size="1.2rem" />
                 Email
                 <Tippy
                     placement="right"
@@ -88,11 +96,13 @@ const Register = () => {
                             !isEmailValidate ? '-active' : ''
                         }`}
                     >
-                        i
+                        <FaInfoCircle size="1.2rem" />
                     </span>
                 </Tippy>
             </label>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">
+                <FaRegUserCircle size="1.2rem" /> Username
+            </label>
 
             <input
                 required={true}
@@ -114,6 +124,7 @@ const Register = () => {
             />
 
             <label htmlFor="password">
+                <TiKeyOutline size="1.2rem" />
                 Password
                 <Tippy
                     placement="right"
@@ -124,11 +135,12 @@ const Register = () => {
                             !isPasswordValidate ? '-active' : ''
                         }`}
                     >
-                        i
+                        <FaInfoCircle size="1.2rem" />
                     </span>
                 </Tippy>{' '}
             </label>
             <label htmlFor="confirmPassword">
+                <TiKeyOutline size="1.2rem" />
                 Confirm Password
                 <Tippy
                     placement="right"
@@ -145,7 +157,7 @@ const Register = () => {
                             !isConfirmPasswordValidate ? '-active' : ''
                         }`}
                     >
-                        i
+                        <FaInfoCircle size="1.2rem" />
                     </span>
                 </Tippy>
             </label>
