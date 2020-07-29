@@ -54,6 +54,12 @@
 
         label {
             margin: 1.5rem 0 0.8rem 0.5rem;
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 1rem;
+            }
 
             &:nth-child(1) {
                 margin-top: 0;
@@ -84,19 +90,16 @@
         .tooltip {
             margin-left: 1rem;
             cursor: pointer;
-            padding: 0.1rem 0.5rem;
-            color: #f4f4f4;
-            background-color: #2b2b2b;
-            border-radius: 50%;
+            color: #2b2b2b;
             transition: all 0.3s;
 
             &-email {
                 opacity: 0;
                 pointer-events: none;
-                background-color: $error-color;
+                color: $error-color;
 
                 &-active {
-                    background-color: $error-color;
+                    color: $error-color;
                     opacity: 1;
                     pointer-events: all;
                 }
@@ -104,17 +107,17 @@
 
             &-password {
                 &-active {
-                    background-color: $error-color;
+                    color: $error-color;
                 }
             }
 
             &-confirm-password {
                 opacity: 0;
                 pointer-events: none;
-                background-color: $error-color;
+                color: $error-color;
 
                 &-active {
-                    background-color: $error-color;
+                    color: $error-color;
                     opacity: 1;
                     pointer-events: all;
                 }
