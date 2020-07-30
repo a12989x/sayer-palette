@@ -4,6 +4,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { TiKeyOutline } from 'react-icons/ti';
 
 import { useForm } from '../useForm';
+import History from '../History';
 
 const SignIn = () => {
     const [values, handleChange] = useForm({ username: '', password: '' });
@@ -15,6 +16,7 @@ const SignIn = () => {
         try {
             const params = { username, password };
             const res = await axios.post('/api/users/login-user', params);
+            History.push('/');
             console.log(res.data);
         } catch (error) {
             console.log(error);
