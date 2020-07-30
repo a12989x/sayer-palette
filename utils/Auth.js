@@ -82,6 +82,7 @@ const userLogin = async (userCreds, role, res) => {
             expiresIn: 24,
         };
 
+        res.cookie('token', token, { httpOnly: true });
         return res.status(200).json({
             ...result,
             message: 'You are now logged in',
