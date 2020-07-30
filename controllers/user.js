@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
 
 const getUsers = async (req, res) => {
     try {
