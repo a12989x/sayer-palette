@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
+const {
+    userAuth,
+    checkRole,
+    serializeUser,
+    verifyToken,
+} = require('../middlewares/auth');
 const {
     getColors,
     createColor,
@@ -12,7 +17,7 @@ const {
 
 router.get(
     '/',
-    userAuth,
+    verifyToken,
     checkRole(['user', 'admin', 'superadmin']),
     getColors
 );
@@ -21,7 +26,7 @@ router.post('/new', userAuth, checkRole(['admin', 'superadmin']), createColor);
 
 router.get(
     '/:id',
-    userAuth,
+    verifyToken,
     checkRole(['user', 'admin', 'superadmin']),
     getColor
 );
@@ -30,7 +35,7 @@ router.patch('/:id', userAuth, checkRole(['admin', 'superadmin']), updateColor);
 
 router.delete(
     '/:id',
-    userAuth,
+    verifyToken,
     checkRole(['admin', 'superadmin']),
     deleteColor
 );
