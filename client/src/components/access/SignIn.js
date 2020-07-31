@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { TiKeyOutline } from 'react-icons/ti';
 
 import { useForm } from '../useForm';
 import History from '../History';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const SignIn = () => {
     const [values, handleChange] = useForm({ username: '', password: '' });
+    const { setIsSignIn } = useContext(AuthContext);
 
     const signIn = async (e) => {
         e.preventDefault();
@@ -18,6 +20,7 @@ const SignIn = () => {
             const res = await axios.post('/api/users/login-user', params);
             History.push('/');
             console.log(res.data);
+            setIsSignIn(true);
         } catch (error) {
             console.log(error);
         }
