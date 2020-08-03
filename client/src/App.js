@@ -7,7 +7,7 @@ import History from './components/History';
 import Home from './components/pages/Home';
 import Navbar from './components/Navbar';
 import Access from './components/pages/Access';
-import NoMatch from './components/NoMatch';
+import NoMatch from './components/pages/NoMatch';
 
 const App = () => {
     const { isSignIn } = useContext(AuthContext);
