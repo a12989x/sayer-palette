@@ -1,9 +1,14 @@
 import React, { useState, createContext } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import History from '../components/History';
 
 export const AuthContext = createContext();
+
+toast.configure();
 
 const AuthContextProvider = (props) => {
     const [isSignIn, setIsSignIn] = useState(false);
@@ -24,8 +29,9 @@ const AuthContextProvider = (props) => {
                 email: res.data.email,
                 role: res.data.role,
             });
+            notifySuccess('You sign in correctly');
         } catch (error) {
-            console.log(error);
+            notifyError('Username or email incorrect');
         }
     };
 
@@ -50,10 +56,34 @@ const AuthContextProvider = (props) => {
                 repeat_password: confirmPassword,
             };
             const res = await axios.post('/api/users/register-user', params);
-            console.log(res.data);
+            notifySuccess('You register correctly');
         } catch (error) {
-            console.log(error);
+            notifyError('Please make sure if your credentials are valid');
         }
+    };
+
+    const notifySuccess = (message) => {
+        toast.success(message, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
+
+    const notifyError = (message) => {
+        toast.error(message, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
     return (
