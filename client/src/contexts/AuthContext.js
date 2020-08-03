@@ -22,7 +22,6 @@ const AuthContextProvider = (props) => {
             const params = { username, password };
             const res = await axios.post('/api/users/login-user', params);
             History.push('/');
-            console.log(res.data);
             setIsSignIn(true);
             setUser({
                 username: res.data.username,
