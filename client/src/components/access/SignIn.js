@@ -9,25 +9,25 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 const SignIn = () => {
     const [values, handleChange] = useForm({ username: '', password: '' });
-    const { setIsSignIn } = useContext(AuthContext);
+    const { setIsSignIn, signIn } = useContext(AuthContext);
 
-    const signIn = async (e) => {
-        e.preventDefault();
-        const { username, password } = values;
+    // const signIn = async (e) => {
+    //     e.preventDefault();
+    //     const { username, password } = values;
 
-        try {
-            const params = { username, password };
-            const res = await axios.post('/api/users/login-user', params);
-            History.push('/');
-            console.log(res.data);
-            setIsSignIn(true);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    //     try {
+    //         const params = { username, password };
+    //         const res = await axios.post('/api/users/login-user', params);
+    //         History.push('/');
+    //         console.log(res.data);
+    //         setIsSignIn(true);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     return (
-        <form className="sign-in" onSubmit={(e) => signIn(e)}>
+        <form className="sign-in" onSubmit={(e) => signIn(e, values)}>
             <label htmlFor="username">
                 <FaRegUserCircle /> Username
             </label>
