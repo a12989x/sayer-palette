@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
 import Tippy from '@tippyjs/react';
 import { FaRegUserCircle, FaInfoCircle } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
@@ -7,6 +8,7 @@ import { TiKeyOutline } from 'react-icons/ti';
 import 'tippy.js/dist/tippy.css';
 
 import { useForm } from '../useForm';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
     const [isEmailValidate, setIsEmailValidate] = useState(true);
@@ -14,6 +16,8 @@ const Register = () => {
     const [isConfirmPasswordValidate, setIsConfirmPasswordValidate] = useState(
         true
     );
+
+    const { register } = useContext(AuthContext);
 
     const [values, handleChange] = useForm({
         firstName: '',
@@ -59,7 +63,7 @@ const Register = () => {
     };
 
     return (
-        <form className="register">
+        <form className="register" onSubmit={(e) => register(e, values)}>
             <label htmlFor="firstName">
                 <FaRegUserCircle size="1.2rem" /> First Name
             </label>
@@ -108,6 +112,8 @@ const Register = () => {
                 required={true}
                 type="email"
                 id="email"
+                name="email"
+                value={values.email}
                 onChange={(e) => {
                     validateEmail(e);
                     handleChange(e);
