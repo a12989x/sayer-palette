@@ -29,10 +29,37 @@ const AuthContextProvider = (props) => {
         }
     };
 
-    const register = () => {};
+    const register = async (e, values) => {
+        e.preventDefault();
+        const {
+            firstName,
+            lastName,
+            email,
+            username,
+            password,
+            confirmPassword,
+        } = values;
+        const name = `${firstName} ${lastName}`;
+
+        try {
+            const params = {
+                name,
+                email,
+                username,
+                password,
+                repeat_password: confirmPassword,
+            };
+            const res = await axios.post('/api/users/register-user', params);
+            console.log(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
-        <AuthContext.Provider value={{ isSignIn, setIsSignIn, signIn }}>
+        <AuthContext.Provider
+            value={{ isSignIn, setIsSignIn, signIn, register }}
+        >
             {props.children}
         </AuthContext.Provider>
     );
