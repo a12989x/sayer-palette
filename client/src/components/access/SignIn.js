@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
-import axios from 'axios';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { TiKeyOutline } from 'react-icons/ti';
 
 import { useForm } from '../useForm';
-import History from '../History';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const SignIn = () => {

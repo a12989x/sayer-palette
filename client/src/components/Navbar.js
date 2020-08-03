@@ -11,21 +11,23 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
             <ul>
                 {isSignIn && (
-                    <li>
-                        <NavLink
-                            exact
-                            to="/access"
-                            onClick={() => setIsSignIn(false)}
-                        >
-                            Sign Out
-                        </NavLink>
-                    </li>
+                    <>
+                        <li>
+                            <NavLink
+                                exact
+                                to="/access"
+                                onClick={() => setIsSignIn(false)}
+                            >
+                                Sign Out
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink exact to="/new">
+                                New
+                            </NavLink>
+                        </li>
+                    </>
                 )}
-                <li>
-                    <NavLink exact to="/new">
-                        New
-                    </NavLink>
-                </li>
             </ul>
         </div>
     );
