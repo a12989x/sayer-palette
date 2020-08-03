@@ -22,7 +22,12 @@ router.get(
     getColors
 );
 
-router.post('/new', userAuth, checkRole(['admin', 'superadmin']), createColor);
+router.post(
+    '/new',
+    verifyToken,
+    checkRole(['admin', 'superadmin']),
+    createColor
+);
 
 router.get(
     '/:id',
@@ -31,7 +36,12 @@ router.get(
     getColor
 );
 
-router.patch('/:id', userAuth, checkRole(['admin', 'superadmin']), updateColor);
+router.patch(
+    '/:id',
+    verifyToken,
+    checkRole(['admin', 'superadmin']),
+    updateColor
+);
 
 router.delete(
     '/:id',
