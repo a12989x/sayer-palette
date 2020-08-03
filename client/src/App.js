@@ -8,6 +8,7 @@ import Home from './components/pages/Home';
 import Navbar from './components/Navbar';
 import Access from './components/pages/Access';
 import NoMatch from './components/pages/NoMatch';
+import NewColor from './components/pages/NewColor';
 
 const App = () => {
     const { isSignIn } = useContext(AuthContext);
@@ -21,6 +22,7 @@ const App = () => {
                     {isSignIn && (
                         <>
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/new" component={NewColor} />
                         </>
                     )}
                     <Route component={NoMatch} />
