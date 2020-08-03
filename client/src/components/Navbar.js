@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to={isSignIn ? '/' : '/access'}>Home</NavLink>
             <ul>
                 {isSignIn && (
                     <>
