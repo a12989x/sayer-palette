@@ -55,8 +55,27 @@ const createColor = async (req, res) => {
 };
 
 const getColor = async (req, res) => {
-    const color = await Color.findById(req.params.id);
-    res.send(color);
+    const value = req.params.value;
+    const formatValue = value.replace(/\s+|-|\//g, '').toLowerCase();
+    const checkValue = /^[a-zA-Z]+$/.test(formatValue);
+
+    if (checkValue) {
+        const color = await Color.findOne({ colorName: formatValue });
+        if (color !== null) res.send(color);
+        else
+            res.status(401).json({
+                message: 'Unable to find color.',
+                success: false,
+            });
+    } else {
+        const color = await Color.findOne({ codeNumber: formatValue });
+        if (color !== null) res.send(color);
+        else
+            res.status(401).json({
+                message: 'Unable to find color.',
+                success: false,
+            });
+    }
 };
 
 const updateColor = async (req, res) => {
