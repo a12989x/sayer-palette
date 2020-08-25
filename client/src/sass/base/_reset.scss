@@ -1,3 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f4f4f4;
+    padding: 3.2rem 4.5rem;
+    background-color: $background-color;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 100vh;
+    height: 100%;
+    color: $text-color;
+    transition: all 0.3s;
+
+    #root {
+        height: 100%;
+    }
+
+    .App {
+        height: 100%;
+        display: grid;
+        grid-template: auto / 1fr 1fr 1fr 1fr;
+        column-gap: 4.5rem;
+    }
+    .Toastify__toast {
+        border-radius: 0.5rem;
+    }
+}
+
+@media (max-width: 950px) {
+    body {
+        .App {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        padding: 2.8rem 4.1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 2rem 2.2rem;
+
+        .Toastify__toast-container {
+            max-width: 15rem;
+            left: inherit;
+            margin-top: 1rem;
+        }
+    }
 }

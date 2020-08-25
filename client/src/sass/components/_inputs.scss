@@ -1,0 +1,11 @@
+input {
+    min-height: 3.2rem;
+    height: 3.2rem;
+    max-height: 3.2rem;
+    color: $text-color;
+    background-color: $background-color;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+}

@@ -1,0 +1,43 @@
+.select-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    select {
+        min-height: 3rem;
+        height: 3rem;
+        max-height: 3rem;
+        width: 100%;
+        padding: 0 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        color: $text-color;
+        text-transform: capitalize;
+        background-color: $gray-color;
+        appearance: none;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s all ease;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        color: $text-color;
+        height: 100%;
+        background: $gray-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        pointer-events: none;
+        transition: 0.3s all ease;
+    }
+}

@@ -30,7 +30,7 @@ router.post(
 );
 
 router.get(
-    '/:id',
+    '/:value',
     verifyToken,
     checkRole(['user', 'admin', 'superadmin']),
     getColor

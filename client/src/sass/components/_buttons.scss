@@ -1,0 +1,51 @@
+button {
+    border: 1px solid transparent;
+    box-shadow: $box-shadow;
+    background-color: $background-color;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.primary-button {
+        min-height: 4.2rem;
+        height: 4.2rem;
+        max-height: 4.2rem;
+        width: 100%;
+        border-radius: $border-radius;
+        color: $gray-color;
+        font-weight: bold;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    &.delete-button {
+        padding: 0.5rem;
+        color: $background-color;
+        background-color: $error-color;
+        border-radius: 50%;
+
+        &:hover {
+            color: $error-color;
+            background-color: $background-color;
+            border-color: $error-color;
+        }
+    }
+
+    &.success-button {
+        padding: 0.5rem;
+        color: $background-color;
+        background-color: $success-color;
+        border-radius: 50%;
+
+        &:hover {
+            color: $success-color;
+            background-color: $background-color;
+            border-color: $success-color;
+        }
+    }
+
+    &:active {
+        box-shadow: $inset-box-shadow;
+    }
+}

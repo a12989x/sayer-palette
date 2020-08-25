@@ -5,13 +5,15 @@
     "main": "index.js",
     "scripts": {
         "start": "node .",
-        "devStart": "nodemon ."
+        "devStart": "nodemon .",
+        "dev": "concurrently \"cd client && npm start\" \"npm run devStart\""
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "bcrypt": "^5.0.0",
+        "concurrently": "^5.3.0",
         "consola": "^2.14.0",
         "cookie-parser": "^1.4.5",
         "dotenv": "^8.2.0",

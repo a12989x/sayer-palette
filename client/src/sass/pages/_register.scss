@@ -1,0 +1,18 @@
+.register {
+    &__button {
+        margin-top: 4rem;
+        font-size: 1.2rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        font-weight: bold;
+        color: $gray-color;
+        margin: 1.5rem auto 0;
+        transition: 0.3s;
+
+        &:hover {
+            color: $text-color;
+        }
+    }
+}

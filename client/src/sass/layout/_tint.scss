@@ -1,0 +1,17 @@
+.tint {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+
+    .select-wrapper {
+        select {
+            min-height: 3.2rem;
+            height: 3.2rem;
+            max-height: 3.2rem;
+        }
+    }
+
+    .input-wrapper {
+        margin-bottom: 0 !important;
+    }
+}

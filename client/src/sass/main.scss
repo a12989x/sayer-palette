@@ -9,10 +9,20 @@
 @import './base/typography';
 
 /* layout */
+@import './layout/navbar';
+@import './layout/tint';
+@import './layout/input-wrapper';
+@import './layout/main-form';
 
 /* components */
 @import './components/inputs';
 @import './components/buttons';
+@import './components/selects';
 
 /* pages */
-@import './pages/access';
+@import './pages/sign-in';
+@import './pages/register';
+@import './pages/get-color';
+@import './pages/new-color';
+@import './pages/users';
+@import './pages/not-found';

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import History from '../components/History';
+import { notifySuccess, notifyError } from '../components/Toastify';
 
 export const AuthContext = createContext();
 
@@ -20,8 +21,8 @@ const AuthContextProvider = (props) => {
 
         try {
             const params = { username, password };
-            const res = await axios.post('/api/users/login-user', params);
-            History.push('/');
+            const res = await axios.post('/api/users/login', params);
+            History.push('/get-color');
             setIsSignIn(true);
             setUser({
                 username: res.data.username,
@@ -30,21 +31,13 @@ const AuthContextProvider = (props) => {
             });
             notifySuccess('You sign in correctly');
         } catch (error) {
-            notifyError('Username or email incorrect');
+            notifyError('Username or password incorrect');
         }
     };
 
     const register = async (e, values) => {
         e.preventDefault();
-        const {
-            firstName,
-            lastName,
-            email,
-            username,
-            password,
-            confirmPassword,
-        } = values;
-        const name = `${firstName} ${lastName}`;
+        const { name, email, username, password, confirmPassword } = values;
 
         try {
             const params = {
@@ -54,40 +47,17 @@ const AuthContextProvider = (props) => {
                 password,
                 repeat_password: confirmPassword,
             };
-            const res = await axios.post('/api/users/register-user', params);
+            const res = await axios.post('/api/users/register', params);
+            History.push('/sign-in');
             notifySuccess('You register correctly');
         } catch (error) {
             notifyError('Please make sure if your credentials are valid');
         }
     };
 
-    const notifySuccess = (message) => {
-        toast.success(message, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-    };
-
-    const notifyError = (message) => {
-        toast.error(message, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-    };
-
     return (
         <AuthContext.Provider
-            value={{ isSignIn, setIsSignIn, signIn, register }}
+            value={{ user, isSignIn, setIsSignIn, signIn, register }}
         >
             {props.children}
         </AuthContext.Provider>

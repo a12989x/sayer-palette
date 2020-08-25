@@ -1,0 +1,27 @@
+.not-found {
+    color: $gray-color;
+
+    p {
+        color: $accent-color;
+        margin: 0;
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    h1 {
+        color: $text-color;
+        font-weight: normal;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-weight: normal;
+    }
+
+    a {
+        margin-top: 3rem;
+        button {
+            padding: 0 2rem;
+        }
+    }
+}

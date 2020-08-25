@@ -1,0 +1,52 @@
+.input-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.8rem;
+
+    input:focus + label span,
+    input:valid + label span {
+        transform: translateY(-150%);
+        margin-bottom: 4px;
+        font-size: 0.8rem;
+        color: $accent-color;
+    }
+
+    input:valid + label::after {
+        transform: translateX(0%);
+    }
+
+    input:focus + label::after {
+        transform: translateX(0%);
+    }
+
+    label {
+        color: $gray-color;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        border-bottom: 1px solid $gray-color;
+
+        span {
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            transition: 0.3s;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 100%;
+            width: 100%;
+            border-bottom: 3px solid $accent-color;
+            transform: translateX(-100%);
+            transition: 0.3s;
+        }
+    }
+}

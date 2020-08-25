@@ -6,26 +6,49 @@ import History from './components/History';
 
 import Home from './components/pages/Home';
 import Navbar from './components/Navbar';
-import Access from './components/pages/Access';
-import NoMatch from './components/pages/NoMatch';
+import SignIn from './components/pages/SignIn';
+import Register from './components/pages/Register';
+import GetColor from './components/pages/GetColor';
 import NewColor from './components/pages/NewColor';
+import Users from './components/pages/Users';
+import NotFound from './components/pages/NotFound';
 
 const App = () => {
-    const { isSignIn } = useContext(AuthContext);
+    const { user, isSignIn } = useContext(AuthContext);
+
+    const roleUser = () => (
+        <Route exact path="/get-color" component={GetColor} />
+    );
+
+    const roleAdmin = () => (
+        <>
+            <Route exact path="/get-color" component={GetColor} />
+            <Route exact path="/new-color" component={NewColor} />
+        </>
+    );
+    const roleSuperAdmin = () => (
+        <>
+            <Route exact path="/get-color" component={GetColor} />
+            <Route exact path="/new-color" component={NewColor} />
+            <Route exact path="/users" component={Users} />
+        </>
+    );
+
+    const renderPages = () => {
+        if (user.role === 'user') return roleUser();
+        else if (user.role === 'admin') return roleAdmin();
+        else if (user.role === 'superadmin') return roleSuperAdmin();
+    };
 
     return (
         <div className="App">
             <Router history={History}>
                 <Navbar />
                 <Switch>
-                    <Route exact path="/access" component={Access} />
-                    {isSignIn && (
-                        <>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/new" component={NewColor} />
-                        </>
-                    )}
-                    <Route component={NoMatch} />
+                    <Route exact path="/sign-in" component={SignIn} />
+                    <Route exact path="/register" component={Register} />
+                    {isSignIn && renderPages()}
+                    <Route component={NotFound} />
                 </Switch>
             </Router>
         </div>

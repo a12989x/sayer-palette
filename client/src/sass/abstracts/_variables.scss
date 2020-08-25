@@ -1,2 +1,21 @@
+:root {
+    --background-color: #ecf0f3;
+    --gray-color: #bdc1c7;
+    --text-color: #232628;
+    --dark-shadow-color: #d1d9e6;
+    --light-shadow-color: #ffffff;
+}
+
+$background-color: var(--background-color);
+$gray-color: var(--gray-color);
+$text-color: var(--text-color);
+$dark-shadow-color: var(--dark-shadow-color);
+$light-shadow-color: var(--light-shadow-color);
 $accent-color: #1a8ccb;
-$error-color: #e74b45;
+$error-color: #ff6363;
+$success-color: #44dd66;
+$border-radius: 2rem;
+$box-shadow: 1.2rem 1.2rem 2rem $dark-shadow-color,
+    -1.2rem -1.2rem 2rem $light-shadow-color;
+$inset-box-shadow: inset 1.2rem 1.2rem 2rem $dark-shadow-color,
+    inset -1.2rem -1.2rem 2rem $light-shadow-color;

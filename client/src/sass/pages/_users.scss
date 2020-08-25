@@ -1,0 +1,55 @@
+.users {
+    &__wrapper {
+        width: 100%;
+
+        hr {
+            margin-bottom: 1.5rem;
+            color: $gray-color;
+
+            &:last-child {
+                display: none;
+            }
+        }
+
+        &-header {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr 1fr;
+
+            h2 {
+                font-size: 1.3rem;
+                font-weight: normal;
+                margin: 0;
+            }
+        }
+
+        .user {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr 1fr;
+            align-items: center;
+            position: relative;
+
+            h3 {
+                font-weight: normal;
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            select {
+                min-height: 2rem;
+                height: 2rem;
+                max-height: 2rem;
+            }
+
+            button {
+                &.delete-button {
+                    justify-self: flex-end;
+                }
+
+                &.success-button {
+                    position: absolute;
+                    right: 3rem;
+                }
+            }
+        }
+    }
+}
