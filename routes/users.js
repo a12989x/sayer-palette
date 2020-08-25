@@ -2,8 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const { userRegister, userLogin } = require('../utils/Auth.js');
-const { getUsers, getUser, updateUser } = require('../controllers/user');
-const { userAuth, checkRole, serializeUser } = require('../middlewares/auth');
+const {
+    getUsers,
+    getUser,
+    updateUser,
+    deleteUser,
+} = require('../controllers/user');
+const {
+    userAuth,
+    checkRole,
+    serializeUser,
+    verifyToken,
+} = require('../middlewares/auth');
 const {
     userValidationMiddleware,
     schemas,
@@ -13,7 +23,7 @@ const User = require('../models/User');
 
 /* ─────────────────── Register Routes ────────────────── */
 router.post(
-    '/register-user',
+    '/register',
     userValidationMiddleware(schemas.registerSchema),
     async (req, res) => {
         await userRegister(req.body, 'user', res);
@@ -34,10 +44,11 @@ router.post(
 
 /* ──────────────────── Login Routes ──────────────────── */
 router.post(
-    '/login-user',
+    '/login',
     userValidationMiddleware(schemas.loginSchema),
     async (req, res) => {
-        await userLogin(req.body, 'user', res);
+        const user = await User.findOne({ username: req.body.username });
+        userLogin(req.body, user.role, res);
     }
 );
 
@@ -55,10 +66,12 @@ router.post(
 
 /* ───────────────────── Edit Routes ──────────────────── */
 
-router.get('/', userAuth, checkRole(['superadmin']), getUsers);
+router.get('/', verifyToken, checkRole(['superadmin']), getUsers);
 
-router.get('/:id', userAuth, checkRole(['superadmin']), getUser);
+router.get('/:id', verifyToken, checkRole(['superadmin']), getUser);
 
-router.patch('/:id', userAuth, checkRole(['superadmin']), updateUser);
+router.patch('/:id', verifyToken, checkRole(['superadmin']), updateUser);
+
+router.delete('/:id', verifyToken, checkRole(['superadmin']), deleteUser);
 
 module.exports = router;
