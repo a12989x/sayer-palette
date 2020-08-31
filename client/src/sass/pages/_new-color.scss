@@ -6,6 +6,20 @@
         width: 100%;
     }
 
+    .base {
+        margin-bottom: 3.5rem;
+
+        .size {
+            .tint {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    &:nth-child(5) {
+        background-color: red;
+    }
+
     &__button {
         margin-top: 4rem;
         font-size: 1.2rem;
