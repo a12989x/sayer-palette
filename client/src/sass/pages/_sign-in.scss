@@ -16,3 +16,11 @@
         }
     }
 }
+
+@media screen and (max-width: 750px) {
+    .sign-in {
+        &__link {
+            font-size: 0.9rem;
+        }
+    }
+}
