@@ -6,153 +6,154 @@ import Tint from '../new-color/Tint';
 
 const NewColor = () => {
     const {
+        lines,
         bases,
         values,
         handleChange,
-        firstBaseLiterFirstTint,
-        setFirstBaseLiterFirstTintHandleChange,
-        firstBaseLiterSecondTint,
-        setFirstBaseLiterSecondTintHandleChange,
-        firstBaseLiterThirdTint,
-        setFirstBaseLiterThirdTintHandleChange,
-        firstBaseLiterFourthTint,
-        setFirstBaseLiterFourthTintHandleChange,
-        firstBaseGalonFirstTint,
-        setFirstBaseGalonFirstTintHandleChange,
-        firstBaseGalonSecondTint,
-        setFirstBaseGalonSecondTintHandleChange,
-        firstBaseGalonThirdTint,
-        setFirstBaseGalonThirdTintHandleChange,
-        firstBaseGalonFourthTint,
-        setFirstBaseGalonFourthTintHandleChange,
-        firstBaseBucketFirstTint,
-        setFirstBaseBucketFirstTintHandleChange,
-        firstBaseBucketSecondTint,
-        setFirstBaseBucketSecondTintHandleChange,
-        firstBaseBucketThirdTint,
-        setFirstBaseBucketThirdTintHandleChange,
-        firstBaseBucketFourthTint,
-        setFirstBaseBucketFourthTintHandleChange,
-        secondBaseLiterFirstTint,
-        setSecondBaseLiterFirstTintHandleChange,
-        secondBaseLiterSecondTint,
-        setSecondBaseLiterSecondTintHandleChange,
-        secondBaseLiterThirdTint,
-        setSecondBaseLiterThirdTintHandleChange,
-        secondBaseLiterFourthTint,
-        setSecondBaseLiterFourthTintHandleChange,
-        secondBaseGalonFirstTint,
-        setSecondBaseGalonFirstTintHandleChange,
-        secondBaseGalonSecondTint,
-        setSecondBaseGalonSecondTintHandleChange,
-        secondBaseGalonThirdTint,
-        setSecondBaseGalonThirdTintHandleChange,
-        secondBaseGalonFourthTint,
-        setSecondBaseGalonFourthTintHandleChange,
-        secondBaseBucketFirstTint,
-        setSecondBaseBucketFirstTintHandleChange,
-        secondBaseBucketSecondTint,
-        setSecondBaseBucketSecondTintHandleChange,
-        secondBaseBucketThirdTint,
-        setSecondBaseBucketThirdTintHandleChange,
-        secondBaseBucketFourthTint,
-        setSecondBaseBucketFourthTintHandleChange,
-        thirdBaseLiterFirstTint,
-        setThirdBaseLiterFirstTintHandleChange,
-        thirdBaseLiterSecondTint,
-        setThirdBaseLiterSecondTintHandleChange,
-        thirdBaseLiterThirdTint,
-        setThirdBaseLiterThirdTintHandleChange,
-        thirdBaseLiterFourthTint,
-        setThirdBaseLiterFourthTintHandleChange,
-        thirdBaseGalonFirstTint,
-        setThirdBaseGalonFirstTintHandleChange,
-        thirdBaseGalonSecondTint,
-        setThirdBaseGalonSecondTintHandleChange,
-        thirdBaseGalonThirdTint,
-        setThirdBaseGalonThirdTintHandleChange,
-        thirdBaseGalonFourthTint,
-        setThirdBaseGalonFourthTintHandleChange,
-        thirdBaseBucketFirstTint,
-        setThirdBaseBucketFirstTintHandleChange,
-        thirdBaseBucketSecondTint,
-        setThirdBaseBucketSecondTintHandleChange,
-        thirdBaseBucketThirdTint,
-        setThirdBaseBucketThirdTintHandleChange,
-        thirdBaseBucketFourthTint,
-        setThirdBaseBucketFourthTintHandleChange,
-        fourthBaseLiterFirstTint,
-        setFourthBaseLiterFirstTintHandleChange,
-        fourthBaseLiterSecondTint,
-        setFourthBaseLiterSecondTintHandleChange,
-        fourthBaseLiterThirdTint,
-        setFourthBaseLiterThirdTintHandleChange,
-        fourthBaseLiterFourthTint,
-        setFourthBaseLiterFourthTintHandleChange,
-        fourthBaseGalonFirstTint,
-        setFourthBaseGalonFirstTintHandleChange,
-        fourthBaseGalonSecondTint,
-        setFourthBaseGalonSecondTintHandleChange,
-        fourthBaseGalonThirdTint,
-        setFourthBaseGalonThirdTintHandleChange,
-        fourthBaseGalonFourthTint,
-        setFourthBaseGalonFourthTintHandleChange,
-        fourthBaseBucketFirstTint,
-        setFourthBaseBucketFirstTintHandleChange,
-        fourthBaseBucketSecondTint,
-        setFourthBaseBucketSecondTintHandleChange,
-        fourthBaseBucketThirdTint,
-        setFourthBaseBucketThirdTintHandleChange,
-        fourthBaseBucketFourthTint,
-        setFourthBaseBucketFourthTintHandleChange,
-        fifthBaseLiterFirstTint,
-        setFifthBaseLiterFirstTintHandleChange,
-        fifthBaseLiterSecondTint,
-        setFifthBaseLiterSecondTintHandleChange,
-        fifthBaseLiterThirdTint,
-        setFifthBaseLiterThirdTintHandleChange,
-        fifthBaseLiterFourthTint,
-        setFifthBaseLiterFourthTintHandleChange,
-        fifthBaseGalonFirstTint,
-        setFifthBaseGalonFirstTintHandleChange,
-        fifthBaseGalonSecondTint,
-        setFifthBaseGalonSecondTintHandleChange,
-        fifthBaseGalonThirdTint,
-        setFifthBaseGalonThirdTintHandleChange,
-        fifthBaseGalonFourthTint,
-        setFifthBaseGalonFourthTintHandleChange,
-        fifthBaseBucketFirstTint,
-        setFifthBaseBucketFirstTintHandleChange,
-        fifthBaseBucketSecondTint,
-        setFifthBaseBucketSecondTintHandleChange,
-        fifthBaseBucketThirdTint,
-        setFifthBaseBucketThirdTintHandleChange,
-        fifthBaseBucketFourthTint,
-        setFifthBaseBucketFourthTintHandleChange,
-        sixthBaseLiterFirstTint,
-        setSixthBaseLiterFirstTintHandleChange,
-        sixthBaseLiterSecondTint,
-        setSixthBaseLiterSecondTintHandleChange,
-        sixthBaseLiterThirdTint,
-        setSixthBaseLiterThirdTintHandleChange,
-        sixthBaseLiterFourthTint,
-        setSixthBaseLiterFourthTintHandleChange,
-        sixthBaseGalonFirstTint,
-        setSixthBaseGalonFirstTintHandleChange,
-        sixthBaseGalonSecondTint,
-        setSixthBaseGalonSecondTintHandleChange,
-        sixthBaseGalonThirdTint,
-        setSixthBaseGalonThirdTintHandleChange,
-        sixthBaseGalonFourthTint,
-        setSixthBaseGalonFourthTintHandleChange,
-        sixthBaseBucketFirstTint,
-        setSixthBaseBucketFirstTintHandleChange,
-        sixthBaseBucketSecondTint,
-        setSixthBaseBucketSecondTintHandleChange,
-        sixthBaseBucketThirdTint,
-        setSixthBaseBucketThirdTintHandleChange,
-        sixthBaseBucketFourthTint,
-        setSixthBaseBucketFourthTintHandleChange,
+        firstColorLiterFirstTint,
+        setFirstColorLiterFirstTintHandleChange,
+        firstColorLiterSecondTint,
+        setFirstColorLiterSecondTintHandleChange,
+        firstColorLiterThirdTint,
+        setFirstColorLiterThirdTintHandleChange,
+        firstColorLiterFourthTint,
+        setFirstColorLiterFourthTintHandleChange,
+        firstColorGalonFirstTint,
+        setFirstColorGalonFirstTintHandleChange,
+        firstColorGalonSecondTint,
+        setFirstColorGalonSecondTintHandleChange,
+        firstColorGalonThirdTint,
+        setFirstColorGalonThirdTintHandleChange,
+        firstColorGalonFourthTint,
+        setFirstColorGalonFourthTintHandleChange,
+        firstColorBucketFirstTint,
+        setFirstColorBucketFirstTintHandleChange,
+        firstColorBucketSecondTint,
+        setFirstColorBucketSecondTintHandleChange,
+        firstColorBucketThirdTint,
+        setFirstColorBucketThirdTintHandleChange,
+        firstColorBucketFourthTint,
+        setFirstColorBucketFourthTintHandleChange,
+        secondColorLiterFirstTint,
+        setSecondColorLiterFirstTintHandleChange,
+        secondColorLiterSecondTint,
+        setSecondColorLiterSecondTintHandleChange,
+        secondColorLiterThirdTint,
+        setSecondColorLiterThirdTintHandleChange,
+        secondColorLiterFourthTint,
+        setSecondColorLiterFourthTintHandleChange,
+        secondColorGalonFirstTint,
+        setSecondColorGalonFirstTintHandleChange,
+        secondColorGalonSecondTint,
+        setSecondColorGalonSecondTintHandleChange,
+        secondColorGalonThirdTint,
+        setSecondColorGalonThirdTintHandleChange,
+        secondColorGalonFourthTint,
+        setSecondColorGalonFourthTintHandleChange,
+        secondColorBucketFirstTint,
+        setSecondColorBucketFirstTintHandleChange,
+        secondColorBucketSecondTint,
+        setSecondColorBucketSecondTintHandleChange,
+        secondColorBucketThirdTint,
+        setSecondColorBucketThirdTintHandleChange,
+        secondColorBucketFourthTint,
+        setSecondColorBucketFourthTintHandleChange,
+        thirdColorLiterFirstTint,
+        setThirdColorLiterFirstTintHandleChange,
+        thirdColorLiterSecondTint,
+        setThirdColorLiterSecondTintHandleChange,
+        thirdColorLiterThirdTint,
+        setThirdColorLiterThirdTintHandleChange,
+        thirdColorLiterFourthTint,
+        setThirdColorLiterFourthTintHandleChange,
+        thirdColorGalonFirstTint,
+        setThirdColorGalonFirstTintHandleChange,
+        thirdColorGalonSecondTint,
+        setThirdColorGalonSecondTintHandleChange,
+        thirdColorGalonThirdTint,
+        setThirdColorGalonThirdTintHandleChange,
+        thirdColorGalonFourthTint,
+        setThirdColorGalonFourthTintHandleChange,
+        thirdColorBucketFirstTint,
+        setThirdColorBucketFirstTintHandleChange,
+        thirdColorBucketSecondTint,
+        setThirdColorBucketSecondTintHandleChange,
+        thirdColorBucketThirdTint,
+        setThirdColorBucketThirdTintHandleChange,
+        thirdColorBucketFourthTint,
+        setThirdColorBucketFourthTintHandleChange,
+        fourthColorLiterFirstTint,
+        setFourthColorLiterFirstTintHandleChange,
+        fourthColorLiterSecondTint,
+        setFourthColorLiterSecondTintHandleChange,
+        fourthColorLiterThirdTint,
+        setFourthColorLiterThirdTintHandleChange,
+        fourthColorLiterFourthTint,
+        setFourthColorLiterFourthTintHandleChange,
+        fourthColorGalonFirstTint,
+        setFourthColorGalonFirstTintHandleChange,
+        fourthColorGalonSecondTint,
+        setFourthColorGalonSecondTintHandleChange,
+        fourthColorGalonThirdTint,
+        setFourthColorGalonThirdTintHandleChange,
+        fourthColorGalonFourthTint,
+        setFourthColorGalonFourthTintHandleChange,
+        fourthColorBucketFirstTint,
+        setFourthColorBucketFirstTintHandleChange,
+        fourthColorBucketSecondTint,
+        setFourthColorBucketSecondTintHandleChange,
+        fourthColorBucketThirdTint,
+        setFourthColorBucketThirdTintHandleChange,
+        fourthColorBucketFourthTint,
+        setFourthColorBucketFourthTintHandleChange,
+        fifthColorLiterFirstTint,
+        setFifthColorLiterFirstTintHandleChange,
+        fifthColorLiterSecondTint,
+        setFifthColorLiterSecondTintHandleChange,
+        fifthColorLiterThirdTint,
+        setFifthColorLiterThirdTintHandleChange,
+        fifthColorLiterFourthTint,
+        setFifthColorLiterFourthTintHandleChange,
+        fifthColorGalonFirstTint,
+        setFifthColorGalonFirstTintHandleChange,
+        fifthColorGalonSecondTint,
+        setFifthColorGalonSecondTintHandleChange,
+        fifthColorGalonThirdTint,
+        setFifthColorGalonThirdTintHandleChange,
+        fifthColorGalonFourthTint,
+        setFifthColorGalonFourthTintHandleChange,
+        fifthColorBucketFirstTint,
+        setFifthColorBucketFirstTintHandleChange,
+        fifthColorBucketSecondTint,
+        setFifthColorBucketSecondTintHandleChange,
+        fifthColorBucketThirdTint,
+        setFifthColorBucketThirdTintHandleChange,
+        fifthColorBucketFourthTint,
+        setFifthColorBucketFourthTintHandleChange,
+        sixthColorLiterFirstTint,
+        setSixthColorLiterFirstTintHandleChange,
+        sixthColorLiterSecondTint,
+        setSixthColorLiterSecondTintHandleChange,
+        sixthColorLiterThirdTint,
+        setSixthColorLiterThirdTintHandleChange,
+        sixthColorLiterFourthTint,
+        setSixthColorLiterFourthTintHandleChange,
+        sixthColorGalonFirstTint,
+        setSixthColorGalonFirstTintHandleChange,
+        sixthColorGalonSecondTint,
+        setSixthColorGalonSecondTintHandleChange,
+        sixthColorGalonThirdTint,
+        setSixthColorGalonThirdTintHandleChange,
+        sixthColorGalonFourthTint,
+        setSixthColorGalonFourthTintHandleChange,
+        sixthColorBucketFirstTint,
+        setSixthColorBucketFirstTintHandleChange,
+        sixthColorBucketSecondTint,
+        setSixthColorBucketSecondTintHandleChange,
+        sixthColorBucketThirdTint,
+        setSixthColorBucketThirdTintHandleChange,
+        sixthColorBucketFourthTint,
+        setSixthColorBucketFourthTintHandleChange,
         handleSubmit,
     } = useContext(NewColorContext);
 
@@ -206,9 +207,30 @@ const NewColor = () => {
                     </div>
 
                     <section className="base">
-                        <h3>First Base</h3>
+                        <h3>First Color</h3>
 
-                        <div>
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="firstColor"
+                                    id="firstColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
                             <div className="select-wrapper">
                                 <select
                                     name="firstBase"
@@ -229,38 +251,164 @@ const NewColor = () => {
                                     ))}
                                 </select>
                             </div>
+                        </div>
 
-                            {/* <div className="select-wrapper">
-                                <select name="firstBaseBase" >
-                                    
+                        <section className="size">
+                            <h4>Liter</h4>
+                            <Tint
+                                values={firstColorLiterFirstTint}
+                                handleChange={
+                                    setFirstColorLiterFirstTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorLiterSecondTint}
+                                handleChange={
+                                    setFirstColorLiterSecondTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorLiterThirdTint}
+                                handleChange={
+                                    setFirstColorLiterThirdTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorLiterFourthTint}
+                                handleChange={
+                                    setFirstColorLiterFourthTintHandleChange
+                                }
+                            />
+                        </section>
+
+                        <section className="size">
+                            <h4>Galon</h4>
+                            <Tint
+                                values={firstColorGalonFirstTint}
+                                handleChange={
+                                    setFirstColorGalonFirstTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorGalonSecondTint}
+                                handleChange={
+                                    setFirstColorGalonSecondTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorGalonThirdTint}
+                                handleChange={
+                                    setFirstColorGalonThirdTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorGalonFourthTint}
+                                handleChange={
+                                    setFirstColorGalonFourthTintHandleChange
+                                }
+                            />
+                        </section>
+
+                        <section className="size">
+                            <h4>Bucket</h4>
+                            <Tint
+                                values={firstColorBucketFirstTint}
+                                handleChange={
+                                    setFirstColorBucketFirstTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorBucketSecondTint}
+                                handleChange={
+                                    setFirstColorBucketSecondTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorBucketThirdTint}
+                                handleChange={
+                                    setFirstColorBucketThirdTintHandleChange
+                                }
+                            />
+                            <Tint
+                                values={firstColorBucketFourthTint}
+                                handleChange={
+                                    setFirstColorBucketFourthTintHandleChange
+                                }
+                            />
+                        </section>
+                    </section>
+
+                    <section className="base">
+                        <h3>Second Color</h3>
+
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="secondColor"
+                                    id="secondColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
                                 </select>
-                            </div> */}
+                            </div>
+
+                            <div className="select-wrapper">
+                                <select
+                                    name="secondBase"
+                                    id="secondBase"
+                                    defaultValue={bases[0]}
+                                    onChange={handleChange}
+                                >
+                                    {bases.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === bases[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
 
                         <section className="size">
                             <h4>Liter</h4>
                             <Tint
-                                values={firstBaseLiterFirstTint}
+                                values={secondColorLiterFirstTint}
                                 handleChange={
-                                    setFirstBaseLiterFirstTintHandleChange
+                                    setSecondColorLiterFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseLiterSecondTint}
+                                values={secondColorLiterSecondTint}
                                 handleChange={
-                                    setFirstBaseLiterSecondTintHandleChange
+                                    setSecondColorLiterSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseLiterThirdTint}
+                                values={secondColorLiterThirdTint}
                                 handleChange={
-                                    setFirstBaseLiterThirdTintHandleChange
+                                    setSecondColorLiterThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseLiterFourthTint}
+                                values={secondColorLiterFourthTint}
                                 handleChange={
-                                    setFirstBaseLiterFourthTintHandleChange
+                                    setSecondColorLiterFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -268,27 +416,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Galon</h4>
                             <Tint
-                                values={firstBaseGalonFirstTint}
+                                values={secondColorGalonFirstTint}
                                 handleChange={
-                                    setFirstBaseGalonFirstTintHandleChange
+                                    setSecondColorGalonFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseGalonSecondTint}
+                                values={secondColorGalonSecondTint}
                                 handleChange={
-                                    setFirstBaseGalonSecondTintHandleChange
+                                    setSecondColorGalonSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseGalonThirdTint}
+                                values={secondColorGalonThirdTint}
                                 handleChange={
-                                    setFirstBaseGalonThirdTintHandleChange
+                                    setSecondColorGalonThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseGalonFourthTint}
+                                values={secondColorGalonFourthTint}
                                 handleChange={
-                                    setFirstBaseGalonFourthTintHandleChange
+                                    setSecondColorGalonFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -296,80 +444,103 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Bucket</h4>
                             <Tint
-                                values={firstBaseBucketFirstTint}
+                                values={secondColorBucketFirstTint}
                                 handleChange={
-                                    setFirstBaseBucketFirstTintHandleChange
+                                    setSecondColorBucketFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseBucketSecondTint}
+                                values={secondColorBucketSecondTint}
                                 handleChange={
-                                    setFirstBaseBucketSecondTintHandleChange
+                                    setSecondColorBucketSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseBucketThirdTint}
+                                values={secondColorBucketThirdTint}
                                 handleChange={
-                                    setFirstBaseBucketThirdTintHandleChange
+                                    setSecondColorBucketThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={firstBaseBucketFourthTint}
+                                values={secondColorBucketFourthTint}
                                 handleChange={
-                                    setFirstBaseBucketFourthTintHandleChange
+                                    setSecondColorBucketFourthTintHandleChange
                                 }
                             />
                         </section>
                     </section>
 
                     <section className="base">
-                        <h3>Second Base</h3>
+                        <h3>Third Color</h3>
 
-                        <div className="select-wrapper">
-                            <select
-                                name="secondBase"
-                                id="secondBase"
-                                defaultValue={bases[0]}
-                                onChange={handleChange}
-                            >
-                                {bases.map((name, key) => (
-                                    <option
-                                        key={key}
-                                        value={name}
-                                        disabled={
-                                            name === bases[0] ? true : false
-                                        }
-                                    >
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="thirdColor"
+                                    id="thirdColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="select-wrapper">
+                                <select
+                                    name="thirdBase"
+                                    id="thirdBase"
+                                    defaultValue={bases[0]}
+                                    onChange={handleChange}
+                                >
+                                    {bases.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === bases[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
 
                         <section className="size">
                             <h4>Liter</h4>
                             <Tint
-                                values={secondBaseLiterFirstTint}
+                                values={thirdColorLiterFirstTint}
                                 handleChange={
-                                    setSecondBaseLiterFirstTintHandleChange
+                                    setThirdColorLiterFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseLiterSecondTint}
+                                values={thirdColorLiterSecondTint}
                                 handleChange={
-                                    setSecondBaseLiterSecondTintHandleChange
+                                    setThirdColorLiterSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseLiterThirdTint}
+                                values={thirdColorLiterThirdTint}
                                 handleChange={
-                                    setSecondBaseLiterThirdTintHandleChange
+                                    setThirdColorLiterThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseLiterFourthTint}
+                                values={thirdColorLiterFourthTint}
                                 handleChange={
-                                    setSecondBaseLiterFourthTintHandleChange
+                                    setThirdColorLiterFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -377,27 +548,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Galon</h4>
                             <Tint
-                                values={secondBaseGalonFirstTint}
+                                values={thirdColorGalonFirstTint}
                                 handleChange={
-                                    setSecondBaseGalonFirstTintHandleChange
+                                    setThirdColorGalonFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseGalonSecondTint}
+                                values={thirdColorGalonSecondTint}
                                 handleChange={
-                                    setSecondBaseGalonSecondTintHandleChange
+                                    setThirdColorGalonSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseGalonThirdTint}
+                                values={thirdColorGalonThirdTint}
                                 handleChange={
-                                    setSecondBaseGalonThirdTintHandleChange
+                                    setThirdColorGalonThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseGalonFourthTint}
+                                values={thirdColorGalonFourthTint}
                                 handleChange={
-                                    setSecondBaseGalonFourthTintHandleChange
+                                    setThirdColorGalonFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -405,80 +576,103 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Bucket</h4>
                             <Tint
-                                values={secondBaseBucketFirstTint}
+                                values={thirdColorBucketFirstTint}
                                 handleChange={
-                                    setSecondBaseBucketFirstTintHandleChange
+                                    setThirdColorBucketFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseBucketSecondTint}
+                                values={thirdColorBucketSecondTint}
                                 handleChange={
-                                    setSecondBaseBucketSecondTintHandleChange
+                                    setThirdColorBucketSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseBucketThirdTint}
+                                values={thirdColorBucketThirdTint}
                                 handleChange={
-                                    setSecondBaseBucketThirdTintHandleChange
+                                    setThirdColorBucketThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={secondBaseBucketFourthTint}
+                                values={thirdColorBucketFourthTint}
                                 handleChange={
-                                    setSecondBaseBucketFourthTintHandleChange
+                                    setThirdColorBucketFourthTintHandleChange
                                 }
                             />
                         </section>
                     </section>
 
                     <section className="base">
-                        <h3>Third Base</h3>
+                        <h3>Fourth Color</h3>
 
-                        <div className="select-wrapper">
-                            <select
-                                name="thirdBase"
-                                id="thirdBase"
-                                defaultValue={bases[0]}
-                                onChange={handleChange}
-                            >
-                                {bases.map((name, key) => (
-                                    <option
-                                        key={key}
-                                        value={name}
-                                        disabled={
-                                            name === bases[0] ? true : false
-                                        }
-                                    >
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="fourthColor"
+                                    id="fourthColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="select-wrapper">
+                                <select
+                                    name="fourthBase"
+                                    id="fourthBase"
+                                    defaultValue={bases[0]}
+                                    onChange={handleChange}
+                                >
+                                    {bases.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === bases[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
 
                         <section className="size">
                             <h4>Liter</h4>
                             <Tint
-                                values={thirdBaseLiterFirstTint}
+                                values={fourthColorLiterFirstTint}
                                 handleChange={
-                                    setThirdBaseLiterFirstTintHandleChange
+                                    setFourthColorLiterFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseLiterSecondTint}
+                                values={fourthColorLiterSecondTint}
                                 handleChange={
-                                    setThirdBaseLiterSecondTintHandleChange
+                                    setFourthColorLiterSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseLiterThirdTint}
+                                values={fourthColorLiterThirdTint}
                                 handleChange={
-                                    setThirdBaseLiterThirdTintHandleChange
+                                    setFourthColorLiterThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseLiterFourthTint}
+                                values={fourthColorLiterFourthTint}
                                 handleChange={
-                                    setThirdBaseLiterFourthTintHandleChange
+                                    setFourthColorLiterFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -486,27 +680,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Galon</h4>
                             <Tint
-                                values={thirdBaseGalonFirstTint}
+                                values={fourthColorGalonFirstTint}
                                 handleChange={
-                                    setThirdBaseGalonFirstTintHandleChange
+                                    setFourthColorGalonFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseGalonSecondTint}
+                                values={fourthColorGalonSecondTint}
                                 handleChange={
-                                    setThirdBaseGalonSecondTintHandleChange
+                                    setFourthColorGalonSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseGalonThirdTint}
+                                values={fourthColorGalonThirdTint}
                                 handleChange={
-                                    setThirdBaseGalonThirdTintHandleChange
+                                    setFourthColorGalonThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseGalonFourthTint}
+                                values={fourthColorGalonFourthTint}
                                 handleChange={
-                                    setThirdBaseGalonFourthTintHandleChange
+                                    setFourthColorGalonFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -514,80 +708,103 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Bucket</h4>
                             <Tint
-                                values={thirdBaseBucketFirstTint}
+                                values={fourthColorBucketFirstTint}
                                 handleChange={
-                                    setThirdBaseBucketFirstTintHandleChange
+                                    setFourthColorBucketFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseBucketSecondTint}
+                                values={fourthColorBucketSecondTint}
                                 handleChange={
-                                    setThirdBaseBucketSecondTintHandleChange
+                                    setFourthColorBucketSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseBucketThirdTint}
+                                values={fourthColorBucketThirdTint}
                                 handleChange={
-                                    setThirdBaseBucketThirdTintHandleChange
+                                    setFourthColorBucketThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={thirdBaseBucketFourthTint}
+                                values={fourthColorBucketFourthTint}
                                 handleChange={
-                                    setThirdBaseBucketFourthTintHandleChange
+                                    setFourthColorBucketFourthTintHandleChange
                                 }
                             />
                         </section>
                     </section>
 
                     <section className="base">
-                        <h3>Fourth Base</h3>
+                        <h3>Fifth Color</h3>
 
-                        <div className="select-wrapper">
-                            <select
-                                name="fourthBase"
-                                id="fourthBase"
-                                defaultValue={bases[0]}
-                                onChange={handleChange}
-                            >
-                                {bases.map((name, key) => (
-                                    <option
-                                        key={key}
-                                        value={name}
-                                        disabled={
-                                            name === bases[0] ? true : false
-                                        }
-                                    >
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="fifthColor"
+                                    id="fifthColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="select-wrapper">
+                                <select
+                                    name="fifthBase"
+                                    id="fifthBase"
+                                    defaultValue={bases[0]}
+                                    onChange={handleChange}
+                                >
+                                    {bases.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === bases[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
 
                         <section className="size">
                             <h4>Liter</h4>
                             <Tint
-                                values={fourthBaseLiterFirstTint}
+                                values={fifthColorLiterFirstTint}
                                 handleChange={
-                                    setFourthBaseLiterFirstTintHandleChange
+                                    setFifthColorLiterFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseLiterSecondTint}
+                                values={fifthColorLiterSecondTint}
                                 handleChange={
-                                    setFourthBaseLiterSecondTintHandleChange
+                                    setFifthColorLiterSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseLiterThirdTint}
+                                values={fifthColorLiterThirdTint}
                                 handleChange={
-                                    setFourthBaseLiterThirdTintHandleChange
+                                    setFifthColorLiterThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseLiterFourthTint}
+                                values={fifthColorLiterFourthTint}
                                 handleChange={
-                                    setFourthBaseLiterFourthTintHandleChange
+                                    setFifthColorLiterFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -595,27 +812,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Galon</h4>
                             <Tint
-                                values={fourthBaseGalonFirstTint}
+                                values={fifthColorGalonFirstTint}
                                 handleChange={
-                                    setFourthBaseGalonFirstTintHandleChange
+                                    setFifthColorGalonFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseGalonSecondTint}
+                                values={fifthColorGalonSecondTint}
                                 handleChange={
-                                    setFourthBaseGalonSecondTintHandleChange
+                                    setFifthColorGalonSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseGalonThirdTint}
+                                values={fifthColorGalonThirdTint}
                                 handleChange={
-                                    setFourthBaseGalonThirdTintHandleChange
+                                    setFifthColorGalonThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseGalonFourthTint}
+                                values={fifthColorGalonFourthTint}
                                 handleChange={
-                                    setFourthBaseGalonFourthTintHandleChange
+                                    setFifthColorGalonFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -623,80 +840,103 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Bucket</h4>
                             <Tint
-                                values={fourthBaseBucketFirstTint}
+                                values={fifthColorBucketFirstTint}
                                 handleChange={
-                                    setFourthBaseBucketFirstTintHandleChange
+                                    setFifthColorBucketFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseBucketSecondTint}
+                                values={fifthColorBucketSecondTint}
                                 handleChange={
-                                    setFourthBaseBucketSecondTintHandleChange
+                                    setFifthColorBucketSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseBucketThirdTint}
+                                values={fifthColorBucketThirdTint}
                                 handleChange={
-                                    setFourthBaseBucketThirdTintHandleChange
+                                    setFifthColorBucketThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fourthBaseBucketFourthTint}
+                                values={fifthColorBucketFourthTint}
                                 handleChange={
-                                    setFourthBaseBucketFourthTintHandleChange
+                                    setFifthColorBucketFourthTintHandleChange
                                 }
                             />
                         </section>
                     </section>
 
                     <section className="base">
-                        <h3>Fifth Base</h3>
+                        <h3>Sixth Color</h3>
 
-                        <div className="select-wrapper">
-                            <select
-                                name="fifthBase"
-                                id="fifthBase"
-                                defaultValue={bases[0]}
-                                onChange={handleChange}
-                            >
-                                {bases.map((name, key) => (
-                                    <option
-                                        key={key}
-                                        value={name}
-                                        disabled={
-                                            name === bases[0] ? true : false
-                                        }
-                                    >
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
+                        <div className="selects-wrapper">
+                            <div className="select-wrapper">
+                                <select
+                                    name="sixthColor"
+                                    id="sixthColor"
+                                    defaultValue={lines[0]}
+                                    onChange={handleChange}
+                                >
+                                    {lines.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === lines[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="select-wrapper">
+                                <select
+                                    name="sixthBase"
+                                    id="sixthBase"
+                                    defaultValue={bases[0]}
+                                    onChange={handleChange}
+                                >
+                                    {bases.map((name, key) => (
+                                        <option
+                                            key={key}
+                                            value={name}
+                                            disabled={
+                                                name === bases[0] ? true : false
+                                            }
+                                        >
+                                            {name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
 
                         <section className="size">
                             <h4>Liter</h4>
                             <Tint
-                                values={fifthBaseLiterFirstTint}
+                                values={sixthColorLiterFirstTint}
                                 handleChange={
-                                    setFifthBaseLiterFirstTintHandleChange
+                                    setSixthColorLiterFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseLiterSecondTint}
+                                values={sixthColorLiterSecondTint}
                                 handleChange={
-                                    setFifthBaseLiterSecondTintHandleChange
+                                    setSixthColorLiterSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseLiterThirdTint}
+                                values={sixthColorLiterThirdTint}
                                 handleChange={
-                                    setFifthBaseLiterThirdTintHandleChange
+                                    setSixthColorLiterThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseLiterFourthTint}
+                                values={sixthColorLiterFourthTint}
                                 handleChange={
-                                    setFifthBaseLiterFourthTintHandleChange
+                                    setSixthColorLiterFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -704,136 +944,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Galon</h4>
                             <Tint
-                                values={fifthBaseGalonFirstTint}
+                                values={sixthColorGalonFirstTint}
                                 handleChange={
-                                    setFifthBaseGalonFirstTintHandleChange
+                                    setSixthColorGalonFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseGalonSecondTint}
+                                values={sixthColorGalonSecondTint}
                                 handleChange={
-                                    setFifthBaseGalonSecondTintHandleChange
+                                    setSixthColorGalonSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseGalonThirdTint}
+                                values={sixthColorGalonThirdTint}
                                 handleChange={
-                                    setFifthBaseGalonThirdTintHandleChange
+                                    setSixthColorGalonThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={fifthBaseGalonFourthTint}
+                                values={sixthColorGalonFourthTint}
                                 handleChange={
-                                    setFifthBaseGalonFourthTintHandleChange
-                                }
-                            />
-                        </section>
-
-                        <section className="size">
-                            <h4>Bucket</h4>
-                            <Tint
-                                values={fifthBaseBucketFirstTint}
-                                handleChange={
-                                    setFifthBaseBucketFirstTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={fifthBaseBucketSecondTint}
-                                handleChange={
-                                    setFifthBaseBucketSecondTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={fifthBaseBucketThirdTint}
-                                handleChange={
-                                    setFifthBaseBucketThirdTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={fifthBaseBucketFourthTint}
-                                handleChange={
-                                    setFifthBaseBucketFourthTintHandleChange
-                                }
-                            />
-                        </section>
-                    </section>
-
-                    <section className="base">
-                        <h3>Sixth Base</h3>
-
-                        <div className="select-wrapper">
-                            <select
-                                name="sixthBase"
-                                id="sixthBase"
-                                defaultValue={bases[0]}
-                                onChange={handleChange}
-                            >
-                                {bases.map((name, key) => (
-                                    <option
-                                        key={key}
-                                        value={name}
-                                        disabled={
-                                            name === bases[0] ? true : false
-                                        }
-                                    >
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <section className="size">
-                            <h4>Liter</h4>
-                            <Tint
-                                values={sixthBaseLiterFirstTint}
-                                handleChange={
-                                    setSixthBaseLiterFirstTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseLiterSecondTint}
-                                handleChange={
-                                    setSixthBaseLiterSecondTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseLiterThirdTint}
-                                handleChange={
-                                    setSixthBaseLiterThirdTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseLiterFourthTint}
-                                handleChange={
-                                    setSixthBaseLiterFourthTintHandleChange
-                                }
-                            />
-                        </section>
-
-                        <section className="size">
-                            <h4>Galon</h4>
-                            <Tint
-                                values={sixthBaseGalonFirstTint}
-                                handleChange={
-                                    setSixthBaseGalonFirstTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseGalonSecondTint}
-                                handleChange={
-                                    setSixthBaseGalonSecondTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseGalonThirdTint}
-                                handleChange={
-                                    setSixthBaseGalonThirdTintHandleChange
-                                }
-                            />
-                            <Tint
-                                values={sixthBaseGalonFourthTint}
-                                handleChange={
-                                    setSixthBaseGalonFourthTintHandleChange
+                                    setSixthColorGalonFourthTintHandleChange
                                 }
                             />
                         </section>
@@ -841,27 +972,27 @@ const NewColor = () => {
                         <section className="size">
                             <h4>Bucket</h4>
                             <Tint
-                                values={sixthBaseBucketFirstTint}
+                                values={sixthColorBucketFirstTint}
                                 handleChange={
-                                    setSixthBaseBucketFirstTintHandleChange
+                                    setSixthColorBucketFirstTintHandleChange
                                 }
                             />
                             <Tint
-                                values={sixthBaseBucketSecondTint}
+                                values={sixthColorBucketSecondTint}
                                 handleChange={
-                                    setSixthBaseBucketSecondTintHandleChange
+                                    setSixthColorBucketSecondTintHandleChange
                                 }
                             />
                             <Tint
-                                values={sixthBaseBucketThirdTint}
+                                values={sixthColorBucketThirdTint}
                                 handleChange={
-                                    setSixthBaseBucketThirdTintHandleChange
+                                    setSixthColorBucketThirdTintHandleChange
                                 }
                             />
                             <Tint
-                                values={sixthBaseBucketFourthTint}
+                                values={sixthColorBucketFourthTint}
                                 handleChange={
-                                    setSixthBaseBucketFourthTintHandleChange
+                                    setSixthColorBucketFourthTintHandleChange
                                 }
                             />
                         </section>
