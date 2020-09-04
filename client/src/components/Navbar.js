@@ -79,7 +79,7 @@ const SignOut = () => {
 
     return (
         <li onClick={() => setIsSignIn(false)}>
-            <NavLink exact to="/login" className="navbar__sign-out">
+            <NavLink exact to="/sign-in" className="navbar__sign-out">
                 <RiLogoutCircleLine /> <span>Sign Out</span>
             </NavLink>
         </li>
