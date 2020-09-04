@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { TiKeyOutline } from 'react-icons/ti';
+import { ClipLoader } from 'react-spinners';
 
 import { useForm } from '../useForm';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const SignIn = () => {
     const [values, handleChange] = useForm({ username: '', password: '' });
-    const { setIsSignIn, signIn } = useContext(AuthContext);
+    const { signIn, isLoading } = useContext(AuthContext);
 
     return (
         <form className="sign-in" onSubmit={(e) => signIn(e, values)}>
@@ -50,7 +51,11 @@ const SignIn = () => {
                     type="submit"
                     className="sign-in__button primary-button"
                 >
-                    Sign In
+                    {!isLoading ? (
+                        'Sign In'
+                    ) : (
+                        <ClipLoader loading={true} size={35} color="#1a8ccb" />
+                    )}
                 </button>
                 <NavLink to="register" className="sign-in__link">
                     You do not have an account? Sign up
