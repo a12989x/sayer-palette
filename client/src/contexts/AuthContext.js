@@ -14,9 +14,11 @@ toast.configure();
 const AuthContextProvider = (props) => {
     const [isSignIn, setIsSignIn] = useState(false);
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
     const signIn = async (e, values) => {
         e.preventDefault();
+        setIsLoading(true);
         const { username, password } = values;
 
         try {
@@ -24,6 +26,7 @@ const AuthContextProvider = (props) => {
             const res = await axios.post('/api/users/login', params);
             History.push('/get-color');
             setIsSignIn(true);
+            setIsLoading(false);
             setUser({
                 username: res.data.username,
                 email: res.data.email,
@@ -31,6 +34,7 @@ const AuthContextProvider = (props) => {
             });
             notifySuccess('You sign in correctly');
         } catch (error) {
+            setIsLoading(false);
             notifyError('Username or password incorrect');
         }
     };
@@ -57,7 +61,7 @@ const AuthContextProvider = (props) => {
 
     return (
         <AuthContext.Provider
-            value={{ user, isSignIn, setIsSignIn, signIn, register }}
+            value={{ user, isSignIn, isLoading, setIsSignIn, signIn, register }}
         >
             {props.children}
         </AuthContext.Provider>
