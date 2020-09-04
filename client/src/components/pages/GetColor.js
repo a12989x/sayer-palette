@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { ClipLoader } from 'react-spinners';
 
 import { useForm } from '../useForm';
 import { notifySuccess, notifyError, notifyInfo } from '../Toastify';
@@ -12,6 +13,7 @@ const GetColor = () => {
     const [color, setColor] = useState({});
     const [prevValue, setPrevValue] = useState('');
     const [selectsDisabled, setSelectsDisabled] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [bases, setBases] = useState([
         'base',
@@ -37,12 +39,15 @@ const GetColor = () => {
         setPrevValue(value);
 
         if (value !== prevValue) {
+            setIsLoading(true);
+
             try {
                 setColorSel('');
                 const res = await axios.get(`/api/colors/${value}`);
                 setColor(res.data);
                 setBasesIfExists(res.data.base);
                 setSelectsDisabled(false);
+                setIsLoading(false);
                 notifySuccess('Color obtained satisfactorily');
             } catch (error) {
                 notifyError('Color not found');
@@ -52,6 +57,7 @@ const GetColor = () => {
                 notifyInfo('Please select one base or size');
                 return;
             }
+            setIsLoading(false);
             findBaseAndSize(color.base);
         }
     };
@@ -152,7 +158,15 @@ const GetColor = () => {
                         type="submit"
                         className="get-color__button primary-button"
                     >
-                        Get Color
+                        {!isLoading ? (
+                            'Get Color'
+                        ) : (
+                            <ClipLoader
+                                loading={true}
+                                color="#1a8ccb"
+                                size={35}
+                            />
+                        )}
                     </button>
                 </form>
 

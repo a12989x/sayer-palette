@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { FiCheck } from 'react-icons/fi';
+import { ClipLoader } from 'react-spinners';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -81,14 +82,17 @@ const User = (props) => {
 
 const Users = () => {
     const [users, setUsers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const getUsers = async () => {
             try {
                 const { data } = await axios.get('/api/users/');
                 setUsers(data);
+                setIsLoading(false);
             } catch (error) {
                 console.log(error);
+                setIsLoading(false);
             }
         };
 
@@ -113,19 +117,23 @@ const Users = () => {
                     All users and their roles are here.
                 </h4>
 
-                <section className="users__wrapper">
-                    <div className="users__wrapper-header">
-                        <h2>Username</h2>
-                        <h2>Role</h2>
-                    </div>
-                    <hr />
-                    {users.map((user) => (
-                        <React.Fragment key={user._id}>
-                            <User {...user} deleteUser={deleteUser} />
-                            <hr />
-                        </React.Fragment>
-                    ))}
-                </section>
+                {!isLoading ? (
+                    <section className="users__wrapper">
+                        <div className="users__wrapper-header">
+                            <h2>Username</h2>
+                            <h2>Role</h2>
+                        </div>
+                        <hr />
+                        {users.map((user) => (
+                            <React.Fragment key={user._id}>
+                                <User {...user} deleteUser={deleteUser} />
+                                <hr />
+                            </React.Fragment>
+                        ))}
+                    </section>
+                ) : (
+                    <ClipLoader size={100} color="#1a8ccb" loading={true} />
+                )}
             </div>
         </main>
     );
