@@ -6,8 +6,8 @@ import { useForm } from '../components/useForm';
 export const NewColorContext = createContext();
 
 const NewColorContextProvider = (props) => {
-    const [bases, setBases] = useState([
-        'base',
+    const [lines, setLines] = useState([
+        'lines',
         'x-trong',
         'esmalack',
         'hidrosayer',
@@ -28,33 +28,41 @@ const NewColorContextProvider = (props) => {
         'lfy',
         'yox',
     ]);
-    const [line, setLine] = useState(['white', 'accent']);
+    const [bases, setBases] = useState([
+        'Bases',
+        'White',
+        'Cake',
+        'Medium',
+        'Intense',
+        'Accent',
+    ]);
 
     const [values, handleChange] = useForm({
         codeNumber: '',
         colorName: '',
         hexCode: '',
+        firstColor: '',
         firstBase: '',
-        firstBaseBase: '',
+        secondColor: '',
         secondBase: '',
-        firstBaseBase: '',
+        thirdColor: '',
         thirdBase: '',
-        firstBaseBase: '',
+        fourthColor: '',
         fourthBase: '',
+        fifthColor: '',
         fifthBase: '',
-        firstBaseBase: '',
+        sixthColor: '',
         sixthBase: '',
-        firstBaseBase: '',
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                    First Base Tints                    */
+    /*                    First Color Tints                    */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        firstBaseLiterFirstTint,
-        setFirstBaseLiterFirstTintHandleChange,
+        firstColorLiterFirstTint,
+        setFirstColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -63,8 +71,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseLiterSecondTint,
-        setFirstBaseLiterSecondTintHandleChange,
+        firstColorLiterSecondTint,
+        setFirstColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -73,8 +81,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseLiterThirdTint,
-        setFirstBaseLiterThirdTintHandleChange,
+        firstColorLiterThirdTint,
+        setFirstColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -83,8 +91,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseLiterFourthTint,
-        setFirstBaseLiterFourthTintHandleChange,
+        firstColorLiterFourthTint,
+        setFirstColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -94,8 +102,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        firstBaseGalonFirstTint,
-        setFirstBaseGalonFirstTintHandleChange,
+        firstColorGalonFirstTint,
+        setFirstColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -104,8 +112,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseGalonSecondTint,
-        setFirstBaseGalonSecondTintHandleChange,
+        firstColorGalonSecondTint,
+        setFirstColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -114,8 +122,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseGalonThirdTint,
-        setFirstBaseGalonThirdTintHandleChange,
+        firstColorGalonThirdTint,
+        setFirstColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -124,8 +132,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseGalonFourthTint,
-        setFirstBaseGalonFourthTintHandleChange,
+        firstColorGalonFourthTint,
+        setFirstColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -135,8 +143,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        firstBaseBucketFirstTint,
-        setFirstBaseBucketFirstTintHandleChange,
+        firstColorBucketFirstTint,
+        setFirstColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -145,8 +153,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseBucketSecondTint,
-        setFirstBaseBucketSecondTintHandleChange,
+        firstColorBucketSecondTint,
+        setFirstColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -155,8 +163,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseBucketThirdTint,
-        setFirstBaseBucketThirdTintHandleChange,
+        firstColorBucketThirdTint,
+        setFirstColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -165,8 +173,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        firstBaseBucketFourthTint,
-        setFirstBaseBucketFourthTintHandleChange,
+        firstColorBucketFourthTint,
+        setFirstColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -175,13 +183,13 @@ const NewColorContextProvider = (props) => {
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                    Second Base Tints                   */
+    /*                    Second Color Tints                   */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        secondBaseLiterFirstTint,
-        setSecondBaseLiterFirstTintHandleChange,
+        secondColorLiterFirstTint,
+        setSecondColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -190,8 +198,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseLiterSecondTint,
-        setSecondBaseLiterSecondTintHandleChange,
+        secondColorLiterSecondTint,
+        setSecondColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -200,8 +208,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseLiterThirdTint,
-        setSecondBaseLiterThirdTintHandleChange,
+        secondColorLiterThirdTint,
+        setSecondColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -210,8 +218,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseLiterFourthTint,
-        setSecondBaseLiterFourthTintHandleChange,
+        secondColorLiterFourthTint,
+        setSecondColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -221,8 +229,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        secondBaseGalonFirstTint,
-        setSecondBaseGalonFirstTintHandleChange,
+        secondColorGalonFirstTint,
+        setSecondColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -231,8 +239,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseGalonSecondTint,
-        setSecondBaseGalonSecondTintHandleChange,
+        secondColorGalonSecondTint,
+        setSecondColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -241,8 +249,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseGalonThirdTint,
-        setSecondBaseGalonThirdTintHandleChange,
+        secondColorGalonThirdTint,
+        setSecondColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -251,8 +259,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseGalonFourthTint,
-        setSecondBaseGalonFourthTintHandleChange,
+        secondColorGalonFourthTint,
+        setSecondColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -262,8 +270,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        secondBaseBucketFirstTint,
-        setSecondBaseBucketFirstTintHandleChange,
+        secondColorBucketFirstTint,
+        setSecondColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -272,8 +280,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseBucketSecondTint,
-        setSecondBaseBucketSecondTintHandleChange,
+        secondColorBucketSecondTint,
+        setSecondColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -282,8 +290,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseBucketThirdTint,
-        setSecondBaseBucketThirdTintHandleChange,
+        secondColorBucketThirdTint,
+        setSecondColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -292,8 +300,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        secondBaseBucketFourthTint,
-        setSecondBaseBucketFourthTintHandleChange,
+        secondColorBucketFourthTint,
+        setSecondColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -302,13 +310,13 @@ const NewColorContextProvider = (props) => {
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                     Third Base Tint                    */
+    /*                     Third Color Tint                    */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        thirdBaseLiterFirstTint,
-        setThirdBaseLiterFirstTintHandleChange,
+        thirdColorLiterFirstTint,
+        setThirdColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -317,8 +325,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseLiterSecondTint,
-        setThirdBaseLiterSecondTintHandleChange,
+        thirdColorLiterSecondTint,
+        setThirdColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -327,8 +335,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseLiterThirdTint,
-        setThirdBaseLiterThirdTintHandleChange,
+        thirdColorLiterThirdTint,
+        setThirdColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -337,8 +345,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseLiterFourthTint,
-        setThirdBaseLiterFourthTintHandleChange,
+        thirdColorLiterFourthTint,
+        setThirdColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -348,8 +356,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        thirdBaseGalonFirstTint,
-        setThirdBaseGalonFirstTintHandleChange,
+        thirdColorGalonFirstTint,
+        setThirdColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -358,8 +366,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseGalonSecondTint,
-        setThirdBaseGalonSecondTintHandleChange,
+        thirdColorGalonSecondTint,
+        setThirdColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -368,8 +376,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseGalonThirdTint,
-        setThirdBaseGalonThirdTintHandleChange,
+        thirdColorGalonThirdTint,
+        setThirdColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -378,8 +386,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseGalonFourthTint,
-        setThirdBaseGalonFourthTintHandleChange,
+        thirdColorGalonFourthTint,
+        setThirdColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -389,8 +397,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        thirdBaseBucketFirstTint,
-        setThirdBaseBucketFirstTintHandleChange,
+        thirdColorBucketFirstTint,
+        setThirdColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -399,8 +407,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseBucketSecondTint,
-        setThirdBaseBucketSecondTintHandleChange,
+        thirdColorBucketSecondTint,
+        setThirdColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -409,8 +417,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseBucketThirdTint,
-        setThirdBaseBucketThirdTintHandleChange,
+        thirdColorBucketThirdTint,
+        setThirdColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -419,8 +427,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        thirdBaseBucketFourthTint,
-        setThirdBaseBucketFourthTintHandleChange,
+        thirdColorBucketFourthTint,
+        setThirdColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -429,13 +437,13 @@ const NewColorContextProvider = (props) => {
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                    Fourth Base Tints                   */
+    /*                    Fourth Color Tints                   */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        fourthBaseLiterFirstTint,
-        setFourthBaseLiterFirstTintHandleChange,
+        fourthColorLiterFirstTint,
+        setFourthColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -444,8 +452,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseLiterSecondTint,
-        setFourthBaseLiterSecondTintHandleChange,
+        fourthColorLiterSecondTint,
+        setFourthColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -454,8 +462,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseLiterThirdTint,
-        setFourthBaseLiterThirdTintHandleChange,
+        fourthColorLiterThirdTint,
+        setFourthColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -464,8 +472,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseLiterFourthTint,
-        setFourthBaseLiterFourthTintHandleChange,
+        fourthColorLiterFourthTint,
+        setFourthColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -475,8 +483,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        fourthBaseGalonFirstTint,
-        setFourthBaseGalonFirstTintHandleChange,
+        fourthColorGalonFirstTint,
+        setFourthColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -485,8 +493,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseGalonSecondTint,
-        setFourthBaseGalonSecondTintHandleChange,
+        fourthColorGalonSecondTint,
+        setFourthColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -495,8 +503,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseGalonThirdTint,
-        setFourthBaseGalonThirdTintHandleChange,
+        fourthColorGalonThirdTint,
+        setFourthColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -505,8 +513,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseGalonFourthTint,
-        setFourthBaseGalonFourthTintHandleChange,
+        fourthColorGalonFourthTint,
+        setFourthColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -516,8 +524,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        fourthBaseBucketFirstTint,
-        setFourthBaseBucketFirstTintHandleChange,
+        fourthColorBucketFirstTint,
+        setFourthColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -526,8 +534,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseBucketSecondTint,
-        setFourthBaseBucketSecondTintHandleChange,
+        fourthColorBucketSecondTint,
+        setFourthColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -536,8 +544,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseBucketThirdTint,
-        setFourthBaseBucketThirdTintHandleChange,
+        fourthColorBucketThirdTint,
+        setFourthColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -546,8 +554,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fourthBaseBucketFourthTint,
-        setFourthBaseBucketFourthTintHandleChange,
+        fourthColorBucketFourthTint,
+        setFourthColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -556,13 +564,13 @@ const NewColorContextProvider = (props) => {
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                    Fifth Base Tints                    */
+    /*                    Fifth Color Tints                    */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        fifthBaseLiterFirstTint,
-        setFifthBaseLiterFirstTintHandleChange,
+        fifthColorLiterFirstTint,
+        setFifthColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -571,8 +579,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseLiterSecondTint,
-        setFifthBaseLiterSecondTintHandleChange,
+        fifthColorLiterSecondTint,
+        setFifthColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -581,8 +589,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseLiterThirdTint,
-        setFifthBaseLiterThirdTintHandleChange,
+        fifthColorLiterThirdTint,
+        setFifthColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -591,8 +599,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseLiterFourthTint,
-        setFifthBaseLiterFourthTintHandleChange,
+        fifthColorLiterFourthTint,
+        setFifthColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -602,8 +610,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        fifthBaseGalonFirstTint,
-        setFifthBaseGalonFirstTintHandleChange,
+        fifthColorGalonFirstTint,
+        setFifthColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -612,8 +620,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseGalonSecondTint,
-        setFifthBaseGalonSecondTintHandleChange,
+        fifthColorGalonSecondTint,
+        setFifthColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -622,8 +630,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseGalonThirdTint,
-        setFifthBaseGalonThirdTintHandleChange,
+        fifthColorGalonThirdTint,
+        setFifthColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -632,8 +640,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseGalonFourthTint,
-        setFifthBaseGalonFourthTintHandleChange,
+        fifthColorGalonFourthTint,
+        setFifthColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -643,8 +651,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        fifthBaseBucketFirstTint,
-        setFifthBaseBucketFirstTintHandleChange,
+        fifthColorBucketFirstTint,
+        setFifthColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -653,8 +661,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseBucketSecondTint,
-        setFifthBaseBucketSecondTintHandleChange,
+        fifthColorBucketSecondTint,
+        setFifthColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -663,8 +671,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseBucketThirdTint,
-        setFifthBaseBucketThirdTintHandleChange,
+        fifthColorBucketThirdTint,
+        setFifthColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -673,8 +681,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        fifthBaseBucketFourthTint,
-        setFifthBaseBucketFourthTintHandleChange,
+        fifthColorBucketFourthTint,
+        setFifthColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -683,13 +691,13 @@ const NewColorContextProvider = (props) => {
     });
 
     /* ────────────────────────────────────────────────────── */
-    /*                    Sixth Base Tints                    */
+    /*                    Sixth Color Tints                    */
     /* ────────────────────────────────────────────────────── */
 
     /* ──────────────────────── Liter ─────────────────────── */
     const [
-        sixthBaseLiterFirstTint,
-        setSixthBaseLiterFirstTintHandleChange,
+        sixthColorLiterFirstTint,
+        setSixthColorLiterFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -698,8 +706,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseLiterSecondTint,
-        setSixthBaseLiterSecondTintHandleChange,
+        sixthColorLiterSecondTint,
+        setSixthColorLiterSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -708,8 +716,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseLiterThirdTint,
-        setSixthBaseLiterThirdTintHandleChange,
+        sixthColorLiterThirdTint,
+        setSixthColorLiterThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -718,8 +726,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseLiterFourthTint,
-        setSixthBaseLiterFourthTintHandleChange,
+        sixthColorLiterFourthTint,
+        setSixthColorLiterFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -729,8 +737,8 @@ const NewColorContextProvider = (props) => {
 
     /* ──────────────────────── Galon ─────────────────────── */
     const [
-        sixthBaseGalonFirstTint,
-        setSixthBaseGalonFirstTintHandleChange,
+        sixthColorGalonFirstTint,
+        setSixthColorGalonFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -739,8 +747,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseGalonSecondTint,
-        setSixthBaseGalonSecondTintHandleChange,
+        sixthColorGalonSecondTint,
+        setSixthColorGalonSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -749,8 +757,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseGalonThirdTint,
-        setSixthBaseGalonThirdTintHandleChange,
+        sixthColorGalonThirdTint,
+        setSixthColorGalonThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -759,8 +767,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseGalonFourthTint,
-        setSixthBaseGalonFourthTintHandleChange,
+        sixthColorGalonFourthTint,
+        setSixthColorGalonFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -770,8 +778,8 @@ const NewColorContextProvider = (props) => {
 
     /* ─────────────────────── Bucket ─────────────────────── */
     const [
-        sixthBaseBucketFirstTint,
-        setSixthBaseBucketFirstTintHandleChange,
+        sixthColorBucketFirstTint,
+        setSixthColorBucketFirstTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -780,8 +788,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseBucketSecondTint,
-        setSixthBaseBucketSecondTintHandleChange,
+        sixthColorBucketSecondTint,
+        setSixthColorBucketSecondTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -790,8 +798,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseBucketThirdTint,
-        setSixthBaseBucketThirdTintHandleChange,
+        sixthColorBucketThirdTint,
+        setSixthColorBucketThirdTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -800,8 +808,8 @@ const NewColorContextProvider = (props) => {
     });
 
     const [
-        sixthBaseBucketFourthTint,
-        setSixthBaseBucketFourthTintHandleChange,
+        sixthColorBucketFourthTint,
+        setSixthColorBucketFourthTintHandleChange,
     ] = useForm({
         tint: '',
         oz: '',
@@ -811,82 +819,536 @@ const NewColorContextProvider = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const checkTypeNumber = (color) => {
+            const typeNumber =
+                color === lines[1]
+                    ? 'ex-0xxx'
+                    : color === lines[2]
+                    ? 'ee-0xxx'
+                    : color === lines[3]
+                    ? 'eh-0xxx'
+                    : color === lines[4]
+                    ? 'vg-0xxx'
+                    : color === lines[5]
+                    ? 'vp-0xxx'
+                    : color === lines[6]
+                    ? 'vu-0xxx'
+                    : '';
 
-        console.log(
-            values,
-            firstBaseLiterFirstTint,
-            firstBaseLiterSecondTint,
-            firstBaseLiterThirdTint,
-            firstBaseLiterFourthTint,
-            firstBaseGalonFirstTint,
-            firstBaseGalonSecondTint,
-            firstBaseGalonThirdTint,
-            firstBaseGalonFourthTint,
-            firstBaseBucketFirstTint,
-            firstBaseBucketSecondTint,
-            firstBaseBucketThirdTint,
-            firstBaseBucketFourthTint,
-            secondBaseLiterFirstTint,
-            secondBaseLiterSecondTint,
-            secondBaseLiterThirdTint,
-            secondBaseLiterFourthTint,
-            secondBaseGalonFirstTint,
-            secondBaseGalonSecondTint,
-            secondBaseGalonThirdTint,
-            secondBaseGalonFourthTint,
-            secondBaseBucketFirstTint,
-            secondBaseBucketSecondTint,
-            secondBaseBucketThirdTint,
-            secondBaseBucketFourthTint,
-            thirdBaseLiterFirstTint,
-            thirdBaseLiterSecondTint,
-            thirdBaseLiterThirdTint,
-            thirdBaseLiterFourthTint,
-            thirdBaseGalonFirstTint,
-            thirdBaseGalonSecondTint,
-            thirdBaseGalonThirdTint,
-            thirdBaseGalonFourthTint,
-            thirdBaseBucketFirstTint,
-            thirdBaseBucketSecondTint,
-            thirdBaseBucketThirdTint,
-            thirdBaseBucketFourthTint,
-            fourthBaseLiterFirstTint,
-            fourthBaseLiterSecondTint,
-            fourthBaseLiterThirdTint,
-            fourthBaseLiterFourthTint,
-            fourthBaseGalonFirstTint,
-            fourthBaseGalonSecondTint,
-            fourthBaseGalonThirdTint,
-            fourthBaseGalonFourthTint,
-            fourthBaseBucketFirstTint,
-            fourthBaseBucketSecondTint,
-            fourthBaseBucketThirdTint,
-            fourthBaseBucketFourthTint,
-            fifthBaseLiterFirstTint,
-            fifthBaseLiterSecondTint,
-            fifthBaseLiterThirdTint,
-            fifthBaseLiterFourthTint,
-            fifthBaseGalonFirstTint,
-            fifthBaseGalonSecondTint,
-            fifthBaseGalonThirdTint,
-            fifthBaseGalonFourthTint,
-            fifthBaseBucketFirstTint,
-            fifthBaseBucketSecondTint,
-            fifthBaseBucketThirdTint,
-            fifthBaseBucketFourthTint,
-            sixthBaseLiterFirstTint,
-            sixthBaseLiterSecondTint,
-            sixthBaseLiterThirdTint,
-            sixthBaseLiterFourthTint,
-            sixthBaseGalonFirstTint,
-            sixthBaseGalonSecondTint,
-            sixthBaseGalonThirdTint,
-            sixthBaseGalonFourthTint,
-            sixthBaseBucketFirstTint,
-            sixthBaseBucketSecondTint,
-            sixthBaseBucketThirdTint,
-            sixthBaseBucketFourthTint
-        );
+            return typeNumber;
+        };
+        const checkBaseNumber = (base) => {
+            const baseNumber =
+                base === bases[1]
+                    ? '-0010'
+                    : base === bases[2]
+                    ? '-0030'
+                    : base === bases[3]
+                    ? '-0060'
+                    : base === bases[4]
+                    ? '-0070'
+                    : base === bases[5]
+                    ? '-0080'
+                    : '';
+
+            return baseNumber;
+        };
+
+        const {
+            codeNumber,
+            colorName,
+            hexCode,
+            firstColor,
+            firstBase,
+            secondColor,
+            secondBase,
+            thirdColor,
+            thirdBase,
+            fourthColor,
+            fourthBase,
+            fifthColor,
+            fifthBase,
+            sixthColor,
+            sixthBase,
+        } = values;
+
+        const firstColorGroup = {
+            typeNumber: checkTypeNumber(firstColor),
+            typeName: firstColor,
+            baseNumber:
+                checkTypeNumber(firstColor).slice(0, 2) +
+                checkBaseNumber(firstBase),
+            baseName: 'Base' + ' ' + firstBase,
+            sizes: {
+                liter: {
+                    [firstColorLiterFirstTint.tint]: [
+                        firstColorLiterFirstTint.oz,
+                        firstColorLiterFirstTint.sixty,
+                        firstColorLiterFirstTint.oneHundred,
+                    ],
+                    [firstColorLiterSecondTint.tint]: [
+                        firstColorLiterSecondTint.oz,
+                        firstColorLiterSecondTint.sixty,
+                        firstColorLiterSecondTint.oneHundred,
+                    ],
+                    [firstColorLiterThirdTint.tint]: [
+                        firstColorLiterThirdTint.oz,
+                        firstColorLiterThirdTint.sixty,
+                        firstColorLiterThirdTint.oneHundred,
+                    ],
+                    [firstColorLiterFourthTint.tint]: [
+                        firstColorLiterFourthTint.oz,
+                        firstColorLiterFourthTint.sixty,
+                        firstColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [firstColorGalonFirstTint.tint]: [
+                        firstColorGalonFirstTint.oz,
+                        firstColorGalonFirstTint.sixty,
+                        firstColorGalonFirstTint.oneHundred,
+                    ],
+                    [firstColorGalonSecondTint.tint]: [
+                        firstColorGalonSecondTint.oz,
+                        firstColorGalonSecondTint.sixty,
+                        firstColorGalonSecondTint.oneHundred,
+                    ],
+                    [firstColorGalonThirdTint.tint]: [
+                        firstColorGalonThirdTint.oz,
+                        firstColorGalonThirdTint.sixty,
+                        firstColorGalonThirdTint.oneHundred,
+                    ],
+                    [firstColorGalonFourthTint.tint]: [
+                        firstColorGalonFourthTint.oz,
+                        firstColorGalonFourthTint.sixty,
+                        firstColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [firstColorBucketFirstTint.tint]: [
+                        firstColorBucketFirstTint.oz,
+                        firstColorBucketFirstTint.sixty,
+                        firstColorBucketFirstTint.oneHundred,
+                    ],
+                    [firstColorBucketSecondTint.tint]: [
+                        firstColorBucketSecondTint.oz,
+                        firstColorBucketSecondTint.sixty,
+                        firstColorBucketSecondTint.oneHundred,
+                    ],
+                    [firstColorBucketThirdTint.tint]: [
+                        firstColorBucketThirdTint.oz,
+                        firstColorBucketThirdTint.sixty,
+                        firstColorBucketThirdTint.oneHundred,
+                    ],
+                    [firstColorBucketFourthTint.tint]: [
+                        firstColorBucketFourthTint.oz,
+                        firstColorBucketFourthTint.sixty,
+                        firstColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const secondColorGroup = {
+            typeNumber: checkTypeNumber(secondColor),
+            typeName: secondColor,
+            baseNumber:
+                checkTypeNumber(secondColor).slice(0, 2) +
+                checkBaseNumber(secondBase),
+            baseName: 'Base' + secondBase,
+            sizes: {
+                liter: {
+                    [secondColorLiterFirstTint.tint]: [
+                        secondColorLiterFirstTint.oz,
+                        secondColorLiterFirstTint.sixty,
+                        secondColorLiterFirstTint.oneHundred,
+                    ],
+                    [secondColorLiterSecondTint.tint]: [
+                        secondColorLiterSecondTint.oz,
+                        secondColorLiterSecondTint.sixty,
+                        secondColorLiterSecondTint.oneHundred,
+                    ],
+                    [secondColorLiterThirdTint.tint]: [
+                        secondColorLiterThirdTint.oz,
+                        secondColorLiterThirdTint.sixty,
+                        secondColorLiterThirdTint.oneHundred,
+                    ],
+                    [secondColorLiterFourthTint.tint]: [
+                        secondColorLiterFourthTint.oz,
+                        secondColorLiterFourthTint.sixty,
+                        secondColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [secondColorGalonFirstTint.tint]: [
+                        secondColorGalonFirstTint.oz,
+                        secondColorGalonFirstTint.sixty,
+                        secondColorGalonFirstTint.oneHundred,
+                    ],
+                    [secondColorGalonSecondTint.tint]: [
+                        secondColorGalonSecondTint.oz,
+                        secondColorGalonSecondTint.sixty,
+                        secondColorGalonSecondTint.oneHundred,
+                    ],
+                    [secondColorGalonThirdTint.tint]: [
+                        secondColorGalonThirdTint.oz,
+                        secondColorGalonThirdTint.sixty,
+                        secondColorGalonThirdTint.oneHundred,
+                    ],
+                    [secondColorGalonFourthTint.tint]: [
+                        secondColorGalonFourthTint.oz,
+                        secondColorGalonFourthTint.sixty,
+                        secondColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [secondColorBucketFirstTint.tint]: [
+                        secondColorBucketFirstTint.oz,
+                        secondColorBucketFirstTint.sixty,
+                        secondColorBucketFirstTint.oneHundred,
+                    ],
+                    [secondColorBucketSecondTint.tint]: [
+                        secondColorBucketSecondTint.oz,
+                        secondColorBucketSecondTint.sixty,
+                        secondColorBucketSecondTint.oneHundred,
+                    ],
+                    [secondColorBucketThirdTint.tint]: [
+                        secondColorBucketThirdTint.oz,
+                        secondColorBucketThirdTint.sixty,
+                        secondColorBucketThirdTint.oneHundred,
+                    ],
+                    [secondColorBucketFourthTint.tint]: [
+                        secondColorBucketFourthTint.oz,
+                        secondColorBucketFourthTint.sixty,
+                        secondColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const thirdColorGroup = {
+            typeNumber: checkTypeNumber(thirdColor),
+            typeName: thirdColor,
+            baseNumber:
+                checkTypeNumber(thirdColor).slice(0, 2) +
+                checkBaseNumber(thirdBase),
+            baseName: 'Base' + thirdBase,
+            sizes: {
+                liter: {
+                    [thirdColorLiterFirstTint.tint]: [
+                        thirdColorLiterFirstTint.oz,
+                        thirdColorLiterFirstTint.sixty,
+                        thirdColorLiterFirstTint.oneHundred,
+                    ],
+                    [thirdColorLiterSecondTint.tint]: [
+                        thirdColorLiterSecondTint.oz,
+                        thirdColorLiterSecondTint.sixty,
+                        thirdColorLiterSecondTint.oneHundred,
+                    ],
+                    [thirdColorLiterThirdTint.tint]: [
+                        thirdColorLiterThirdTint.oz,
+                        thirdColorLiterThirdTint.sixty,
+                        thirdColorLiterThirdTint.oneHundred,
+                    ],
+                    [thirdColorLiterFourthTint.tint]: [
+                        thirdColorLiterFourthTint.oz,
+                        thirdColorLiterFourthTint.sixty,
+                        thirdColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [thirdColorGalonFirstTint.tint]: [
+                        thirdColorGalonFirstTint.oz,
+                        thirdColorGalonFirstTint.sixty,
+                        thirdColorGalonFirstTint.oneHundred,
+                    ],
+                    [thirdColorGalonSecondTint.tint]: [
+                        thirdColorGalonSecondTint.oz,
+                        thirdColorGalonSecondTint.sixty,
+                        thirdColorGalonSecondTint.oneHundred,
+                    ],
+                    [thirdColorGalonThirdTint.tint]: [
+                        thirdColorGalonThirdTint.oz,
+                        thirdColorGalonThirdTint.sixty,
+                        thirdColorGalonThirdTint.oneHundred,
+                    ],
+                    [thirdColorGalonFourthTint.tint]: [
+                        thirdColorGalonFourthTint.oz,
+                        thirdColorGalonFourthTint.sixty,
+                        thirdColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [thirdColorBucketFirstTint.tint]: [
+                        thirdColorBucketFirstTint.oz,
+                        thirdColorBucketFirstTint.sixty,
+                        thirdColorBucketFirstTint.oneHundred,
+                    ],
+                    [thirdColorBucketSecondTint.tint]: [
+                        thirdColorBucketSecondTint.oz,
+                        thirdColorBucketSecondTint.sixty,
+                        thirdColorBucketSecondTint.oneHundred,
+                    ],
+                    [thirdColorBucketThirdTint.tint]: [
+                        thirdColorBucketThirdTint.oz,
+                        thirdColorBucketThirdTint.sixty,
+                        thirdColorBucketThirdTint.oneHundred,
+                    ],
+                    [thirdColorBucketFourthTint.tint]: [
+                        thirdColorBucketFourthTint.oz,
+                        thirdColorBucketFourthTint.sixty,
+                        thirdColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const fourthColorGroup = {
+            typeNumber: checkTypeNumber(fourthColor),
+            typeName: fourthColor,
+            baseNumber:
+                checkTypeNumber(fourthColor).slice(0, 2) +
+                checkBaseNumber(fourthBase),
+            baseName: 'Base' + fourthBase,
+            sizes: {
+                liter: {
+                    [fourthColorLiterFirstTint.tint]: [
+                        fourthColorLiterFirstTint.oz,
+                        fourthColorLiterFirstTint.sixty,
+                        fourthColorLiterFirstTint.oneHundred,
+                    ],
+                    [fourthColorLiterSecondTint.tint]: [
+                        fourthColorLiterSecondTint.oz,
+                        fourthColorLiterSecondTint.sixty,
+                        fourthColorLiterSecondTint.oneHundred,
+                    ],
+                    [fourthColorLiterThirdTint.tint]: [
+                        fourthColorLiterThirdTint.oz,
+                        fourthColorLiterThirdTint.sixty,
+                        fourthColorLiterThirdTint.oneHundred,
+                    ],
+                    [fourthColorLiterFourthTint.tint]: [
+                        fourthColorLiterFourthTint.oz,
+                        fourthColorLiterFourthTint.sixty,
+                        fourthColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [fourthColorGalonFirstTint.tint]: [
+                        fourthColorGalonFirstTint.oz,
+                        fourthColorGalonFirstTint.sixty,
+                        fourthColorGalonFirstTint.oneHundred,
+                    ],
+                    [fourthColorGalonSecondTint.tint]: [
+                        fourthColorGalonSecondTint.oz,
+                        fourthColorGalonSecondTint.sixty,
+                        fourthColorGalonSecondTint.oneHundred,
+                    ],
+                    [fourthColorGalonThirdTint.tint]: [
+                        fourthColorGalonThirdTint.oz,
+                        fourthColorGalonThirdTint.sixty,
+                        fourthColorGalonThirdTint.oneHundred,
+                    ],
+                    [fourthColorGalonFourthTint.tint]: [
+                        fourthColorGalonFourthTint.oz,
+                        fourthColorGalonFourthTint.sixty,
+                        fourthColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [fourthColorBucketFirstTint.tint]: [
+                        fourthColorBucketFirstTint.oz,
+                        fourthColorBucketFirstTint.sixty,
+                        fourthColorBucketFirstTint.oneHundred,
+                    ],
+                    [fourthColorBucketSecondTint.tint]: [
+                        fourthColorBucketSecondTint.oz,
+                        fourthColorBucketSecondTint.sixty,
+                        fourthColorBucketSecondTint.oneHundred,
+                    ],
+                    [fourthColorBucketThirdTint.tint]: [
+                        fourthColorBucketThirdTint.oz,
+                        fourthColorBucketThirdTint.sixty,
+                        fourthColorBucketThirdTint.oneHundred,
+                    ],
+                    [fourthColorBucketFourthTint.tint]: [
+                        fourthColorBucketFourthTint.oz,
+                        fourthColorBucketFourthTint.sixty,
+                        fourthColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const fifthColorGroup = {
+            typeNumber: checkTypeNumber(fifthColor),
+            typeName: fifthColor,
+            baseNumber:
+                checkTypeNumber(fifthColor).slice(0, 2) +
+                checkBaseNumber(fifthBase),
+            baseName: 'Base' + fifthBase,
+            sizes: {
+                liter: {
+                    [fifthColorLiterFirstTint.tint]: [
+                        fifthColorLiterFirstTint.oz,
+                        fifthColorLiterFirstTint.sixty,
+                        fifthColorLiterFirstTint.oneHundred,
+                    ],
+                    [fifthColorLiterSecondTint.tint]: [
+                        fifthColorLiterSecondTint.oz,
+                        fifthColorLiterSecondTint.sixty,
+                        fifthColorLiterSecondTint.oneHundred,
+                    ],
+                    [fifthColorLiterThirdTint.tint]: [
+                        fifthColorLiterThirdTint.oz,
+                        fifthColorLiterThirdTint.sixty,
+                        fifthColorLiterThirdTint.oneHundred,
+                    ],
+                    [fifthColorLiterFourthTint.tint]: [
+                        fifthColorLiterFourthTint.oz,
+                        fifthColorLiterFourthTint.sixty,
+                        fifthColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [fifthColorGalonFirstTint.tint]: [
+                        fifthColorGalonFirstTint.oz,
+                        fifthColorGalonFirstTint.sixty,
+                        fifthColorGalonFirstTint.oneHundred,
+                    ],
+                    [fifthColorGalonSecondTint.tint]: [
+                        fifthColorGalonSecondTint.oz,
+                        fifthColorGalonSecondTint.sixty,
+                        fifthColorGalonSecondTint.oneHundred,
+                    ],
+                    [fifthColorGalonThirdTint.tint]: [
+                        fifthColorGalonThirdTint.oz,
+                        fifthColorGalonThirdTint.sixty,
+                        fifthColorGalonThirdTint.oneHundred,
+                    ],
+                    [fifthColorGalonFourthTint.tint]: [
+                        fifthColorGalonFourthTint.oz,
+                        fifthColorGalonFourthTint.sixty,
+                        fifthColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [fifthColorBucketFirstTint.tint]: [
+                        fifthColorBucketFirstTint.oz,
+                        fifthColorBucketFirstTint.sixty,
+                        fifthColorBucketFirstTint.oneHundred,
+                    ],
+                    [fifthColorBucketSecondTint.tint]: [
+                        fifthColorBucketSecondTint.oz,
+                        fifthColorBucketSecondTint.sixty,
+                        fifthColorBucketSecondTint.oneHundred,
+                    ],
+                    [fifthColorBucketThirdTint.tint]: [
+                        fifthColorBucketThirdTint.oz,
+                        fifthColorBucketThirdTint.sixty,
+                        fifthColorBucketThirdTint.oneHundred,
+                    ],
+                    [fifthColorBucketFourthTint.tint]: [
+                        fifthColorBucketFourthTint.oz,
+                        fifthColorBucketFourthTint.sixty,
+                        fifthColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const sixthColorGroup = {
+            typeNumber: checkTypeNumber(sixthColor),
+            typeName: sixthColor,
+            baseNumber:
+                checkTypeNumber(sixthColor).slice(0, 2) +
+                checkBaseNumber(sixthBase),
+            baseName: 'Base' + sixthBase,
+            sizes: {
+                liter: {
+                    [sixthColorLiterFirstTint.tint]: [
+                        sixthColorLiterFirstTint.oz,
+                        sixthColorLiterFirstTint.sixty,
+                        sixthColorLiterFirstTint.oneHundred,
+                    ],
+                    [sixthColorLiterSecondTint.tint]: [
+                        sixthColorLiterSecondTint.oz,
+                        sixthColorLiterSecondTint.sixty,
+                        sixthColorLiterSecondTint.oneHundred,
+                    ],
+                    [sixthColorLiterThirdTint.tint]: [
+                        sixthColorLiterThirdTint.oz,
+                        sixthColorLiterThirdTint.sixty,
+                        sixthColorLiterThirdTint.oneHundred,
+                    ],
+                    [sixthColorLiterFourthTint.tint]: [
+                        sixthColorLiterFourthTint.oz,
+                        sixthColorLiterFourthTint.sixty,
+                        sixthColorLiterFourthTint.oneHundred,
+                    ],
+                },
+                galon: {
+                    [sixthColorGalonFirstTint.tint]: [
+                        sixthColorGalonFirstTint.oz,
+                        sixthColorGalonFirstTint.sixty,
+                        sixthColorGalonFirstTint.oneHundred,
+                    ],
+                    [sixthColorGalonSecondTint.tint]: [
+                        sixthColorGalonSecondTint.oz,
+                        sixthColorGalonSecondTint.sixty,
+                        sixthColorGalonSecondTint.oneHundred,
+                    ],
+                    [sixthColorGalonThirdTint.tint]: [
+                        sixthColorGalonThirdTint.oz,
+                        sixthColorGalonThirdTint.sixty,
+                        sixthColorGalonThirdTint.oneHundred,
+                    ],
+                    [sixthColorGalonFourthTint.tint]: [
+                        sixthColorGalonFourthTint.oz,
+                        sixthColorGalonFourthTint.sixty,
+                        sixthColorGalonFourthTint.oneHundred,
+                    ],
+                },
+                bucket: {
+                    [sixthColorBucketFirstTint.tint]: [
+                        sixthColorBucketFirstTint.oz,
+                        sixthColorBucketFirstTint.sixty,
+                        sixthColorBucketFirstTint.oneHundred,
+                    ],
+                    [sixthColorBucketSecondTint.tint]: [
+                        sixthColorBucketSecondTint.oz,
+                        sixthColorBucketSecondTint.sixty,
+                        sixthColorBucketSecondTint.oneHundred,
+                    ],
+                    [sixthColorBucketThirdTint.tint]: [
+                        sixthColorBucketThirdTint.oz,
+                        sixthColorBucketThirdTint.sixty,
+                        sixthColorBucketThirdTint.oneHundred,
+                    ],
+                    [sixthColorBucketFourthTint.tint]: [
+                        sixthColorBucketFourthTint.oz,
+                        sixthColorBucketFourthTint.sixty,
+                        sixthColorBucketFourthTint.oneHundred,
+                    ],
+                },
+            },
+        };
+
+        const newColor = {
+            codeNumber,
+            colorName,
+            hexCode,
+            base: [
+                firstColorGroup,
+                secondColorGroup,
+                thirdColorGroup,
+                fourthColorGroup,
+                fifthColorGroup,
+                sixthColorGroup,
+            ],
+        };
+
+        console.log(newColor);
     };
 
     return (
@@ -894,153 +1356,154 @@ const NewColorContextProvider = (props) => {
             value={{
                 values,
                 handleChange,
+                lines,
                 bases,
                 sizes,
                 tints,
-                firstBaseLiterFirstTint,
-                setFirstBaseLiterFirstTintHandleChange,
-                firstBaseLiterSecondTint,
-                setFirstBaseLiterSecondTintHandleChange,
-                firstBaseLiterThirdTint,
-                setFirstBaseLiterThirdTintHandleChange,
-                firstBaseLiterFourthTint,
-                setFirstBaseLiterFourthTintHandleChange,
-                firstBaseGalonFirstTint,
-                setFirstBaseGalonFirstTintHandleChange,
-                firstBaseGalonSecondTint,
-                setFirstBaseGalonSecondTintHandleChange,
-                firstBaseGalonThirdTint,
-                setFirstBaseGalonThirdTintHandleChange,
-                firstBaseGalonFourthTint,
-                setFirstBaseGalonFourthTintHandleChange,
-                firstBaseBucketFirstTint,
-                setFirstBaseBucketFirstTintHandleChange,
-                firstBaseBucketSecondTint,
-                setFirstBaseBucketSecondTintHandleChange,
-                firstBaseBucketThirdTint,
-                setFirstBaseBucketThirdTintHandleChange,
-                firstBaseBucketFourthTint,
-                setFirstBaseBucketFourthTintHandleChange,
-                secondBaseLiterFirstTint,
-                setSecondBaseLiterFirstTintHandleChange,
-                secondBaseLiterSecondTint,
-                setSecondBaseLiterSecondTintHandleChange,
-                secondBaseLiterThirdTint,
-                setSecondBaseLiterThirdTintHandleChange,
-                secondBaseLiterFourthTint,
-                setSecondBaseLiterFourthTintHandleChange,
-                secondBaseGalonFirstTint,
-                setSecondBaseGalonFirstTintHandleChange,
-                secondBaseGalonSecondTint,
-                setSecondBaseGalonSecondTintHandleChange,
-                secondBaseGalonThirdTint,
-                setSecondBaseGalonThirdTintHandleChange,
-                secondBaseGalonFourthTint,
-                setSecondBaseGalonFourthTintHandleChange,
-                secondBaseBucketFirstTint,
-                setSecondBaseBucketFirstTintHandleChange,
-                secondBaseBucketSecondTint,
-                setSecondBaseBucketSecondTintHandleChange,
-                secondBaseBucketThirdTint,
-                setSecondBaseBucketThirdTintHandleChange,
-                secondBaseBucketFourthTint,
-                setSecondBaseBucketFourthTintHandleChange,
-                thirdBaseLiterFirstTint,
-                setThirdBaseLiterFirstTintHandleChange,
-                thirdBaseLiterSecondTint,
-                setThirdBaseLiterSecondTintHandleChange,
-                thirdBaseLiterThirdTint,
-                setThirdBaseLiterThirdTintHandleChange,
-                thirdBaseLiterFourthTint,
-                setThirdBaseLiterFourthTintHandleChange,
-                thirdBaseGalonFirstTint,
-                setThirdBaseGalonFirstTintHandleChange,
-                thirdBaseGalonSecondTint,
-                setThirdBaseGalonSecondTintHandleChange,
-                thirdBaseGalonThirdTint,
-                setThirdBaseGalonThirdTintHandleChange,
-                thirdBaseGalonFourthTint,
-                setThirdBaseGalonFourthTintHandleChange,
-                thirdBaseBucketFirstTint,
-                setThirdBaseBucketFirstTintHandleChange,
-                thirdBaseBucketSecondTint,
-                setThirdBaseBucketSecondTintHandleChange,
-                thirdBaseBucketThirdTint,
-                setThirdBaseBucketThirdTintHandleChange,
-                thirdBaseBucketFourthTint,
-                setThirdBaseBucketFourthTintHandleChange,
-                fourthBaseLiterFirstTint,
-                setFourthBaseLiterFirstTintHandleChange,
-                fourthBaseLiterSecondTint,
-                setFourthBaseLiterSecondTintHandleChange,
-                fourthBaseLiterThirdTint,
-                setFourthBaseLiterThirdTintHandleChange,
-                fourthBaseLiterFourthTint,
-                setFourthBaseLiterFourthTintHandleChange,
-                fourthBaseGalonFirstTint,
-                setFourthBaseGalonFirstTintHandleChange,
-                fourthBaseGalonSecondTint,
-                setFourthBaseGalonSecondTintHandleChange,
-                fourthBaseGalonThirdTint,
-                setFourthBaseGalonThirdTintHandleChange,
-                fourthBaseGalonFourthTint,
-                setFourthBaseGalonFourthTintHandleChange,
-                fourthBaseBucketFirstTint,
-                setFourthBaseBucketFirstTintHandleChange,
-                fourthBaseBucketSecondTint,
-                setFourthBaseBucketSecondTintHandleChange,
-                fourthBaseBucketThirdTint,
-                setFourthBaseBucketThirdTintHandleChange,
-                fourthBaseBucketFourthTint,
-                setFourthBaseBucketFourthTintHandleChange,
-                fifthBaseLiterFirstTint,
-                setFifthBaseLiterFirstTintHandleChange,
-                fifthBaseLiterSecondTint,
-                setFifthBaseLiterSecondTintHandleChange,
-                fifthBaseLiterThirdTint,
-                setFifthBaseLiterThirdTintHandleChange,
-                fifthBaseLiterFourthTint,
-                setFifthBaseLiterFourthTintHandleChange,
-                fifthBaseGalonFirstTint,
-                setFifthBaseGalonFirstTintHandleChange,
-                fifthBaseGalonSecondTint,
-                setFifthBaseGalonSecondTintHandleChange,
-                fifthBaseGalonThirdTint,
-                setFifthBaseGalonThirdTintHandleChange,
-                fifthBaseGalonFourthTint,
-                setFifthBaseGalonFourthTintHandleChange,
-                fifthBaseBucketFirstTint,
-                setFifthBaseBucketFirstTintHandleChange,
-                fifthBaseBucketSecondTint,
-                setFifthBaseBucketSecondTintHandleChange,
-                fifthBaseBucketThirdTint,
-                setFifthBaseBucketThirdTintHandleChange,
-                fifthBaseBucketFourthTint,
-                setFifthBaseBucketFourthTintHandleChange,
-                sixthBaseLiterFirstTint,
-                setSixthBaseLiterFirstTintHandleChange,
-                sixthBaseLiterSecondTint,
-                setSixthBaseLiterSecondTintHandleChange,
-                sixthBaseLiterThirdTint,
-                setSixthBaseLiterThirdTintHandleChange,
-                sixthBaseLiterFourthTint,
-                setSixthBaseLiterFourthTintHandleChange,
-                sixthBaseGalonFirstTint,
-                setSixthBaseGalonFirstTintHandleChange,
-                sixthBaseGalonSecondTint,
-                setSixthBaseGalonSecondTintHandleChange,
-                sixthBaseGalonThirdTint,
-                setSixthBaseGalonThirdTintHandleChange,
-                sixthBaseGalonFourthTint,
-                setSixthBaseGalonFourthTintHandleChange,
-                sixthBaseBucketFirstTint,
-                setSixthBaseBucketFirstTintHandleChange,
-                sixthBaseBucketSecondTint,
-                setSixthBaseBucketSecondTintHandleChange,
-                sixthBaseBucketThirdTint,
-                setSixthBaseBucketThirdTintHandleChange,
-                sixthBaseBucketFourthTint,
-                setSixthBaseBucketFourthTintHandleChange,
+                firstColorLiterFirstTint,
+                setFirstColorLiterFirstTintHandleChange,
+                firstColorLiterSecondTint,
+                setFirstColorLiterSecondTintHandleChange,
+                firstColorLiterThirdTint,
+                setFirstColorLiterThirdTintHandleChange,
+                firstColorLiterFourthTint,
+                setFirstColorLiterFourthTintHandleChange,
+                firstColorGalonFirstTint,
+                setFirstColorGalonFirstTintHandleChange,
+                firstColorGalonSecondTint,
+                setFirstColorGalonSecondTintHandleChange,
+                firstColorGalonThirdTint,
+                setFirstColorGalonThirdTintHandleChange,
+                firstColorGalonFourthTint,
+                setFirstColorGalonFourthTintHandleChange,
+                firstColorBucketFirstTint,
+                setFirstColorBucketFirstTintHandleChange,
+                firstColorBucketSecondTint,
+                setFirstColorBucketSecondTintHandleChange,
+                firstColorBucketThirdTint,
+                setFirstColorBucketThirdTintHandleChange,
+                firstColorBucketFourthTint,
+                setFirstColorBucketFourthTintHandleChange,
+                secondColorLiterFirstTint,
+                setSecondColorLiterFirstTintHandleChange,
+                secondColorLiterSecondTint,
+                setSecondColorLiterSecondTintHandleChange,
+                secondColorLiterThirdTint,
+                setSecondColorLiterThirdTintHandleChange,
+                secondColorLiterFourthTint,
+                setSecondColorLiterFourthTintHandleChange,
+                secondColorGalonFirstTint,
+                setSecondColorGalonFirstTintHandleChange,
+                secondColorGalonSecondTint,
+                setSecondColorGalonSecondTintHandleChange,
+                secondColorGalonThirdTint,
+                setSecondColorGalonThirdTintHandleChange,
+                secondColorGalonFourthTint,
+                setSecondColorGalonFourthTintHandleChange,
+                secondColorBucketFirstTint,
+                setSecondColorBucketFirstTintHandleChange,
+                secondColorBucketSecondTint,
+                setSecondColorBucketSecondTintHandleChange,
+                secondColorBucketThirdTint,
+                setSecondColorBucketThirdTintHandleChange,
+                secondColorBucketFourthTint,
+                setSecondColorBucketFourthTintHandleChange,
+                thirdColorLiterFirstTint,
+                setThirdColorLiterFirstTintHandleChange,
+                thirdColorLiterSecondTint,
+                setThirdColorLiterSecondTintHandleChange,
+                thirdColorLiterThirdTint,
+                setThirdColorLiterThirdTintHandleChange,
+                thirdColorLiterFourthTint,
+                setThirdColorLiterFourthTintHandleChange,
+                thirdColorGalonFirstTint,
+                setThirdColorGalonFirstTintHandleChange,
+                thirdColorGalonSecondTint,
+                setThirdColorGalonSecondTintHandleChange,
+                thirdColorGalonThirdTint,
+                setThirdColorGalonThirdTintHandleChange,
+                thirdColorGalonFourthTint,
+                setThirdColorGalonFourthTintHandleChange,
+                thirdColorBucketFirstTint,
+                setThirdColorBucketFirstTintHandleChange,
+                thirdColorBucketSecondTint,
+                setThirdColorBucketSecondTintHandleChange,
+                thirdColorBucketThirdTint,
+                setThirdColorBucketThirdTintHandleChange,
+                thirdColorBucketFourthTint,
+                setThirdColorBucketFourthTintHandleChange,
+                fourthColorLiterFirstTint,
+                setFourthColorLiterFirstTintHandleChange,
+                fourthColorLiterSecondTint,
+                setFourthColorLiterSecondTintHandleChange,
+                fourthColorLiterThirdTint,
+                setFourthColorLiterThirdTintHandleChange,
+                fourthColorLiterFourthTint,
+                setFourthColorLiterFourthTintHandleChange,
+                fourthColorGalonFirstTint,
+                setFourthColorGalonFirstTintHandleChange,
+                fourthColorGalonSecondTint,
+                setFourthColorGalonSecondTintHandleChange,
+                fourthColorGalonThirdTint,
+                setFourthColorGalonThirdTintHandleChange,
+                fourthColorGalonFourthTint,
+                setFourthColorGalonFourthTintHandleChange,
+                fourthColorBucketFirstTint,
+                setFourthColorBucketFirstTintHandleChange,
+                fourthColorBucketSecondTint,
+                setFourthColorBucketSecondTintHandleChange,
+                fourthColorBucketThirdTint,
+                setFourthColorBucketThirdTintHandleChange,
+                fourthColorBucketFourthTint,
+                setFourthColorBucketFourthTintHandleChange,
+                fifthColorLiterFirstTint,
+                setFifthColorLiterFirstTintHandleChange,
+                fifthColorLiterSecondTint,
+                setFifthColorLiterSecondTintHandleChange,
+                fifthColorLiterThirdTint,
+                setFifthColorLiterThirdTintHandleChange,
+                fifthColorLiterFourthTint,
+                setFifthColorLiterFourthTintHandleChange,
+                fifthColorGalonFirstTint,
+                setFifthColorGalonFirstTintHandleChange,
+                fifthColorGalonSecondTint,
+                setFifthColorGalonSecondTintHandleChange,
+                fifthColorGalonThirdTint,
+                setFifthColorGalonThirdTintHandleChange,
+                fifthColorGalonFourthTint,
+                setFifthColorGalonFourthTintHandleChange,
+                fifthColorBucketFirstTint,
+                setFifthColorBucketFirstTintHandleChange,
+                fifthColorBucketSecondTint,
+                setFifthColorBucketSecondTintHandleChange,
+                fifthColorBucketThirdTint,
+                setFifthColorBucketThirdTintHandleChange,
+                fifthColorBucketFourthTint,
+                setFifthColorBucketFourthTintHandleChange,
+                sixthColorLiterFirstTint,
+                setSixthColorLiterFirstTintHandleChange,
+                sixthColorLiterSecondTint,
+                setSixthColorLiterSecondTintHandleChange,
+                sixthColorLiterThirdTint,
+                setSixthColorLiterThirdTintHandleChange,
+                sixthColorLiterFourthTint,
+                setSixthColorLiterFourthTintHandleChange,
+                sixthColorGalonFirstTint,
+                setSixthColorGalonFirstTintHandleChange,
+                sixthColorGalonSecondTint,
+                setSixthColorGalonSecondTintHandleChange,
+                sixthColorGalonThirdTint,
+                setSixthColorGalonThirdTintHandleChange,
+                sixthColorGalonFourthTint,
+                setSixthColorGalonFourthTintHandleChange,
+                sixthColorBucketFirstTint,
+                setSixthColorBucketFirstTintHandleChange,
+                sixthColorBucketSecondTint,
+                setSixthColorBucketSecondTintHandleChange,
+                sixthColorBucketThirdTint,
+                setSixthColorBucketThirdTintHandleChange,
+                sixthColorBucketFourthTint,
+                setSixthColorBucketFourthTintHandleChange,
                 handleSubmit,
             }}
         >
