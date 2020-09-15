@@ -73,6 +73,18 @@
         }
     }
 
+    &__change-language {
+        button {
+            width: 100%;
+            font-weight: bold;
+            color: $gray-color;
+            min-height: 3.5rem;
+            height: 3.5rem;
+            max-height: 3.5rem;
+            border-radius: $border-radius;
+        }
+    }
+
     &__theme {
         button {
             width: 100%;
