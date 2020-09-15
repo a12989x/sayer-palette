@@ -5,6 +5,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { useForm } from '../useForm';
 import { AuthContext } from '../../contexts/AuthContext';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 const Register = () => {
     const [isEmailValidate, setIsEmailValidate] = useState(true);
@@ -14,6 +15,7 @@ const Register = () => {
     );
 
     const { register } = useContext(AuthContext);
+    const { t } = useContext(LanguageContext);
 
     const [values, handleChange] = useForm({
         name: '',
@@ -60,10 +62,8 @@ const Register = () => {
     return (
         <form className="register" onSubmit={(e) => register(e, values)}>
             <div className="container">
-                <h1 className="title">Register</h1>
-                <h4 className="description">
-                    Enter your details to create an account
-                </h4>
+                <h1 className="title">{t('register.title')}</h1>
+                <h4 className="description">{t('register.description')}</h4>
                 <div className="input-wrapper">
                     <input
                         required={true}
@@ -75,7 +75,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <label htmlFor="name">
-                        <span>Name</span>
+                        <span>{t('register.name')}</span>
                     </label>
                 </div>
 
@@ -92,7 +92,7 @@ const Register = () => {
                         }}
                     />
                     <label htmlFor="email">
-                        <span>Email</span>
+                        <span>{t('register.email')}</span>
                     </label>
                 </div>
 
@@ -106,7 +106,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <label htmlFor="username">
-                        <span>Username</span>
+                        <span>{t('register.username')}</span>
                     </label>
                 </div>
 
@@ -123,7 +123,7 @@ const Register = () => {
                         }}
                     />
                     <label htmlFor="password">
-                        <span>Password</span>
+                        <span>{t('register.password')}</span>
                     </label>
                 </div>
 
@@ -140,7 +140,7 @@ const Register = () => {
                         }}
                     />
                     <label htmlFor="confirmPassword">
-                        <span>Confirm Password</span>
+                        <span>{t('register.confirmPassword')}</span>
                     </label>
                 </div>
 
@@ -148,10 +148,10 @@ const Register = () => {
                     className="register__button primary-button"
                     type="submit"
                 >
-                    Register
+                    {t('register.title')}
                 </button>
                 <NavLink to="sign-in" className="register__link">
-                    Do you already have an account? Sign In
+                    {t('register.link')}
                 </NavLink>
             </div>
         </form>

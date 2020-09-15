@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { LanguageContext } from '../../contexts/LanguageContext';
+
 const NoMatch = () => {
+    const { t } = useContext(LanguageContext);
+
     return (
         <main className="not-found">
             <div className="container">
                 <p>Oops!</p>
-                <h1>404 - Page not found</h1>
-                <h3>
-                    The page you are looking for might have been removed had its
-                    name changed or is temporarily unavailable
-                </h3>
+                <h1>404 - {t('notFound.heading')}</h1>
+                <h3>{t('notFound.description')}</h3>
                 <NavLink to="/sign-in">
                     <button className="primary-button">
-                        Go to Sign In Page
+                        {t('notFound.button')}
                     </button>
                 </NavLink>
             </div>

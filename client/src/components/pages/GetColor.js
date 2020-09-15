@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { ClipLoader } from 'react-spinners';
 
 import { useForm } from '../useForm';
 import { notifySuccess, notifyError, notifyInfo } from '../Toastify';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 toast.configure();
 
 const GetColor = () => {
+    const { t } = useContext(LanguageContext);
+
     const [values, handleChange] = useForm({ number: '', name: '' });
     const [color, setColor] = useState({});
     const [prevValue, setPrevValue] = useState('');
@@ -84,8 +87,8 @@ const GetColor = () => {
     return (
         <main className="get-color">
             <div className="container">
-                <h1 className="title">Get Color</h1>
-                <h4 className="description">Put a code to get the data.</h4>
+                <h1 className="title">{t('getColor.title')}</h1>
+                <h4 className="description">{t('getColor.description')}</h4>
 
                 <form onSubmit={(e) => getColor(e)}>
                     <div className="input-wrapper">
@@ -99,7 +102,7 @@ const GetColor = () => {
                             disabled={values.name.length ? true : false}
                         />
                         <label htmlFor="number">
-                            <span>Number / Color</span>
+                            <span>{t('getColor.number')}</span>
                         </label>
                     </div>
 
@@ -114,7 +117,7 @@ const GetColor = () => {
                             disabled={values.number.length ? true : false}
                         />
                         <label htmlFor="name">
-                            <span>Name / Color</span>
+                            <span>{t('getColor.name')}</span>
                         </label>
                     </div>
 
@@ -159,7 +162,7 @@ const GetColor = () => {
                         className="get-color__button primary-button"
                     >
                         {!isLoading ? (
-                            'Get Color'
+                            t('getColor.title')
                         ) : (
                             <ClipLoader
                                 loading={true}

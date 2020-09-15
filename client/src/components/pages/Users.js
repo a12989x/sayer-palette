@@ -8,6 +8,7 @@ import { ClipLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { AuthContext } from '../../contexts/AuthContext';
+import { LanguageContext } from '../../contexts/LanguageContext';
 import { notifySuccess, notifyError } from '../Toastify';
 
 toast.configure();
@@ -81,6 +82,8 @@ const User = (props) => {
 };
 
 const Users = () => {
+    const { t } = useContext(LanguageContext);
+
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -112,16 +115,14 @@ const Users = () => {
     return (
         <main className="users">
             <div className="container">
-                <h1 className="title">Users Page</h1>
-                <h4 className="description">
-                    All users and their roles are here.
-                </h4>
+                <h1 className="title">{t('users.title')}</h1>
+                <h4 className="description">{t('users.description')}</h4>
 
                 {!isLoading ? (
                     <section className="users__wrapper">
                         <div className="users__wrapper-header">
-                            <h2>Username</h2>
-                            <h2>Role</h2>
+                            <h2>{t('users.username')}</h2>
+                            <h2>{t('users.role')}</h2>
                         </div>
                         <hr />
                         {users.map((user) => (

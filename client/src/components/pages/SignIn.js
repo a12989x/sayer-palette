@@ -6,18 +6,18 @@ import { ClipLoader } from 'react-spinners';
 
 import { useForm } from '../useForm';
 import { AuthContext } from '../../contexts/AuthContext';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 const SignIn = () => {
     const [values, handleChange] = useForm({ username: '', password: '' });
     const { signIn, isLoading } = useContext(AuthContext);
+    const { t } = useContext(LanguageContext);
 
     return (
         <form className="sign-in" onSubmit={(e) => signIn(e, values)}>
             <div className="container">
-                <h1 className="title">Sign In</h1>
-                <h4 className="description">
-                    Enter your data to access the site.
-                </h4>
+                <h1 className="title">{t('signIn.title')}</h1>
+                <h4 className="description">{t('signIn.description')}</h4>
                 <div className="input-wrapper">
                     <input
                         required={true}
@@ -29,7 +29,7 @@ const SignIn = () => {
                         autoFocus={true}
                     />
                     <label htmlFor="username">
-                        <span>Username</span>
+                        <span>{t('signIn.user')}</span>
                     </label>
                 </div>
 
@@ -43,7 +43,7 @@ const SignIn = () => {
                         onChange={handleChange}
                     />
                     <label htmlFor="password">
-                        <span>Password</span>
+                        <span>{t('signIn.password')}</span>
                     </label>
                 </div>
 
@@ -52,13 +52,13 @@ const SignIn = () => {
                     className="sign-in__button primary-button"
                 >
                     {!isLoading ? (
-                        'Sign In'
+                        t('signIn.title')
                     ) : (
                         <ClipLoader loading={true} size={35} color="#1a8ccb" />
                     )}
                 </button>
                 <NavLink to="register" className="sign-in__link">
-                    You do not have an account? Sign up
+                    {t('signIn.link')}
                 </NavLink>
             </div>
         </form>

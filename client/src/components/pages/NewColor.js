@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import { NewColorContext } from '../../contexts/NewColorContext';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 import Tint from '../new-color/Tint';
 
@@ -156,14 +157,13 @@ const NewColor = () => {
         setSixthColorBucketFourthTintHandleChange,
         handleSubmit,
     } = useContext(NewColorContext);
+    const { t } = useContext(LanguageContext);
 
     return (
         <main className="new-color">
             <div className="container">
-                <h1 className="title">Create a new color</h1>
-                <h4 className="description">
-                    Put the data to create a new color.
-                </h4>
+                <h1 className="title">{t('newColor.title')}</h1>
+                <h4 className="description">{t('newColor.description')}</h4>
 
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div className="input-wrapper">
@@ -176,7 +176,7 @@ const NewColor = () => {
                             required={true}
                         />
                         <label htmlFor="codeNumber">
-                            <span>Number / Color</span>
+                            <span>{t('newColor.number')} / Color</span>
                         </label>
                     </div>
                     <div className="input-wrapper">
@@ -189,7 +189,7 @@ const NewColor = () => {
                             required={true}
                         />
                         <label htmlFor="colorName">
-                            <span>Name / Color</span>
+                            <span>{t('newColor.name')} / Color</span>
                         </label>
                     </div>
                     <div className="input-wrapper">
@@ -202,12 +202,12 @@ const NewColor = () => {
                             required={true}
                         />
                         <label htmlFor="hexCode">
-                            <span>Hex Number</span>
+                            <span>Hex {t('newColor.number')}</span>
                         </label>
                     </div>
 
                     <section className="base">
-                        <h3>First Color</h3>
+                        <h3>{t('newColor.first')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -254,7 +254,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={firstColorLiterFirstTint}
                                 handleChange={
@@ -310,7 +310,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={firstColorBucketFirstTint}
                                 handleChange={
@@ -339,7 +339,7 @@ const NewColor = () => {
                     </section>
 
                     <section className="base">
-                        <h3>Second Color</h3>
+                        <h3>{t('newColor.second')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -386,7 +386,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={secondColorLiterFirstTint}
                                 handleChange={
@@ -442,7 +442,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={secondColorBucketFirstTint}
                                 handleChange={
@@ -471,7 +471,7 @@ const NewColor = () => {
                     </section>
 
                     <section className="base">
-                        <h3>Third Color</h3>
+                        <h3>{t('newColor.third')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -518,7 +518,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={thirdColorLiterFirstTint}
                                 handleChange={
@@ -574,7 +574,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={thirdColorBucketFirstTint}
                                 handleChange={
@@ -603,7 +603,7 @@ const NewColor = () => {
                     </section>
 
                     <section className="base">
-                        <h3>Fourth Color</h3>
+                        <h3>{t('newColor.fourth')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -650,7 +650,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={fourthColorLiterFirstTint}
                                 handleChange={
@@ -706,7 +706,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={fourthColorBucketFirstTint}
                                 handleChange={
@@ -735,7 +735,7 @@ const NewColor = () => {
                     </section>
 
                     <section className="base">
-                        <h3>Fifth Color</h3>
+                        <h3>{t('newColor.fifth')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -782,7 +782,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={fifthColorLiterFirstTint}
                                 handleChange={
@@ -838,7 +838,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={fifthColorBucketFirstTint}
                                 handleChange={
@@ -867,7 +867,7 @@ const NewColor = () => {
                     </section>
 
                     <section className="base">
-                        <h3>Sixth Color</h3>
+                        <h3>{t('newColor.sixth')} Color</h3>
 
                         <div className="selects-wrapper">
                             <div className="select-wrapper">
@@ -914,7 +914,7 @@ const NewColor = () => {
                         </div>
 
                         <section className="size">
-                            <h4>Liter</h4>
+                            <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={sixthColorLiterFirstTint}
                                 handleChange={
@@ -970,7 +970,7 @@ const NewColor = () => {
                         </section>
 
                         <section className="size">
-                            <h4>Bucket</h4>
+                            <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={sixthColorBucketFirstTint}
                                 handleChange={
@@ -1002,7 +1002,7 @@ const NewColor = () => {
                         type="submit"
                         className="new-color__button primary-button"
                     >
-                        Create Color
+                        {t('newColor.button')}
                     </button>
                 </form>
             </div>
