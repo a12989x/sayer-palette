@@ -3,35 +3,61 @@ import { NavLink } from 'react-router-dom';
 import { RiLogoutCircleLine } from 'react-icons/ri';
 
 import { AuthContext } from '../contexts/AuthContext';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 import SayerLogoMini from '../img/Sayer Logo Mini.svg';
 
-const GetColor = () => (
-    <li>
-        <NavLink exact to="/get-color">
-            Get Color
-        </NavLink>
-    </li>
-);
+const GetColor = () => {
+    const { t } = useContext(LanguageContext);
 
-const NewColor = () => (
-    <li>
-        <NavLink exact to="/new-color">
-            New Color
-        </NavLink>
-    </li>
-);
+    return (
+        <li>
+            <NavLink exact to="/get-color">
+                {t('navbar.thirdLink')}
+            </NavLink>
+        </li>
+    );
+};
 
-const Users = () => (
-    <li>
-        <NavLink exact to="/users">
-            Users
-        </NavLink>
-    </li>
-);
+const NewColor = () => {
+    const { t } = useContext(LanguageContext);
+
+    return (
+        <li>
+            <NavLink exact to="/new-color">
+                {t('navbar.fourthLink')}
+            </NavLink>
+        </li>
+    );
+};
+
+const Users = () => {
+    const { t } = useContext(LanguageContext);
+
+    return (
+        <li>
+            <NavLink exact to="/users">
+                {t('navbar.fifthLink')}
+            </NavLink>
+        </li>
+    );
+};
+
+const Language = () => {
+    const { language, changeLanguage } = useContext(LanguageContext);
+
+    return (
+        <li className="navbar__change-language">
+            <button onClick={() => changeLanguage()}>
+                {language === 'en' ? 'EN' : 'ES'}
+            </button>
+        </li>
+    );
+};
 
 const Theme = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const { t } = useContext(LanguageContext);
 
     const setRootVariable = (variable, color) =>
         document.documentElement.style.setProperty(variable, color);
@@ -68,7 +94,7 @@ const Theme = () => {
     return (
         <li onClick={changeTheme} className="navbar__theme">
             <button>
-                🌓 <span>Theme</span>
+                🌓 <span>{t('navbar.sixthLink')}</span>
             </button>
         </li>
     );
@@ -76,11 +102,12 @@ const Theme = () => {
 
 const SignOut = () => {
     const { setIsSignIn } = useContext(AuthContext);
+    const { t } = useContext(LanguageContext);
 
     return (
         <li onClick={() => setIsSignIn(false)}>
             <NavLink exact to="/sign-in" className="navbar__sign-out">
-                <RiLogoutCircleLine /> <span>Sign Out</span>
+                <RiLogoutCircleLine /> <span>{t('navbar.seventhLink')}</span>
             </NavLink>
         </li>
     );
@@ -88,6 +115,7 @@ const SignOut = () => {
 
 const Navbar = () => {
     const { user, isSignIn } = useContext(AuthContext);
+    const { t } = useContext(LanguageContext);
 
     const roleUser = () => (
         <>
@@ -95,6 +123,7 @@ const Navbar = () => {
                 <GetColor />
             </div>
             <div className="navbar__wrapper">
+                <Language />
                 <Theme />
                 <SignOut />
             </div>
@@ -108,6 +137,7 @@ const Navbar = () => {
                 <NewColor />
             </div>
             <div className="navbar__wrapper">
+                <Language />
                 <Theme />
                 <SignOut />
             </div>
@@ -122,6 +152,7 @@ const Navbar = () => {
                 <Users />
             </div>
             <div className="navbar__wrapper">
+                <Language />
                 <Theme />
                 <SignOut />
             </div>
@@ -148,16 +179,17 @@ const Navbar = () => {
                         <div>
                             <li>
                                 <NavLink exact to="/sign-in">
-                                    Sign In
+                                    {t('navbar.firstLink')}
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink exact to="/register">
-                                    Register
+                                    {t('navbar.secondLink')}
                                 </NavLink>
                             </li>
                         </div>
                         <div className="navbar__wrapper">
+                            <Language />
                             <Theme />
                         </div>
                     </>
