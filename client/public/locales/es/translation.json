@@ -1,0 +1,60 @@
+{
+    "navbar": {
+        "firstLink": "Iniciar Sesión",
+        "secondLink": "Registrarse",
+        "thirdLink": "Obtener Color",
+        "fourthLink": "Nuevo Color",
+        "fifthLink": "Usuarios",
+        "sixthLink": "Tema",
+        "seventhLink": "Cerrar Sesión"
+    },
+    "notFound": {
+        "heading": "Pagina no encontrada",
+        "description": "Es posible que la página que está buscando se haya eliminado, se cambió el nombre o no está disponible temporalmente",
+        "button": "Ve a la pagina de iniciar sesión"
+    },
+    "signIn": {
+        "title": "Iniciar Sesión",
+        "description": "Ingrese sus datos para acceder al sitio.",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "link": "¿No tienes cuenta? Regístrate"
+    },
+    "register": {
+        "title": "Registrarse",
+        "description": "Ingrese sus datos para crear una cuenta.",
+        "name": "Nombre",
+        "email": "Email",
+        "username": "Usuario",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar Contraseña",
+        "link": "¿Ya tienes una cuenta? Inicia Sesión"
+    },
+    "getColor": {
+        "title": "Obtener Color",
+        "description": "Descripcion",
+        "number": "Numero / Color",
+        "name": "Nombre / Color"
+    },
+    "newColor": {
+        "title": "Nuevo Color",
+        "description": "Pon los datos para crear un nuevo color.",
+        "number": "Numero",
+        "name": "Nombre",
+        "first": "Primer",
+        "second": "Segundo",
+        "third": "Tercer",
+        "fourth": "Cuarto",
+        "fifth": "Quinto",
+        "sixth": "Sexto",
+        "liter": "Litro",
+        "bucket": "Cubeta",
+        "button": "Crear Color"
+    },
+    "users": {
+        "title": "Usuarios",
+        "description": "Todos los usuarios y sus roles están aquí.",
+        "username": "Nombre de usuario",
+        "role": "Rol"
+    }
+}

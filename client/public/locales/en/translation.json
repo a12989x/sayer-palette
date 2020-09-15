@@ -1,0 +1,60 @@
+{
+    "navbar": {
+        "firstLink": "Sign In",
+        "secondLink": "Register",
+        "thirdLink": "Get Color",
+        "fourthLink": "New Color",
+        "fifthLink": "Users",
+        "sixthLink": "Theme",
+        "seventhLink": "Sign Out"
+    },
+    "notFound": {
+        "heading": "Page not found",
+        "description": "The page you are looking for may have been deleted, renamed, or temporarily unavailable",
+        "button": "Go to Sign In Page"
+    },
+    "signIn": {
+        "title": "Sign In",
+        "description": "Enter your data to access the site.",
+        "user": "User",
+        "password": "Password",
+        "link": "You do not have an account? Register"
+    },
+    "register": {
+        "title": "Register",
+        "description": "Enter your details to create an account.",
+        "name": "Name",
+        "email": "Email",
+        "username": "Username",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "link": "Do you already have an account? Sign In"
+    },
+    "getColor": {
+        "title": "Get Color",
+        "description": "Description",
+        "number": "Number / Color",
+        "name": "Name / Color"
+    },
+    "newColor": {
+        "title": "New Color",
+        "description": "Put the data to create a new color.",
+        "number": "Number",
+        "name": "Name",
+        "first": "First",
+        "second": "Second",
+        "third": "Third",
+        "fourth": "Fourth",
+        "fifth": "Fifth",
+        "sixth": "Sixth",
+        "liter": "Liter",
+        "bucket": "Bucket",
+        "button": "Create Color"
+    },
+    "users": {
+        "title": "Users",
+        "description": "All users and their roles are here.",
+        "username": "Username",
+        "role": "Role"
+    }
+}
