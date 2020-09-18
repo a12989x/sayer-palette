@@ -101,11 +101,11 @@ const Theme = () => {
 };
 
 const SignOut = () => {
-    const { setIsSignIn } = useContext(AuthContext);
+    const { signOut } = useContext(AuthContext);
     const { t } = useContext(LanguageContext);
 
     return (
-        <li onClick={() => setIsSignIn(false)}>
+        <li onClick={signOut}>
             <NavLink exact to="/sign-in" className="navbar__sign-out">
                 <RiLogoutCircleLine /> <span>{t('navbar.seventhLink')}</span>
             </NavLink>
