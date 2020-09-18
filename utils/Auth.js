@@ -82,7 +82,12 @@ const userLogin = async (userCreds, role, res) => {
             expiresIn: 24,
         };
 
-        res.cookie('token', token, { httpOnly: true });
+        res.cookie('token', token, {
+            maxAge: 60 * 60 * 1000 * 24,
+            httpOnly: true,
+            secure: true,
+            sameSite: true,
+        });
         return res.status(200).json({
             ...result,
             message: 'You are now logged in',
@@ -91,6 +96,22 @@ const userLogin = async (userCreds, role, res) => {
     } else {
         return res.status(404).json({
             message: 'Incorrect Password',
+            success: false,
+        });
+    }
+};
+
+const userLogout = async (req, res) => {
+    try {
+        await res.clearCookie('token');
+
+        return res.status(200).json({
+            message: 'Success Logout',
+            success: true,
+        });
+    } catch (error) {
+        return res.status(404).json({
+            message: 'Invalid Logout',
             success: false,
         });
     }
@@ -109,4 +130,5 @@ const validateEmail = async (email) => {
 module.exports = {
     userRegister,
     userLogin,
+    userLogout,
 };
