@@ -10,8 +10,11 @@ i18n.use(Backend)
         fallbackLng: 'en',
         debug: true,
         detection: {
-            order: ['queryString', 'cookie'],
-            cache: ['cookie'],
+            order: ['queryString', 'cookie', 'localStorage'],
+            lookupQuerystring: 'lng',
+            lookupCookie: 'i18next',
+            lookupLocalStorage: 'i18nextLng',
+            caches: ['cookie', 'localStorage'],
         },
         interpolation: {
             escapeValue: false,
