@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import History from '../components/History';
-import { notifySuccess, notifyError } from '../components/Toastify';
+import { notifySuccess, notifyError, notifyInfo } from '../components/Toastify';
 
 export const AuthContext = createContext();
 
@@ -59,9 +59,29 @@ const AuthContextProvider = (props) => {
         }
     };
 
+    const signOut = async () => {
+        try {
+            await axios.post('/api/users/logout');
+            History.push('/sign-in');
+            setIsSignIn(false);
+            setUser({});
+            notifyInfo('You sign out correctly');
+        } catch (error) {
+            notifyError('Error to sign out');
+        }
+    };
+
     return (
         <AuthContext.Provider
-            value={{ user, isSignIn, isLoading, setIsSignIn, signIn, register }}
+            value={{
+                user,
+                isSignIn,
+                isLoading,
+                setIsSignIn,
+                signIn,
+                register,
+                signOut,
+            }}
         >
             {props.children}
         </AuthContext.Provider>
