@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { userRegister, userLogin } = require('../utils/Auth.js');
+const { userRegister, userLogin, userLogout } = require('../utils/Auth.js');
 const {
     getUsers,
     getUser,
@@ -51,6 +51,8 @@ router.post(
         userLogin(req.body, user.role, res);
     }
 );
+
+router.post('/logout', async (req, res) => await userLogout(req, res));
 
 router.post(
     '/login-admin',
