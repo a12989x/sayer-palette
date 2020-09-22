@@ -1,6 +1,7 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import cookie from 'react-cookies';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,6 +16,13 @@ const AuthContextProvider = (props) => {
     const [isSignIn, setIsSignIn] = useState(false);
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        const isSign = cookie.load('isSignIn');
+        console.log(cookie.loadAll());
+        isSign ? setIsSignIn(true) : setIsSignIn(false);
+        isSign ? setUser(isSign) : setUser({});
+    }, []);
 
     const signIn = async (e, values) => {
         e.preventDefault();
@@ -32,6 +40,15 @@ const AuthContextProvider = (props) => {
                 email: res.data.email,
                 role: res.data.role,
             });
+            cookie.save(
+                'isSignIn',
+                {
+                    username: res.data.username,
+                    email: res.data.email,
+                    role: res.data.role,
+                },
+                { path: '/', sameSite: true }
+            );
             notifySuccess('You sign in correctly');
         } catch (error) {
             setIsLoading(false);
@@ -62,6 +79,7 @@ const AuthContextProvider = (props) => {
     const signOut = async () => {
         try {
             await axios.post('/api/users/logout');
+            cookie.remove('isSignIn');
             History.push('/sign-in');
             setIsSignIn(false);
             setUser({});
