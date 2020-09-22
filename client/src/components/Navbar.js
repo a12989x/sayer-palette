@@ -64,7 +64,6 @@ const Theme = () => {
 
     useEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            console.log('🎉 device on Dark mode');
             setRootVariable('--background-color', '#23262b');
             setRootVariable('--gray-color', '#4f4f4f');
             setRootVariable('--text-color', '#ecf0f3');
