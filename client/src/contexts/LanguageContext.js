@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import ls from 'local-storage';
+import cookie from 'react-cookies';
 
 export const LanguageContext = createContext();
 
@@ -9,7 +9,7 @@ const LanguageContextProvider = (props) => {
     const [t, i18n] = useTranslation();
 
     useEffect(() => {
-        const lng = ls.get('i18nextLng');
+        const lng = cookie.load('i18next');
         setLanguage(lng);
     }, []);
 
