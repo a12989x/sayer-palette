@@ -19,7 +19,6 @@ const AuthContextProvider = (props) => {
 
     useEffect(() => {
         const isSign = cookie.load('isSignIn');
-        console.log(cookie.loadAll());
         isSign ? setIsSignIn(true) : setIsSignIn(false);
         isSign ? setUser(isSign) : setUser({});
     }, []);
