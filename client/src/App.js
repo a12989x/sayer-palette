@@ -4,20 +4,22 @@ import { Router, Switch, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
 import History from './components/History';
 
-import Home from './components/pages/Home';
 import Navbar from './components/Navbar';
 import SignIn from './components/pages/SignIn';
 import Register from './components/pages/Register';
 import GetColor from './components/pages/GetColor';
 import NewColor from './components/pages/NewColor';
 import Users from './components/pages/Users';
+import ModalIdleTimer from './components/ModalIdleTimer';
 import NotFound from './components/pages/NotFound';
 
 const App = () => {
     const { user, isSignIn } = useContext(AuthContext);
 
     const roleUser = () => (
-        <Route exact path="/get-color" component={GetColor} />
+        <>
+            <Route exact path="/get-color" component={GetColor} />
+        </>
     );
 
     const roleAdmin = () => (
@@ -45,9 +47,21 @@ const App = () => {
             <Router history={History}>
                 <Navbar />
                 <Switch>
-                    <Route exact path="/sign-in" component={SignIn} />
-                    <Route exact path="/register" component={Register} />
-                    {isSignIn && renderPages()}
+                    {!isSignIn ? (
+                        <>
+                            <Route exact path="/sign-in" component={SignIn} />
+                            <Route
+                                exact
+                                path="/register"
+                                component={Register}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            {renderPages()}
+                            <ModalIdleTimer />
+                        </>
+                    )}
                     <Route component={NotFound} />
                 </Switch>
             </Router>
