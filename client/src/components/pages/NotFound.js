@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../../contexts/LanguageContext';
 import { AuthContext } from '../../contexts/AuthContext';
 
-const NoMatch = () => {
+const NotFound = () => {
     const { t } = useContext(LanguageContext);
     const { isSignIn } = useContext(AuthContext);
 
@@ -24,4 +24,4 @@ const NoMatch = () => {
     );
 };
 
-export default NoMatch;
+export default NotFound;
