@@ -11,7 +11,6 @@ import GetColor from './components/pages/GetColor';
 import NewColor from './components/pages/NewColor';
 import Users from './components/pages/Users';
 import ModalIdleTimer from './components/ModalIdleTimer';
-import NotFound from './components/pages/NotFound';
 
 const App = () => {
     const { user, isSignIn } = useContext(AuthContext);
@@ -55,12 +54,10 @@ const App = () => {
                                 path="/register"
                                 component={Register}
                             />
-                            {/* <Route component={NotFound} /> */}
                         </>
                     ) : (
                         <>
                             {renderPages()}
-                            {/* <Route path="*" component={NotFound} /> */}
                             <ModalIdleTimer />
                         </>
                     )}
