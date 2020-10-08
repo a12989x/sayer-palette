@@ -1,10 +1,11 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import cookie from 'react-cookies';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import { LanguageContext } from './LanguageContext';
 import History from '../components/History';
 import { notifySuccess, notifyError, notifyInfo } from '../components/Toastify';
 
@@ -16,6 +17,7 @@ const AuthContextProvider = (props) => {
     const [isSignIn, setIsSignIn] = useState(false);
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const { t } = useContext(LanguageContext);
 
     useEffect(() => {
         const isSign = cookie.load('isSignIn');
@@ -48,10 +50,10 @@ const AuthContextProvider = (props) => {
                 },
                 { path: '/', sameSite: true }
             );
-            notifySuccess('You sign in correctly');
+            notifySuccess(t('notify.signIn.success'));
         } catch (error) {
             setIsLoading(false);
-            notifyError('Username or password incorrect');
+            notifyError(t('notify.signIn.error'));
         }
     };
 
@@ -69,9 +71,9 @@ const AuthContextProvider = (props) => {
             };
             const res = await axios.post('/api/users/register', params);
             History.push('/sign-in');
-            notifySuccess('You register correctly');
+            notifySuccess(t('notify.register.success'));
         } catch (error) {
-            notifyError('Please make sure if your credentials are valid');
+            notifyError(t('notify.register.error'));
         }
     };
 
@@ -82,9 +84,9 @@ const AuthContextProvider = (props) => {
             History.push('/sign-in');
             setIsSignIn(false);
             setUser({});
-            notifyInfo('You sign out correctly');
+            notifyInfo(t('notify.signOut.success'));
         } catch (error) {
-            notifyError('Error to sign out');
+            notifyError(t('notify.signOut.error'));
         }
     };
 

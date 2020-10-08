@@ -51,9 +51,9 @@ const GetColor = () => {
                 setBasesIfExists(res.data.base);
                 setSelectsDisabled(false);
                 setIsLoading(false);
-                notifySuccess('Color obtained satisfactorily');
+                notifySuccess(t('notify.getColor.success'));
             } catch (error) {
-                notifyError('Color not found');
+                notifyError(t('notify.getColor.error'));
             }
         } else {
             if (baseSel === bases[0] || sizeSel === sizes[0]) {

@@ -15,6 +15,7 @@ toast.configure();
 
 const User = (props) => {
     const { user } = useContext(AuthContext);
+    const { t } = useContext(LanguageContext);
 
     const [roles, setRoles] = useState(['user', 'admin', 'superadmin']);
     const { username, role, _id, deleteUser } = props;
@@ -27,10 +28,10 @@ const User = (props) => {
             await axios.patch(`/api/users/${_id}`, params);
             setRoleLocal(roleSelect);
             console.log(role, roleSelect);
-            notifySuccess('User updated correctly');
+            notifySuccess(t('notify.updateUser.success'));
         } catch (error) {
             console.log(error);
-            notifyError('Unable to update user');
+            notifyError(t('notify.updateUser.error'));
         }
     };
 
@@ -106,9 +107,9 @@ const Users = () => {
         try {
             await axios.delete(`/api/users/${id}`);
             setUsers(users.filter((user) => user._id !== id));
-            notifySuccess('User deleted correctly');
+            notifySuccess(t('notify.deleteUser.success'));
         } catch (error) {
-            notifyError('Unable to delete user');
+            notifyError(t('notify.deleteUser.error'));
         }
     };
 
