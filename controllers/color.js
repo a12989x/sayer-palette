@@ -13,21 +13,27 @@ const createColor = async (req, res) => {
     try {
         const { codeNumber, colorName, base, hexCode } = req.body;
 
-        const codeNumberNotTaken = await validateCodeNumber(codeNumber);
+        const lowerCodeNumber = codeNumber
+            .replace(/\s+|-|\//g, '')
+            .toLowerCase();
+        const lowerColorName = colorName.replace(/\s/g, '').toLowerCase();
+        const lowerHexCode = hexCode.toLowerCase();
+
+        const codeNumberNotTaken = await validateCodeNumber(lowerCodeNumber);
         if (!codeNumberNotTaken)
             return res.status(400).json({
                 message: 'Code Number is already taken.',
                 success: 400,
             });
 
-        const colorNameNotTaken = await validateColorName(colorName);
+        const colorNameNotTaken = await validateColorName(lowerColorName);
         if (!colorNameNotTaken)
             return res.status(400).json({
                 message: 'Color Name is already taken.',
                 success: 400,
             });
 
-        const hexCodeNotTaken = await validateHexCode(hexCode);
+        const hexCodeNotTaken = await validateHexCode(lowerHexCode);
         if (!hexCodeNotTaken)
             return res.status(400).json({
                 message: 'Color Name is already taken.',
@@ -35,9 +41,9 @@ const createColor = async (req, res) => {
             });
 
         const newColor = await new Color({
-            codeNumber,
-            colorName,
-            hexCode,
+            codeNumber: lowerCodeNumber,
+            colorName: lowerColorName,
+            hexCode: lowerHexCode,
             base,
         });
 
