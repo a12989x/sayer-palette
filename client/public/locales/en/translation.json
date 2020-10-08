@@ -56,5 +56,31 @@
         "description": "All users and their roles are here.",
         "username": "Username",
         "role": "Role"
+    },
+    "notify": {
+        "signIn": {
+            "success": "You sign in correctly",
+            "error": "Username or password incorrect"
+        },
+        "register": {
+            "success": "You register correctly",
+            "error": "Please make sure if your credentials are valid"
+        },
+        "signOut": {
+            "success": "You sign out correctly",
+            "error": "Error to sign out"
+        },
+        "updateUser": {
+            "success": "User updated correctly",
+            "error": "Unable to update user"
+        },
+        "deleteUser": {
+            "success": "User deleted correctly",
+            "error": "Unable to delete user"
+        },
+        "getColor": {
+            "success": "Color obtained satisfactorily",
+            "error": "Color not found"
+        }
     }
 }
