@@ -55,14 +55,15 @@ const App = () => {
                                 path="/register"
                                 component={Register}
                             />
+                            {/* <Route component={NotFound} /> */}
                         </>
                     ) : (
                         <>
                             {renderPages()}
+                            {/* <Route path="*" component={NotFound} /> */}
                             <ModalIdleTimer />
                         </>
                     )}
-                    <Route component={NotFound} />
                 </Switch>
             </Router>
         </div>
