@@ -817,7 +817,7 @@ const NewColorContextProvider = (props) => {
         oneHundred: '',
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const checkTypeNumber = (color) => {
             const typeNumber =
@@ -1348,7 +1348,11 @@ const NewColorContextProvider = (props) => {
             ],
         };
 
-        console.log(newColor);
+        try {
+            const res = await axios.post('/api/colors/new', newColor);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
