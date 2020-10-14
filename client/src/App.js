@@ -17,19 +17,19 @@ const App = () => {
 
     const roleUser = () => (
         <>
-            <Route exact path="/get-color" component={GetColor} />
+            <Route exact path="/" component={GetColor} />
         </>
     );
 
     const roleAdmin = () => (
         <>
-            <Route exact path="/get-color" component={GetColor} />
+            <Route exact path="/" component={GetColor} />
             <Route exact path="/new-color" component={NewColor} />
         </>
     );
     const roleSuperAdmin = () => (
         <>
-            <Route exact path="/get-color" component={GetColor} />
+            <Route exact path="/" component={GetColor} />
             <Route exact path="/new-color" component={NewColor} />
             <Route exact path="/users" component={Users} />
         </>
