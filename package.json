@@ -11,8 +11,7 @@
         "start": "node .",
         "devStart": "nodemon .",
         "dev": "concurrently \"cd client && npm start\" \"npm run devStart\"",
-        // "postinstall": "concurrently \"cd client && npm install && npm run build\" \"npm install && npm run start\"",
-        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+        "postinstall": "concurrently \"cd client && npm install\" \"cd client && npm run build\" \"npm install && npm run start\""
     },
     "keywords": [],
     "author": "",
