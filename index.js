@@ -37,6 +37,9 @@ const startApp = async () => {
             useUnifiedTopology: true,
             useCreateIndex: true,
         });
+        if (process.env.NODE_ENV === 'production') {
+            app.use(express.static('client/build'));
+        }
         success({ message: 'Connected to MongoDB', badge: true });
         app.listen(PORT, () =>
             success({ message: `Server running on port ${PORT}`, badge: true })
