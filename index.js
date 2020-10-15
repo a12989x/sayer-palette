@@ -26,8 +26,6 @@ app.use(
         secret: SECRET,
         algorithms: ['HS256'],
         getToken: (req) => req.cookies.token,
-    }).unless({
-        path: ['/', '/sign-in', '/register'],
     })
 );
 
