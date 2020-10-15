@@ -150,7 +150,7 @@ const Register = () => {
                 >
                     {t('register.title')}
                 </button>
-                <NavLink to="sign-in" className="register__link">
+                <NavLink to="/" className="register__link">
                     {t('register.link')}
                 </NavLink>
             </div>

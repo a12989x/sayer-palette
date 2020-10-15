@@ -17,19 +17,19 @@ const App = () => {
 
     const roleUser = () => (
         <>
-            <Route exact path="/" component={GetColor} />
+            <Route exact path="/get-color" component={GetColor} />
         </>
     );
 
     const roleAdmin = () => (
         <>
-            <Route exact path="/" component={GetColor} />
+            <Route exact path="/get-color" component={GetColor} />
             <Route exact path="/new-color" component={NewColor} />
         </>
     );
     const roleSuperAdmin = () => (
         <>
-            <Route exact path="/" component={GetColor} />
+            <Route exact path="/get-color" component={GetColor} />
             <Route exact path="/new-color" component={NewColor} />
             <Route exact path="/users" component={Users} />
         </>
@@ -48,7 +48,7 @@ const App = () => {
                 <Switch>
                     {!isSignIn ? (
                         <>
-                            <Route exact path="/sign-in" component={SignIn} />
+                            <Route exact path="/" component={SignIn} />
                             <Route
                                 exact
                                 path="/register"
