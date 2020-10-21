@@ -7,7 +7,7 @@ const userAuth = passport.authenticate('jwt', { session: false });
 
 const verifyToken = async (req, res, next) => {
     try {
-        const token = req.cookies.token || '';
+        const token = req.cookies.token || req.headers.token || '';
         if (!token)
             return res
                 .status(401)
