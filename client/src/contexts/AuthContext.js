@@ -70,7 +70,7 @@ const AuthContextProvider = (props) => {
                 repeat_password: confirmPassword,
             };
             const res = await axios.post('/api/users/register', params);
-            History.push('/');
+            History.push('/sign-in');
             notifySuccess(t('notify.register.success'));
         } catch (error) {
             notifyError(t('notify.register.error'));
@@ -81,7 +81,7 @@ const AuthContextProvider = (props) => {
         try {
             await axios.post('/api/users/logout');
             cookie.remove('isSignIn');
-            History.push('/');
+            History.push('/sign-in');
             setIsSignIn(false);
             setUser({});
             notifyInfo(t('notify.signOut.success'));

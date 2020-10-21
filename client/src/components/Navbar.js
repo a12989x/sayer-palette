@@ -105,7 +105,7 @@ const SignOut = () => {
 
     return (
         <li onClick={signOut}>
-            <NavLink exact to="/" className="navbar__sign-out">
+            <NavLink exact to="/sign-in" className="navbar__sign-out">
                 <RiLogoutCircleLine /> <span>{t('navbar.seventhLink')}</span>
             </NavLink>
         </li>
@@ -166,10 +166,7 @@ const Navbar = () => {
 
     return (
         <section className="navbar">
-            <NavLink
-                to={isSignIn ? '/get-color' : '/'}
-                className="navbar__link"
-            >
+            <NavLink to={isSignIn ? '/' : '/sign-in'} className="navbar__link">
                 <img src={SayerLogoMini} alt="Sayer Logo Mini" />
                 Sayer
             </NavLink>
@@ -180,7 +177,7 @@ const Navbar = () => {
                     <>
                         <div>
                             <li>
-                                <NavLink exact to="/">
+                                <NavLink exact to="/sign-in">
                                     {t('navbar.firstLink')}
                                 </NavLink>
                             </li>
