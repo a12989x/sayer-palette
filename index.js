@@ -22,6 +22,7 @@ app.use('/api/colors', colorsRoute);
 app.use('/api/users', usersRoute);
 
 app.use(
+    '/api',
     jwt({
         secret: SECRET,
         algorithms: ['HS256'],
