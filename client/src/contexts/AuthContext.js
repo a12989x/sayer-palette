@@ -21,8 +21,17 @@ const AuthContextProvider = (props) => {
 
     useEffect(() => {
         const isSign = cookie.load('isSignIn');
+        const currentLocation = window.location.pathname;
+
         isSign ? setIsSignIn(true) : setIsSignIn(false);
         isSign ? setUser(isSign) : setUser({});
+
+        if (!isSign && currentLocation === '/register')
+            History.push(currentLocation);
+        else if (isSign) History.push(currentLocation);
+        else History.push('/sign-in');
+
+        console.log(currentLocation);
     }, []);
 
     const signIn = async (e, values) => {
@@ -33,7 +42,7 @@ const AuthContextProvider = (props) => {
         try {
             const params = { username, password };
             const res = await axios.post('/api/users/login', params);
-            History.push('/get-color');
+            History.push('/');
             setIsSignIn(true);
             setIsLoading(false);
             setUser({
