@@ -9,13 +9,13 @@ const NotFound = () => {
     const { isSignIn } = useContext(AuthContext);
 
     return (
-        <main className="not-found">
-            <div className="container">
+        <main className='not-found'>
+            <div className='container'>
                 <p>Oops!</p>
                 <h1>404 - {t('notFound.heading')}</h1>
                 <h3>{t('notFound.description')}</h3>
-                <NavLink to={!isSignIn ? '/sign-in' : '/get-color'}>
-                    <button className="primary-button">
+                <NavLink to={!isSignIn ? '/sign-in' : '/'}>
+                    <button className='primary-button'>
                         {t('notFound.button')}
                     </button>
                 </NavLink>
