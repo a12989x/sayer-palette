@@ -12,7 +12,7 @@ const GetColor = () => {
 
     return (
         <li>
-            <NavLink exact to="/get-color">
+            <NavLink exact to='/'>
                 {t('navbar.thirdLink')}
             </NavLink>
         </li>
@@ -24,7 +24,7 @@ const NewColor = () => {
 
     return (
         <li>
-            <NavLink exact to="/new-color">
+            <NavLink exact to='/new-color'>
                 {t('navbar.fourthLink')}
             </NavLink>
         </li>
@@ -36,7 +36,7 @@ const Users = () => {
 
     return (
         <li>
-            <NavLink exact to="/users">
+            <NavLink exact to='/users'>
                 {t('navbar.fifthLink')}
             </NavLink>
         </li>
@@ -47,7 +47,7 @@ const Language = () => {
     const { language, changeLanguage } = useContext(LanguageContext);
 
     return (
-        <li className="navbar__change-language">
+        <li className='navbar__change-language'>
             <button onClick={() => changeLanguage()}>
                 {language === 'en' ? 'EN' : 'ES'}
             </button>
@@ -91,7 +91,7 @@ const Theme = () => {
     };
 
     return (
-        <li onClick={changeTheme} className="navbar__theme">
+        <li onClick={changeTheme} className='navbar__theme'>
             <button>
                 🌓 <span>{t('navbar.sixthLink')}</span>
             </button>
@@ -105,7 +105,7 @@ const SignOut = () => {
 
     return (
         <li onClick={signOut}>
-            <NavLink exact to="/sign-in" className="navbar__sign-out">
+            <NavLink exact to='/sign-in' className='navbar__sign-out'>
                 <RiLogoutCircleLine /> <span>{t('navbar.seventhLink')}</span>
             </NavLink>
         </li>
@@ -121,7 +121,7 @@ const Navbar = () => {
             <div>
                 <GetColor />
             </div>
-            <div className="navbar__wrapper">
+            <div className='navbar__wrapper'>
                 <Language />
                 <Theme />
                 <SignOut />
@@ -135,7 +135,7 @@ const Navbar = () => {
                 <GetColor />
                 <NewColor />
             </div>
-            <div className="navbar__wrapper">
+            <div className='navbar__wrapper'>
                 <Language />
                 <Theme />
                 <SignOut />
@@ -150,7 +150,7 @@ const Navbar = () => {
                 <NewColor />
                 <Users />
             </div>
-            <div className="navbar__wrapper">
+            <div className='navbar__wrapper'>
                 <Language />
                 <Theme />
                 <SignOut />
@@ -165,9 +165,9 @@ const Navbar = () => {
     };
 
     return (
-        <section className="navbar">
-            <NavLink to={isSignIn ? '/' : '/sign-in'} className="navbar__link">
-                <img src={SayerLogoMini} alt="Sayer Logo Mini" />
+        <section className='navbar'>
+            <NavLink to={isSignIn ? '/' : '/sign-in'} className='navbar__link'>
+                <img src={SayerLogoMini} alt='Sayer Logo Mini' />
                 Sayer
             </NavLink>
             <ul>
@@ -177,17 +177,17 @@ const Navbar = () => {
                     <>
                         <div>
                             <li>
-                                <NavLink exact to="/sign-in">
+                                <NavLink exact to='/sign-in'>
                                     {t('navbar.firstLink')}
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink exact to="/register">
+                                <NavLink exact to='/register'>
                                     {t('navbar.secondLink')}
                                 </NavLink>
                             </li>
                         </div>
-                        <div className="navbar__wrapper">
+                        <div className='navbar__wrapper'>
                             <Language />
                             <Theme />
                         </div>
