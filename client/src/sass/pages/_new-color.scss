@@ -1,8 +1,5 @@
 .new-color {
     form {
-        // display: grid;
-        // grid-template: auto / 1fr 1fr;
-        // column-gap: 1.2rem;
         width: 100%;
     }
 
@@ -23,8 +20,6 @@
     }
 
     &__button {
-        margin-top: 4rem;
         font-size: 1.2rem;
-        grid-column: 1 / -1;
     }
 }
