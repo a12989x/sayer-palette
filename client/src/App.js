@@ -17,21 +17,21 @@ const App = () => {
 
     const roleUser = () => (
         <>
-            <Route exact path="/" component={GetColor} />
+            <Route exact path='/' component={GetColor} />
         </>
     );
 
     const roleAdmin = () => (
         <>
-            <Route exact path="/" component={GetColor} />
-            <Route exact path="/new-color" component={NewColor} />
+            <Route exact path='/' component={GetColor} />
+            <Route exact path='/new-color' component={NewColor} />
         </>
     );
     const roleSuperAdmin = () => (
         <>
-            <Route exact path="/" component={GetColor} />
-            <Route exact path="/new-color" component={NewColor} />
-            <Route exact path="/users" component={Users} />
+            <Route exact path='/' component={GetColor} />
+            <Route exact path='/new-color' component={NewColor} />
+            <Route exact path='/users' component={Users} />
         </>
     );
 
@@ -42,16 +42,16 @@ const App = () => {
     };
 
     return (
-        <div className="App">
+        <div className='App'>
             <Router history={History}>
                 <Navbar />
                 <Switch>
                     {!isSignIn ? (
                         <>
-                            <Route exact path="/sign-in" component={SignIn} />
+                            <Route exact path='/sign-in' component={SignIn} />
                             <Route
                                 exact
-                                path="/register"
+                                path='/register'
                                 component={Register}
                             />
                         </>

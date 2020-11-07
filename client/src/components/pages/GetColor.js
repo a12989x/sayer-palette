@@ -85,43 +85,43 @@ const GetColor = () => {
     };
 
     return (
-        <main className="get-color">
-            <div className="container">
-                <h1 className="title">{t('getColor.title')}</h1>
-                <h4 className="description">{t('getColor.description')}</h4>
+        <main className='get-color'>
+            <div className='container'>
+                <h1 className='title'>{t('getColor.title')}</h1>
+                <h4 className='description'>{t('getColor.description')}</h4>
 
                 <form onSubmit={(e) => getColor(e)}>
-                    <div className="input-wrapper">
+                    <div className='input-wrapper'>
                         <input
                             required={true}
-                            type="text"
-                            id="number"
-                            name="number"
+                            type='text'
+                            id='number'
+                            name='number'
                             value={values.number}
                             onChange={handleChange}
                             disabled={values.name.length ? true : false}
                         />
-                        <label htmlFor="number">
+                        <label htmlFor='number'>
                             <span>{t('getColor.number')}</span>
                         </label>
                     </div>
 
-                    <div className="input-wrapper">
+                    <div className='input-wrapper'>
                         <input
                             required={true}
-                            type="text"
-                            id="name"
-                            name="name"
+                            type='text'
+                            id='name'
+                            name='name'
                             value={values.name}
                             onChange={handleChange}
                             disabled={values.number.length ? true : false}
                         />
-                        <label htmlFor="name">
+                        <label htmlFor='name'>
                             <span>{t('getColor.name')}</span>
                         </label>
                     </div>
 
-                    <div className="select-wrapper">
+                    <div className='select-wrapper'>
                         <select
                             onChange={(e) => setBaseSel(e.target.value)}
                             defaultValue={bases[0]}
@@ -139,7 +139,7 @@ const GetColor = () => {
                         </select>
                     </div>
 
-                    <div className="select-wrapper">
+                    <div className='select-wrapper'>
                         <select
                             onChange={(e) => setSizeSel(e.target.value)}
                             defaultValue={sizes[0]}
@@ -158,15 +158,15 @@ const GetColor = () => {
                     </div>
 
                     <button
-                        type="submit"
-                        className="get-color__button primary-button"
+                        type='submit'
+                        className='get-color__button primary-button'
                     >
                         {!isLoading ? (
                             t('getColor.title')
                         ) : (
                             <ClipLoader
                                 loading={true}
-                                color="#1a8ccb"
+                                color='#1a8ccb'
                                 size={35}
                             />
                         )}
@@ -174,24 +174,24 @@ const GetColor = () => {
                 </form>
 
                 {colorSel && (
-                    <div className="get-color__wrapper">
-                        <section className="get-color__result">
-                            <p className="get-color__result-size">Oz.</p>
-                            <p className="get-color__result-size">1/64</p>
-                            <p className="get-color__result-size">1/128</p>
+                    <div className='get-color__wrapper'>
+                        <section className='get-color__result'>
+                            <p className='get-color__result-size'>Oz.</p>
+                            <p className='get-color__result-size'>1/64</p>
+                            <p className='get-color__result-size'>1/128</p>
                             {colorSel.map((entry) => {
                                 const tint = entry[0];
                                 const quantities = entry[1];
 
                                 return (
                                     <React.Fragment key={tint}>
-                                        <p className="get-color__result-tint">
+                                        <p className='get-color__result-tint'>
                                             {tint}
                                         </p>
                                         {quantities.map((quantity, key) => (
                                             <span
                                                 key={key}
-                                                className="get-color__result-quantity"
+                                                className='get-color__result-quantity'
                                             >
                                                 {quantity}
                                             </span>
@@ -202,7 +202,7 @@ const GetColor = () => {
                         </section>
 
                         <span
-                            className="get-color__color"
+                            className='get-color__color'
                             style={{ background: color.hexCode }}
                         ></span>
                     </div>
