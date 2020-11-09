@@ -93,7 +93,7 @@ const Theme = () => {
     return (
         <li onClick={changeTheme} className='navbar__theme'>
             <button>
-                🌓 <span>{t('navbar.sixthLink')}</span>
+                <span role='img'>🌓</span> <span>{t('navbar.sixthLink')}</span>
             </button>
         </li>
     );
