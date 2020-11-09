@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { NewColorContext } from '../../contexts/NewColorContext';
 import { LanguageContext } from '../../contexts/LanguageContext';
@@ -160,60 +160,60 @@ const NewColor = () => {
     const { t } = useContext(LanguageContext);
 
     return (
-        <main className="new-color">
-            <div className="container">
-                <h1 className="title">{t('newColor.title')}</h1>
-                <h4 className="description">{t('newColor.description')}</h4>
+        <main className='new-color'>
+            <div className='container'>
+                <h1 className='title'>{t('newColor.title')}</h1>
+                <h4 className='description'>{t('newColor.description')}</h4>
 
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <div className="input-wrapper">
+                    <div className='input-wrapper'>
                         <input
-                            type="text"
-                            id="codeNumber"
-                            name="codeNumber"
+                            type='text'
+                            id='codeNumber'
+                            name='codeNumber'
                             value={values.codeNumber}
                             onChange={handleChange}
                             required={true}
                         />
-                        <label htmlFor="codeNumber">
+                        <label htmlFor='codeNumber'>
                             <span>{t('newColor.number')} / Color</span>
                         </label>
                     </div>
-                    <div className="input-wrapper">
+                    <div className='input-wrapper'>
                         <input
-                            type="text"
-                            id="colorName"
-                            name="colorName"
+                            type='text'
+                            id='colorName'
+                            name='colorName'
                             value={values.colorName}
                             onChange={handleChange}
                             required={true}
                         />
-                        <label htmlFor="colorName">
+                        <label htmlFor='colorName'>
                             <span>{t('newColor.name')} / Color</span>
                         </label>
                     </div>
-                    <div className="input-wrapper">
+                    <div className='input-wrapper'>
                         <input
-                            type="text"
-                            id="hexCode"
-                            name="hexCode"
+                            type='text'
+                            id='hexCode'
+                            name='hexCode'
                             value={values.hexCode}
                             onChange={handleChange}
                             required={true}
                         />
-                        <label htmlFor="hexCode">
+                        <label htmlFor='hexCode'>
                             <span>Hex {t('newColor.number')}</span>
                         </label>
                     </div>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.first')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="firstColor"
-                                    id="firstColor"
+                                    name='firstColor'
+                                    id='firstColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -231,10 +231,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="firstBase"
-                                    id="firstBase"
+                                    name='firstBase'
+                                    id='firstBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -253,7 +253,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={firstColorLiterFirstTint}
@@ -281,7 +281,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={firstColorGalonFirstTint}
@@ -309,7 +309,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={firstColorBucketFirstTint}
@@ -338,14 +338,14 @@ const NewColor = () => {
                         </section>
                     </section>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.second')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="secondColor"
-                                    id="secondColor"
+                                    name='secondColor'
+                                    id='secondColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -363,10 +363,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="secondBase"
-                                    id="secondBase"
+                                    name='secondBase'
+                                    id='secondBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -385,7 +385,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={secondColorLiterFirstTint}
@@ -413,7 +413,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={secondColorGalonFirstTint}
@@ -441,7 +441,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={secondColorBucketFirstTint}
@@ -470,14 +470,14 @@ const NewColor = () => {
                         </section>
                     </section>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.third')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="thirdColor"
-                                    id="thirdColor"
+                                    name='thirdColor'
+                                    id='thirdColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -495,10 +495,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="thirdBase"
-                                    id="thirdBase"
+                                    name='thirdBase'
+                                    id='thirdBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -517,7 +517,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={thirdColorLiterFirstTint}
@@ -545,7 +545,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={thirdColorGalonFirstTint}
@@ -573,7 +573,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={thirdColorBucketFirstTint}
@@ -602,14 +602,14 @@ const NewColor = () => {
                         </section>
                     </section>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.fourth')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="fourthColor"
-                                    id="fourthColor"
+                                    name='fourthColor'
+                                    id='fourthColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -627,10 +627,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="fourthBase"
-                                    id="fourthBase"
+                                    name='fourthBase'
+                                    id='fourthBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -649,7 +649,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={fourthColorLiterFirstTint}
@@ -677,7 +677,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={fourthColorGalonFirstTint}
@@ -705,7 +705,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={fourthColorBucketFirstTint}
@@ -734,14 +734,14 @@ const NewColor = () => {
                         </section>
                     </section>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.fifth')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="fifthColor"
-                                    id="fifthColor"
+                                    name='fifthColor'
+                                    id='fifthColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -759,10 +759,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="fifthBase"
-                                    id="fifthBase"
+                                    name='fifthBase'
+                                    id='fifthBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -781,7 +781,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={fifthColorLiterFirstTint}
@@ -809,7 +809,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={fifthColorGalonFirstTint}
@@ -837,7 +837,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={fifthColorBucketFirstTint}
@@ -866,14 +866,14 @@ const NewColor = () => {
                         </section>
                     </section>
 
-                    <section className="base">
+                    <section className='base'>
                         <h3>{t('newColor.sixth')} Color</h3>
 
-                        <div className="selects-wrapper">
-                            <div className="select-wrapper">
+                        <div className='selects-wrapper'>
+                            <div className='select-wrapper'>
                                 <select
-                                    name="sixthColor"
-                                    id="sixthColor"
+                                    name='sixthColor'
+                                    id='sixthColor'
                                     defaultValue={lines[0]}
                                     onChange={handleChange}
                                 >
@@ -891,10 +891,10 @@ const NewColor = () => {
                                 </select>
                             </div>
 
-                            <div className="select-wrapper">
+                            <div className='select-wrapper'>
                                 <select
-                                    name="sixthBase"
-                                    id="sixthBase"
+                                    name='sixthBase'
+                                    id='sixthBase'
                                     defaultValue={bases[0]}
                                     onChange={handleChange}
                                 >
@@ -913,7 +913,7 @@ const NewColor = () => {
                             </div>
                         </div>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.liter')}</h4>
                             <Tint
                                 values={sixthColorLiterFirstTint}
@@ -941,7 +941,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>Galon</h4>
                             <Tint
                                 values={sixthColorGalonFirstTint}
@@ -969,7 +969,7 @@ const NewColor = () => {
                             />
                         </section>
 
-                        <section className="size">
+                        <section className='size'>
                             <h4>{t('newColor.bucket')}</h4>
                             <Tint
                                 values={sixthColorBucketFirstTint}
@@ -999,8 +999,8 @@ const NewColor = () => {
                     </section>
 
                     <button
-                        type="submit"
-                        className="new-color__button primary-button"
+                        type='submit'
+                        className='new-color__button primary-button'
                     >
                         {t('newColor.button')}
                     </button>
