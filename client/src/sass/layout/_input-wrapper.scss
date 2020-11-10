@@ -14,10 +14,24 @@
 
     input:valid + label::after {
         transform: translateX(0%);
+        border-bottom: 2px solid $accent-color;
     }
 
     input:focus + label::after {
         transform: translateX(0%);
+    }
+
+    input:focus:invalid + label span {
+        color: $error-color;
+    }
+
+    input.notMatched + label span {
+        color: $error-color;
+    }
+
+    input.notMatched + label::after,
+    input:invalid:focus + label::after {
+        border-bottom: 1px solid $error-color;
     }
 
     label {
@@ -44,9 +58,18 @@
             bottom: -1px;
             height: 100%;
             width: 100%;
-            border-bottom: 3px solid $accent-color;
+            border-bottom: 1px solid $error-color;
             transform: translateX(-100%);
             transition: 0.3s;
         }
+    }
+
+    svg {
+        position: absolute;
+        left: 95%;
+        top: 50%;
+        fill: $gray-color;
+        z-index: 2;
+        cursor: pointer;
     }
 }
