@@ -7,7 +7,7 @@ const UserSchema = new Schema(
             type: String,
             required: true,
             min: 4,
-            max: 100,
+            max: 254,
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/],
             unique: true,
         },
