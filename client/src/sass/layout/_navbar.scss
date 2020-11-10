@@ -1,6 +1,6 @@
 .navbar {
     min-height: 87vh;
-    max-height: 87vh;
+    // max-height: 87vh;
     padding: 4rem 3rem;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
@@ -28,20 +28,18 @@
 
     ul {
         display: grid;
-        height: 90%;
+        row-gap: 1.5rem;
         list-style-type: none;
         margin: 3rem 0 0;
         padding: 0;
 
         li {
-            min-height: 3.5rem;
-            height: 3.5rem;
-            max-height: 3.5rem;
-
             a {
-                display: inline-block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 text-align: center;
-                height: 100%;
+                min-height: 100%;
                 width: 100%;
                 padding: 1rem 0.8rem;
                 box-shadow: $box-shadow;
@@ -52,24 +50,17 @@
                     box-shadow: $inset-box-shadow;
                 }
             }
-
-            &:not(last-child) {
-                margin-bottom: 2rem;
-            }
         }
     }
+    align-self: flex-start;
 
-    &__wrapper {
-        align-self: flex-end;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        a {
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-
-            svg {
-                margin-right: 0.5rem;
-            }
+        svg {
+            margin-right: 0.5rem;
         }
     }
 
@@ -100,27 +91,22 @@
 
 @media screen and (max-width: 950px) {
     .navbar {
-        // bottom: 0;
-        // left: 0;
-        // position: absolute;
         box-shadow: none;
         min-height: 0;
         width: 100%;
-        // padding: 0 4.5rem;
         padding: 0;
         border-radius: 0;
-        // margin: 0 0 3.5rem 0;
         margin-top: 2.5rem;
 
         &__link {
-            display: none;
+            display: none !important;
         }
 
         ul {
             display: grid;
-            grid-template: auto / 1fr 1fr;
+            grid-template: auto / repeat(auto-fit, minmax(150px, 1fr));
             margin: 0;
-            column-gap: 0.5rem;
+            column-gap: 1.5rem;
 
             div {
                 display: grid;
@@ -152,16 +138,15 @@
                 }
             }
         }
-        &__wrapper {
-            justify-self: end;
-        }
 
         &__theme {
             button {
                 height: 100%;
 
                 span {
-                    display: none;
+                    &:nth-child(2) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -171,8 +156,23 @@
 @media screen and (max-width: 750px) {
     .navbar {
         ul {
-            li {
-                font-size: 0.9rem;
+            div {
+                justify-self: stretch;
+
+                li {
+                    font-size: 0.9rem;
+                    justify-self: stretch;
+                }
+            }
+        }
+
+        &__theme {
+            button {
+                span {
+                    &:nth-child(2) {
+                        display: inline-block;
+                    }
+                }
             }
         }
     }
@@ -182,7 +182,9 @@
     .navbar {
         ul {
             li {
-                // font-size: 0.7rem;
+                a {
+                    // padding: 0;
+                }
             }
         }
     }
