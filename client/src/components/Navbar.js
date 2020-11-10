@@ -93,7 +93,10 @@ const Theme = () => {
     return (
         <li onClick={changeTheme} className='navbar__theme'>
             <button>
-                <span role='img'>🌓</span> <span>{t('navbar.sixthLink')}</span>
+                <span role='img' aria-label='sun and moon'>
+                    🌓
+                </span>
+                <span>{t('navbar.sixthLink')}</span>
             </button>
         </li>
     );
@@ -118,43 +121,32 @@ const Navbar = () => {
 
     const roleUser = () => (
         <>
-            <div>
-                <GetColor />
-            </div>
-            <div className='navbar__wrapper'>
-                <Language />
-                <Theme />
-                <SignOut />
-            </div>
+            <GetColor />
+            <Language />
+            <Theme />
+            <SignOut />
         </>
     );
 
     const roleAdmin = () => (
         <>
-            <div>
-                <GetColor />
-                <NewColor />
-            </div>
-            <div className='navbar__wrapper'>
-                <Language />
-                <Theme />
-                <SignOut />
-            </div>
+            <GetColor />
+            <NewColor />
+            <Language />
+            <Theme />
+            <SignOut />
         </>
     );
 
     const roleSuperAdmin = () => (
         <>
-            <div>
-                <GetColor />
-                <NewColor />
-                <Users />
-            </div>
-            <div className='navbar__wrapper'>
-                <Language />
-                <Theme />
-                <SignOut />
-            </div>
+            <GetColor />
+            <NewColor />
+            <Users />
+
+            <Language />
+            <Theme />
+            <SignOut />
         </>
     );
 
@@ -175,22 +167,18 @@ const Navbar = () => {
                     renderLinks()
                 ) : (
                     <>
-                        <div>
-                            <li>
-                                <NavLink exact to='/sign-in'>
-                                    {t('navbar.firstLink')}
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to='/register'>
-                                    {t('navbar.secondLink')}
-                                </NavLink>
-                            </li>
-                        </div>
-                        <div className='navbar__wrapper'>
-                            <Language />
-                            <Theme />
-                        </div>
+                        <li>
+                            <NavLink exact to='/sign-in'>
+                                {t('navbar.firstLink')}
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink exact to='/register'>
+                                {t('navbar.secondLink')}
+                            </NavLink>
+                        </li>
+                        <Language />
+                        <Theme />
                     </>
                 )}
             </ul>
