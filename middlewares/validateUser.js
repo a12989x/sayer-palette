@@ -3,7 +3,7 @@ const Joi = require('joi');
 const schemas = {
     loginSchema: Joi.object().keys({
         username: Joi.string().min(5).max(50),
-        password: Joi.string().min(8).max(50),
+        password: Joi.string().min(8).max(250),
     }),
 
     registerSchema: Joi.object().keys({
@@ -11,10 +11,10 @@ const schemas = {
         email: Joi.string()
             .email({ minDomainSegments: 2 })
             .min(4)
-            .max(100)
+            .max(254)
             .required(),
         username: Joi.string().min(5).max(50),
-        password: Joi.string().min(8).max(150).required(),
+        password: Joi.string().min(8).max(250).required(),
         repeat_password: Joi.ref('password'),
     }),
 };
