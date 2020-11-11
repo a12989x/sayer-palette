@@ -2,6 +2,9 @@ import React, { useState, createContext } from 'react';
 import axios from 'axios';
 
 import { useForm } from '../components/useForm';
+import { notifySuccess, notifyError } from '../components/Toastify';
+
+toast.configure();
 
 export const NewColorContext = createContext();
 
@@ -1350,8 +1353,9 @@ const NewColorContextProvider = (props) => {
 
         try {
             const res = await axios.post('/api/colors/new', newColor);
+            notifySuccess(t('notify.newColor.success'));
         } catch (error) {
-            console.log(error);
+            notifyError(t('notify.newColor.error'));
         }
     };
 
