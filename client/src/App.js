@@ -11,6 +11,7 @@ import GetColor from './components/pages/GetColor';
 import NewColor from './components/pages/NewColor';
 import Users from './components/pages/Users';
 import ModalIdleTimer from './components/ModalIdleTimer';
+import NotFound from './components/pages/NotFound';
 
 const App = () => {
     const { user, isSignIn } = useContext(AuthContext);
@@ -18,6 +19,7 @@ const App = () => {
     const roleUser = () => (
         <>
             <Route exact path='/' component={GetColor} />
+            <Route exact path='/not-found' component={NotFound} />
         </>
     );
 
@@ -25,6 +27,7 @@ const App = () => {
         <>
             <Route exact path='/' component={GetColor} />
             <Route exact path='/new-color' component={NewColor} />
+            <Route exact path='/not-found' component={NotFound} />
         </>
     );
     const roleSuperAdmin = () => (
@@ -32,6 +35,7 @@ const App = () => {
             <Route exact path='/' component={GetColor} />
             <Route exact path='/new-color' component={NewColor} />
             <Route exact path='/users' component={Users} />
+            <Route exact path='/not-found' component={NotFound} />
         </>
     );
 
@@ -53,6 +57,11 @@ const App = () => {
                                 exact
                                 path='/register'
                                 component={Register}
+                            />
+                            <Route
+                                exact
+                                path='/not-found'
+                                component={NotFound}
                             />
                         </>
                     ) : (
