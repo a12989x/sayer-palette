@@ -27,21 +27,19 @@ const User = (props) => {
             const params = { role: roleSelect };
             await axios.patch(`/api/users/${_id}`, params);
             setRoleLocal(roleSelect);
-            console.log(role, roleSelect);
             notifySuccess(t('notify.updateUser.success'));
         } catch (error) {
-            console.log(error);
             notifyError(t('notify.updateUser.error'));
         }
     };
 
     return (
-        <article className="user">
+        <article className='user'>
             <h3>{username}</h3>
-            <div className="select-wrapper">
+            <div className='select-wrapper'>
                 <select
-                    name="role"
-                    id="role"
+                    name='role'
+                    id='role'
                     defaultValue={role}
                     onChange={(e) => setRoleSelect(e.target.value)}
                 >
@@ -64,7 +62,7 @@ const User = (props) => {
             </div>
             {user.username !== username && (
                 <button
-                    className="delete-button"
+                    className='delete-button'
                     onClick={() => deleteUser(_id)}
                 >
                     <AiOutlineDelete />
@@ -72,7 +70,7 @@ const User = (props) => {
             )}
             {roleSelect !== roleLocal && (
                 <button
-                    className="success-button"
+                    className='success-button'
                     onClick={() => updateUser(roleSelect)}
                 >
                     <FiCheck />
@@ -95,7 +93,6 @@ const Users = () => {
                 setUsers(data);
                 setIsLoading(false);
             } catch (error) {
-                console.log(error);
                 setIsLoading(false);
             }
         };
@@ -114,14 +111,14 @@ const Users = () => {
     };
 
     return (
-        <main className="users">
-            <div className="container">
-                <h1 className="title">{t('users.title')}</h1>
-                <h4 className="description">{t('users.description')}</h4>
+        <main className='users'>
+            <div className='container'>
+                <h1 className='title'>{t('users.title')}</h1>
+                <h4 className='description'>{t('users.description')}</h4>
 
                 {!isLoading ? (
-                    <section className="users__wrapper">
-                        <div className="users__wrapper-header">
+                    <section className='users__wrapper'>
+                        <div className='users__wrapper-header'>
                             <h2>{t('users.username')}</h2>
                             <h2>{t('users.role')}</h2>
                         </div>
@@ -134,7 +131,7 @@ const Users = () => {
                         ))}
                     </section>
                 ) : (
-                    <ClipLoader size={100} color="#1a8ccb" loading={true} />
+                    <ClipLoader size={100} color='#1a8ccb' loading={true} />
                 )}
             </div>
         </main>
