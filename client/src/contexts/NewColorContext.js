@@ -1,14 +1,18 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import { useForm } from '../components/useForm';
 import { notifySuccess, notifyError } from '../components/Toastify';
+import { LanguageContext } from './LanguageContext';
 
 toast.configure();
 
 export const NewColorContext = createContext();
 
 const NewColorContextProvider = (props) => {
+    const { t } = useContext(LanguageContext);
+
     const [lines, setLines] = useState([
         'lines',
         'x-trong',
