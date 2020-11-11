@@ -81,6 +81,10 @@
         "getColor": {
             "success": "Color obtenido satisfactoriamente",
             "error": "Color no encontrado"
+        },
+        "newColor": {
+            "success": "Color created successfully",
+            "error": "Unable to create color"
         }
     }
 }
