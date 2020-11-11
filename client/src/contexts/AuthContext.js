@@ -26,12 +26,19 @@ const AuthContextProvider = (props) => {
         isSign ? setIsSignIn(true) : setIsSignIn(false);
         isSign ? setUser(isSign) : setUser({});
 
-        if (!isSign && currentLocation === '/register')
+        if (
+            (!isSign && currentLocation === '/sign-in') ||
+            (!isSign && currentLocation === '/register')
+        )
             History.push(currentLocation);
-        else if (isSign) History.push(currentLocation);
-        else History.push('/sign-in');
-
-        console.log(currentLocation);
+        else if (
+            (isSign && currentLocation !== '/') ||
+            (isSign && currentLocation !== '/new-color') ||
+            (isSign && currentLocation !== '/users')
+        )
+            History.push('/not-found');
+        else if (isSignIn) History.push(currentLocation);
+        else History.push('/not-found');
     }, []);
 
     const signIn = async (e, values) => {
