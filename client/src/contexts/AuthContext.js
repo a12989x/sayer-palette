@@ -22,6 +22,7 @@ const AuthContextProvider = (props) => {
     useEffect(() => {
         const isSign = cookie.load('isSignIn');
         const currentLocation = window.location.pathname;
+        console.log(currentLocation);
 
         isSign ? setIsSignIn(true) : setIsSignIn(false);
         isSign ? setUser(isSign) : setUser({});
@@ -31,13 +32,13 @@ const AuthContextProvider = (props) => {
             (!isSign && currentLocation === '/register')
         )
             History.push(currentLocation);
+        else if (!isSign) History.push('/sign-in');
         else if (
-            (isSign && currentLocation !== '/') ||
-            (isSign && currentLocation !== '/new-color') ||
-            (isSign && currentLocation !== '/users')
+            currentLocation === '/' ||
+            currentLocation === '/new-color' ||
+            currentLocation === '/users'
         )
-            History.push('/not-found');
-        else if (isSignIn) History.push(currentLocation);
+            History.push(currentLocation);
         else History.push('/not-found');
     }, []);
 
