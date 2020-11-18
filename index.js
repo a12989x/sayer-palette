@@ -4,6 +4,7 @@ const passport = require('passport');
 const { success, error } = require('consola');
 const jwt = require('express-jwt');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 const { PORT, MONGODB_URI, SECRET } = require('./config');
 
