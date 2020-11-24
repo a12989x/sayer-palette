@@ -5,7 +5,7 @@ import { UncontrolledTooltip } from 'reactstrap';
 
 import 'tippy.js/dist/tippy.css';
 
-import { useForm } from '../useForm';
+import { useForm } from '../../hooks/useForm';
 import { AuthContext } from '../../contexts/AuthContext';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
