@@ -2,7 +2,7 @@
 
 Application buit with MERN stack, you can get the quantities of the inks depending on the color saved in a database.
 
-**Live Preview:** [Sayer Palette](https://wildfire-tracker-six.vercel.app/ 'Wildfire Tracker React App')
+**Live Preview:** [Sayer Palette](ax-sayer-palette.herokuapp.com/ 'Sayer Palette Mern App')
 
 ![sayer-palette-mern-app](./thumb.png)
 
